@@ -1,0 +1,22 @@
+{
+    "name": "Foundry.Networking.Fusion.Setup.Settings",
+    "rootNamespace": "Foundry.Networking",
+    "references": [
+        "GUID:0b611528461e48e48973c1472b20956f",
+        "GUID:fdbcaec5f0c0cb04cbcc6dbdac102da5",
+        "GUID:4d449a4732e064d26a3069f2cfd88917"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [
+        "FUSION_WEAVER"
+    ],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

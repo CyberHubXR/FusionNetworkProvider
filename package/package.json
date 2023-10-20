@@ -1,15 +1,17 @@
 {
-    "name": "com.cyberhub.foundry.example",
-    "displayName": "Template Package",
-    "version": "0.0.1-preview",
-    "unity": "2021.3",
-    "description": "Description here.",
-    "keywords": [
-        "foundry"
-    ],
-    "category": "",
-    "dependencies": {
-    },
-    "samples": [
-    ]
+  "name": "com.cyberhub.foundry.networking.fusion",
+  "displayName": "Fusion Networking for Foundry",
+  "version": "0.0.4-preview",
+  "unity": "2021.3",
+  "description": "Provides networking backend for Foundry through Photon Fusion.",
+  "keywords": [
+    "foundry",
+    "networking",
+    "Fusion",
+    "Photon"
+  ],
+  "category": "Networking",
+  "dependencies": {
+    "com.cyberhub.foundry.core": "0.1.4-preview"
+  }
 }

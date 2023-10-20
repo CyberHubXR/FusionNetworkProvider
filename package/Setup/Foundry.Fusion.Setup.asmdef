@@ -1,0 +1,20 @@
+{
+    "name": "Foundry.Fusion.Setup",
+    "rootNamespace": "Foundry.Fusion.Setup",
+    "references": [
+        "GUID:fdbcaec5f0c0cb04cbcc6dbdac102da5",
+        "GUID:695fc961570e58f4293948619467a6f4",
+        "GUID:0b611528461e48e48973c1472b20956f"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
