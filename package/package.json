@@ -1,0 +1,15 @@
+{
+    "name": "com.cyberhub.foundry.example",
+    "displayName": "Template Package",
+    "version": "0.0.1-preview",
+    "unity": "2021.3",
+    "description": "Description here.",
+    "keywords": [
+        "foundry"
+    ],
+    "category": "",
+    "dependencies": {
+    },
+    "samples": [
+    ]
+}
