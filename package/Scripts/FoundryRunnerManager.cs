@@ -404,7 +404,7 @@ namespace Foundry.Networking
 
         public void OnInput(NetworkRunner runner, NetworkInput input)
         {
-            provider.SendFusionInputRequest(runner, input);
+            
         }
 
         public void OnInputMissing(NetworkRunner runner, PlayerRef player, NetworkInput input)

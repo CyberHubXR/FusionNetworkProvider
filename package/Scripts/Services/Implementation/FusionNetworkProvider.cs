@@ -280,8 +280,6 @@ namespace Foundry.Networking
         public event NetworkErrorEventHandler SessionDisconnected;
         public event NetworkPlayerEventHandler PlayerJoined;
         public event NetworkPlayerEventHandler PlayerLeft;
-        
-        public event FusionInputHandler FusionInputRequest;
 
         public void SendSessionConnected()
         {
@@ -313,11 +311,6 @@ namespace Foundry.Networking
         public void SendPlayerLeft(int playerId)
         {
             PlayerLeft?.Invoke(playerId);
-        }
-
-        public void SendFusionInputRequest(Fusion.NetworkRunner runner, Fusion.NetworkInput input)
-        {
-            FusionInputRequest?.Invoke(runner, input);
         }
 
         #endregion
