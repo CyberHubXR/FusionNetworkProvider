@@ -1,0 +1,728 @@
+### YamlMime:ManagedReference
+items:
+- uid: Foundry.Networking.Fusion.Editor.MappedNetworkPropertyDrawers
+  commentId: T:Foundry.Networking.Fusion.Editor.MappedNetworkPropertyDrawers
+  id: MappedNetworkPropertyDrawers
+  parent: Foundry.Networking.Fusion.Editor
+  children:
+  - Foundry.Networking.Fusion.Editor.MappedNetworkPropertyDrawers.GetPropertyHeight(UnityEditor.SerializedProperty,UnityEngine.GUIContent)
+  - Foundry.Networking.Fusion.Editor.MappedNetworkPropertyDrawers.OnGUI(UnityEngine.Rect,UnityEditor.SerializedProperty,UnityEngine.GUIContent)
+  langs:
+  - csharp
+  - vb
+  name: MappedNetworkPropertyDrawers
+  nameWithType: MappedNetworkPropertyDrawers
+  fullName: Foundry.Networking.Fusion.Editor.MappedNetworkPropertyDrawers
+  type: Class
+  source:
+    remote:
+      path: package/Scripts/Editor/MappedNetworkPropertyDrawers.cs
+      branch: main
+      repo: https://github.com/FoundryXR/FusionNetworkProvider.git
+    id: MappedNetworkPropertyDrawers
+    path: ../Scripts/Editor/MappedNetworkPropertyDrawers.cs
+    startLine: 11
+  assemblies:
+  - Foundry.Networking.Fusion.Editor
+  namespace: Foundry.Networking.Fusion.Editor
+  syntax:
+    content: >-
+      [CustomPropertyDrawer(typeof(NetworkTransformProperties))]
+
+      public class MappedNetworkPropertyDrawers : PropertyDrawer
+    content.vb: >-
+      <CustomPropertyDrawer(GetType(NetworkTransformProperties))>
+
+      Public Class MappedNetworkPropertyDrawers Inherits PropertyDrawer
+  inheritance:
+  - System.Object
+  - UnityEditor.GUIDrawer
+  - UnityEditor.PropertyDrawer
+  inheritedMembers:
+  - UnityEditor.PropertyDrawer.CreatePropertyGUI(UnityEditor.SerializedProperty)
+  - UnityEditor.PropertyDrawer.CanCacheInspectorGUI(UnityEditor.SerializedProperty)
+  - UnityEditor.PropertyDrawer.attribute
+  - UnityEditor.PropertyDrawer.fieldInfo
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+  extensionMethods:
+  - UnityEditor.PropertyDrawer.Foundry.Networking.Fusion.Editor.PropDrawExtensions.GetSerializedValue``1(UnityEditor.SerializedProperty)
+  attributes:
+  - type: UnityEditor.CustomPropertyDrawer
+    ctor: UnityEditor.CustomPropertyDrawer.#ctor(System.Type)
+    arguments:
+    - type: System.Type
+      value: Foundry.Networking.NetworkTransformProperties
+- uid: Foundry.Networking.Fusion.Editor.MappedNetworkPropertyDrawers.GetPropertyHeight(UnityEditor.SerializedProperty,UnityEngine.GUIContent)
+  commentId: M:Foundry.Networking.Fusion.Editor.MappedNetworkPropertyDrawers.GetPropertyHeight(UnityEditor.SerializedProperty,UnityEngine.GUIContent)
+  id: GetPropertyHeight(UnityEditor.SerializedProperty,UnityEngine.GUIContent)
+  parent: Foundry.Networking.Fusion.Editor.MappedNetworkPropertyDrawers
+  langs:
+  - csharp
+  - vb
+  name: GetPropertyHeight(SerializedProperty, GUIContent)
+  nameWithType: MappedNetworkPropertyDrawers.GetPropertyHeight(SerializedProperty, GUIContent)
+  fullName: Foundry.Networking.Fusion.Editor.MappedNetworkPropertyDrawers.GetPropertyHeight(UnityEditor.SerializedProperty, UnityEngine.GUIContent)
+  type: Method
+  source:
+    remote:
+      path: package/Scripts/Editor/MappedNetworkPropertyDrawers.cs
+      branch: main
+      repo: https://github.com/FoundryXR/FusionNetworkProvider.git
+    id: GetPropertyHeight
+    path: ../Scripts/Editor/MappedNetworkPropertyDrawers.cs
+    startLine: 15
+  assemblies:
+  - Foundry.Networking.Fusion.Editor
+  namespace: Foundry.Networking.Fusion.Editor
+  summary: <p>Override this method to specify how tall the GUI for this field is in pixels.</p>
+  example: []
+  syntax:
+    content: public override float GetPropertyHeight(SerializedProperty property, GUIContent label)
+    parameters:
+    - id: property
+      type: UnityEditor.SerializedProperty
+      description: The SerializedProperty to make the custom GUI for.
+    - id: label
+      type: UnityEngine.GUIContent
+      description: The label of this property.
+    return:
+      type: System.Single
+      description: <p>The height in pixels.</p>
+    content.vb: Public Overrides Function GetPropertyHeight([property] As SerializedProperty, label As GUIContent) As Single
+  overridden: UnityEditor.PropertyDrawer.GetPropertyHeight(UnityEditor.SerializedProperty,UnityEngine.GUIContent)
+  overload: Foundry.Networking.Fusion.Editor.MappedNetworkPropertyDrawers.GetPropertyHeight*
+- uid: Foundry.Networking.Fusion.Editor.MappedNetworkPropertyDrawers.OnGUI(UnityEngine.Rect,UnityEditor.SerializedProperty,UnityEngine.GUIContent)
+  commentId: M:Foundry.Networking.Fusion.Editor.MappedNetworkPropertyDrawers.OnGUI(UnityEngine.Rect,UnityEditor.SerializedProperty,UnityEngine.GUIContent)
+  id: OnGUI(UnityEngine.Rect,UnityEditor.SerializedProperty,UnityEngine.GUIContent)
+  parent: Foundry.Networking.Fusion.Editor.MappedNetworkPropertyDrawers
+  langs:
+  - csharp
+  - vb
+  name: OnGUI(Rect, SerializedProperty, GUIContent)
+  nameWithType: MappedNetworkPropertyDrawers.OnGUI(Rect, SerializedProperty, GUIContent)
+  fullName: Foundry.Networking.Fusion.Editor.MappedNetworkPropertyDrawers.OnGUI(UnityEngine.Rect, UnityEditor.SerializedProperty, UnityEngine.GUIContent)
+  type: Method
+  source:
+    remote:
+      path: package/Scripts/Editor/MappedNetworkPropertyDrawers.cs
+      branch: main
+      repo: https://github.com/FoundryXR/FusionNetworkProvider.git
+    id: OnGUI
+    path: ../Scripts/Editor/MappedNetworkPropertyDrawers.cs
+    startLine: 20
+  assemblies:
+  - Foundry.Networking.Fusion.Editor
+  namespace: Foundry.Networking.Fusion.Editor
+  summary: <p>Override this method to make your own IMGUI based GUI for the property.</p>
+  example: []
+  syntax:
+    content: public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
+    parameters:
+    - id: position
+      type: UnityEngine.Rect
+      description: Rectangle on the screen to use for the property GUI.
+    - id: property
+      type: UnityEditor.SerializedProperty
+      description: The SerializedProperty to make the custom GUI for.
+    - id: label
+      type: UnityEngine.GUIContent
+      description: The label of this property.
+    content.vb: Public Overrides Sub OnGUI(position As Rect, [property] As SerializedProperty, label As GUIContent)
+  overridden: UnityEditor.PropertyDrawer.OnGUI(UnityEngine.Rect,UnityEditor.SerializedProperty,UnityEngine.GUIContent)
+  overload: Foundry.Networking.Fusion.Editor.MappedNetworkPropertyDrawers.OnGUI*
+references:
+- uid: Foundry.Networking.Fusion.Editor
+  commentId: N:Foundry.Networking.Fusion.Editor
+  href: Foundry.html
+  name: Foundry.Networking.Fusion.Editor
+  nameWithType: Foundry.Networking.Fusion.Editor
+  fullName: Foundry.Networking.Fusion.Editor
+  spec.csharp:
+  - uid: Foundry
+    name: Foundry
+    href: Foundry.html
+  - name: .
+  - uid: Foundry.Networking
+    name: Networking
+    href: Foundry.Networking.html
+  - name: .
+  - uid: Foundry.Networking.Fusion
+    name: Fusion
+    href: Foundry.Networking.Fusion.html
+  - name: .
+  - uid: Foundry.Networking.Fusion.Editor
+    name: Editor
+    href: Foundry.Networking.Fusion.Editor.html
+  spec.vb:
+  - uid: Foundry
+    name: Foundry
+    href: Foundry.html
+  - name: .
+  - uid: Foundry.Networking
+    name: Networking
+    href: Foundry.Networking.html
+  - name: .
+  - uid: Foundry.Networking.Fusion
+    name: Fusion
+    href: Foundry.Networking.Fusion.html
+  - name: .
+  - uid: Foundry.Networking.Fusion.Editor
+    name: Editor
+    href: Foundry.Networking.Fusion.Editor.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: UnityEditor.GUIDrawer
+  commentId: T:UnityEditor.GUIDrawer
+  parent: UnityEditor
+  isExternal: true
+  name: GUIDrawer
+  nameWithType: GUIDrawer
+  fullName: UnityEditor.GUIDrawer
+- uid: UnityEditor.PropertyDrawer
+  commentId: T:UnityEditor.PropertyDrawer
+  parent: UnityEditor
+  isExternal: true
+  name: PropertyDrawer
+  nameWithType: PropertyDrawer
+  fullName: UnityEditor.PropertyDrawer
+- uid: UnityEditor.PropertyDrawer.CreatePropertyGUI(UnityEditor.SerializedProperty)
+  commentId: M:UnityEditor.PropertyDrawer.CreatePropertyGUI(UnityEditor.SerializedProperty)
+  parent: UnityEditor.PropertyDrawer
+  isExternal: true
+  name: CreatePropertyGUI(SerializedProperty)
+  nameWithType: PropertyDrawer.CreatePropertyGUI(SerializedProperty)
+  fullName: UnityEditor.PropertyDrawer.CreatePropertyGUI(UnityEditor.SerializedProperty)
+  spec.csharp:
+  - uid: UnityEditor.PropertyDrawer.CreatePropertyGUI(UnityEditor.SerializedProperty)
+    name: CreatePropertyGUI
+    isExternal: true
+  - name: (
+  - uid: UnityEditor.SerializedProperty
+    name: SerializedProperty
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: UnityEditor.PropertyDrawer.CreatePropertyGUI(UnityEditor.SerializedProperty)
+    name: CreatePropertyGUI
+    isExternal: true
+  - name: (
+  - uid: UnityEditor.SerializedProperty
+    name: SerializedProperty
+    isExternal: true
+  - name: )
+- uid: UnityEditor.PropertyDrawer.CanCacheInspectorGUI(UnityEditor.SerializedProperty)
+  commentId: M:UnityEditor.PropertyDrawer.CanCacheInspectorGUI(UnityEditor.SerializedProperty)
+  parent: UnityEditor.PropertyDrawer
+  isExternal: true
+  name: CanCacheInspectorGUI(SerializedProperty)
+  nameWithType: PropertyDrawer.CanCacheInspectorGUI(SerializedProperty)
+  fullName: UnityEditor.PropertyDrawer.CanCacheInspectorGUI(UnityEditor.SerializedProperty)
+  spec.csharp:
+  - uid: UnityEditor.PropertyDrawer.CanCacheInspectorGUI(UnityEditor.SerializedProperty)
+    name: CanCacheInspectorGUI
+    isExternal: true
+  - name: (
+  - uid: UnityEditor.SerializedProperty
+    name: SerializedProperty
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: UnityEditor.PropertyDrawer.CanCacheInspectorGUI(UnityEditor.SerializedProperty)
+    name: CanCacheInspectorGUI
+    isExternal: true
+  - name: (
+  - uid: UnityEditor.SerializedProperty
+    name: SerializedProperty
+    isExternal: true
+  - name: )
+- uid: UnityEditor.PropertyDrawer.attribute
+  commentId: P:UnityEditor.PropertyDrawer.attribute
+  parent: UnityEditor.PropertyDrawer
+  isExternal: true
+  name: attribute
+  nameWithType: PropertyDrawer.attribute
+  fullName: UnityEditor.PropertyDrawer.attribute
+- uid: UnityEditor.PropertyDrawer.fieldInfo
+  commentId: P:UnityEditor.PropertyDrawer.fieldInfo
+  parent: UnityEditor.PropertyDrawer
+  isExternal: true
+  name: fieldInfo
+  nameWithType: PropertyDrawer.fieldInfo
+  fullName: UnityEditor.PropertyDrawer.fieldInfo
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: UnityEditor.PropertyDrawer.Foundry.Networking.Fusion.Editor.PropDrawExtensions.GetSerializedValue``1(UnityEditor.SerializedProperty)
+  commentId: M:Foundry.Networking.Fusion.Editor.PropDrawExtensions.GetSerializedValue``1(UnityEditor.PropertyDrawer,UnityEditor.SerializedProperty)
+  parent: Foundry.Networking.Fusion.Editor.PropDrawExtensions
+  definition: Foundry.Networking.Fusion.Editor.PropDrawExtensions.GetSerializedValue``1(UnityEditor.PropertyDrawer,UnityEditor.SerializedProperty)
+  href: Foundry.Networking.Fusion.Editor.PropDrawExtensions.html#Foundry.Networking.Fusion.Editor.PropDrawExtensions.GetSerializedValue``1(UnityEditor.PropertyDrawer,UnityEditor.SerializedProperty)
+  name: GetSerializedValue<T>(PropertyDrawer, SerializedProperty)
+  nameWithType: PropDrawExtensions.GetSerializedValue<T>(PropertyDrawer, SerializedProperty)
+  fullName: Foundry.Networking.Fusion.Editor.PropDrawExtensions.GetSerializedValue<T>(UnityEditor.PropertyDrawer, UnityEditor.SerializedProperty)
+  nameWithType.vb: PropDrawExtensions.GetSerializedValue(Of T)(PropertyDrawer, SerializedProperty)
+  fullName.vb: Foundry.Networking.Fusion.Editor.PropDrawExtensions.GetSerializedValue(Of T)(UnityEditor.PropertyDrawer, UnityEditor.SerializedProperty)
+  name.vb: GetSerializedValue(Of T)(PropertyDrawer, SerializedProperty)
+  spec.csharp:
+  - uid: Foundry.Networking.Fusion.Editor.PropDrawExtensions.GetSerializedValue``1(UnityEditor.PropertyDrawer,UnityEditor.SerializedProperty)
+    name: GetSerializedValue
+    href: Foundry.Networking.Fusion.Editor.PropDrawExtensions.html#Foundry.Networking.Fusion.Editor.PropDrawExtensions.GetSerializedValue``1(UnityEditor.PropertyDrawer,UnityEditor.SerializedProperty)
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - uid: UnityEditor.PropertyDrawer
+    name: PropertyDrawer
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: UnityEditor.SerializedProperty
+    name: SerializedProperty
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: Foundry.Networking.Fusion.Editor.PropDrawExtensions.GetSerializedValue``1(UnityEditor.PropertyDrawer,UnityEditor.SerializedProperty)
+    name: GetSerializedValue
+    href: Foundry.Networking.Fusion.Editor.PropDrawExtensions.html#Foundry.Networking.Fusion.Editor.PropDrawExtensions.GetSerializedValue``1(UnityEditor.PropertyDrawer,UnityEditor.SerializedProperty)
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - uid: UnityEditor.PropertyDrawer
+    name: PropertyDrawer
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: UnityEditor.SerializedProperty
+    name: SerializedProperty
+    isExternal: true
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: UnityEditor
+  commentId: N:UnityEditor
+  isExternal: true
+  name: UnityEditor
+  nameWithType: UnityEditor
+  fullName: UnityEditor
+- uid: Foundry.Networking.Fusion.Editor.PropDrawExtensions.GetSerializedValue``1(UnityEditor.PropertyDrawer,UnityEditor.SerializedProperty)
+  commentId: M:Foundry.Networking.Fusion.Editor.PropDrawExtensions.GetSerializedValue``1(UnityEditor.PropertyDrawer,UnityEditor.SerializedProperty)
+  isExternal: true
+  href: Foundry.Networking.Fusion.Editor.PropDrawExtensions.html#Foundry.Networking.Fusion.Editor.PropDrawExtensions.GetSerializedValue``1(UnityEditor.PropertyDrawer,UnityEditor.SerializedProperty)
+  name: GetSerializedValue<T>(PropertyDrawer, SerializedProperty)
+  nameWithType: PropDrawExtensions.GetSerializedValue<T>(PropertyDrawer, SerializedProperty)
+  fullName: Foundry.Networking.Fusion.Editor.PropDrawExtensions.GetSerializedValue<T>(UnityEditor.PropertyDrawer, UnityEditor.SerializedProperty)
+  nameWithType.vb: PropDrawExtensions.GetSerializedValue(Of T)(PropertyDrawer, SerializedProperty)
+  fullName.vb: Foundry.Networking.Fusion.Editor.PropDrawExtensions.GetSerializedValue(Of T)(UnityEditor.PropertyDrawer, UnityEditor.SerializedProperty)
+  name.vb: GetSerializedValue(Of T)(PropertyDrawer, SerializedProperty)
+  spec.csharp:
+  - uid: Foundry.Networking.Fusion.Editor.PropDrawExtensions.GetSerializedValue``1(UnityEditor.PropertyDrawer,UnityEditor.SerializedProperty)
+    name: GetSerializedValue
+    href: Foundry.Networking.Fusion.Editor.PropDrawExtensions.html#Foundry.Networking.Fusion.Editor.PropDrawExtensions.GetSerializedValue``1(UnityEditor.PropertyDrawer,UnityEditor.SerializedProperty)
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - uid: UnityEditor.PropertyDrawer
+    name: PropertyDrawer
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: UnityEditor.SerializedProperty
+    name: SerializedProperty
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: Foundry.Networking.Fusion.Editor.PropDrawExtensions.GetSerializedValue``1(UnityEditor.PropertyDrawer,UnityEditor.SerializedProperty)
+    name: GetSerializedValue
+    href: Foundry.Networking.Fusion.Editor.PropDrawExtensions.html#Foundry.Networking.Fusion.Editor.PropDrawExtensions.GetSerializedValue``1(UnityEditor.PropertyDrawer,UnityEditor.SerializedProperty)
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - uid: UnityEditor.PropertyDrawer
+    name: PropertyDrawer
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: UnityEditor.SerializedProperty
+    name: SerializedProperty
+    isExternal: true
+  - name: )
+- uid: Foundry.Networking.Fusion.Editor.PropDrawExtensions
+  commentId: T:Foundry.Networking.Fusion.Editor.PropDrawExtensions
+  parent: Foundry.Networking.Fusion.Editor
+  href: Foundry.Networking.Fusion.Editor.PropDrawExtensions.html
+  name: PropDrawExtensions
+  nameWithType: PropDrawExtensions
+  fullName: Foundry.Networking.Fusion.Editor.PropDrawExtensions
+- uid: UnityEditor.PropertyDrawer.GetPropertyHeight(UnityEditor.SerializedProperty,UnityEngine.GUIContent)
+  commentId: M:UnityEditor.PropertyDrawer.GetPropertyHeight(UnityEditor.SerializedProperty,UnityEngine.GUIContent)
+  parent: UnityEditor.PropertyDrawer
+  isExternal: true
+  name: GetPropertyHeight(SerializedProperty, GUIContent)
+  nameWithType: PropertyDrawer.GetPropertyHeight(SerializedProperty, GUIContent)
+  fullName: UnityEditor.PropertyDrawer.GetPropertyHeight(UnityEditor.SerializedProperty, UnityEngine.GUIContent)
+  spec.csharp:
+  - uid: UnityEditor.PropertyDrawer.GetPropertyHeight(UnityEditor.SerializedProperty,UnityEngine.GUIContent)
+    name: GetPropertyHeight
+    isExternal: true
+  - name: (
+  - uid: UnityEditor.SerializedProperty
+    name: SerializedProperty
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: UnityEngine.GUIContent
+    name: GUIContent
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: UnityEditor.PropertyDrawer.GetPropertyHeight(UnityEditor.SerializedProperty,UnityEngine.GUIContent)
+    name: GetPropertyHeight
+    isExternal: true
+  - name: (
+  - uid: UnityEditor.SerializedProperty
+    name: SerializedProperty
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: UnityEngine.GUIContent
+    name: GUIContent
+    isExternal: true
+  - name: )
+- uid: Foundry.Networking.Fusion.Editor.MappedNetworkPropertyDrawers.GetPropertyHeight*
+  commentId: Overload:Foundry.Networking.Fusion.Editor.MappedNetworkPropertyDrawers.GetPropertyHeight
+  href: Foundry.Networking.Fusion.Editor.MappedNetworkPropertyDrawers.html#Foundry.Networking.Fusion.Editor.MappedNetworkPropertyDrawers.GetPropertyHeight(UnityEditor.SerializedProperty,UnityEngine.GUIContent)
+  name: GetPropertyHeight
+  nameWithType: MappedNetworkPropertyDrawers.GetPropertyHeight
+  fullName: Foundry.Networking.Fusion.Editor.MappedNetworkPropertyDrawers.GetPropertyHeight
+- uid: UnityEditor.SerializedProperty
+  commentId: T:UnityEditor.SerializedProperty
+  parent: UnityEditor
+  isExternal: true
+  name: SerializedProperty
+  nameWithType: SerializedProperty
+  fullName: UnityEditor.SerializedProperty
+- uid: UnityEngine.GUIContent
+  commentId: T:UnityEngine.GUIContent
+  parent: UnityEngine
+  isExternal: true
+  name: GUIContent
+  nameWithType: GUIContent
+  fullName: UnityEngine.GUIContent
+- uid: System.Single
+  commentId: T:System.Single
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.single
+  name: float
+  nameWithType: float
+  fullName: float
+  nameWithType.vb: Single
+  fullName.vb: Single
+  name.vb: Single
+- uid: UnityEngine
+  commentId: N:UnityEngine
+  isExternal: true
+  name: UnityEngine
+  nameWithType: UnityEngine
+  fullName: UnityEngine
+- uid: UnityEditor.PropertyDrawer.OnGUI(UnityEngine.Rect,UnityEditor.SerializedProperty,UnityEngine.GUIContent)
+  commentId: M:UnityEditor.PropertyDrawer.OnGUI(UnityEngine.Rect,UnityEditor.SerializedProperty,UnityEngine.GUIContent)
+  parent: UnityEditor.PropertyDrawer
+  isExternal: true
+  name: OnGUI(Rect, SerializedProperty, GUIContent)
+  nameWithType: PropertyDrawer.OnGUI(Rect, SerializedProperty, GUIContent)
+  fullName: UnityEditor.PropertyDrawer.OnGUI(UnityEngine.Rect, UnityEditor.SerializedProperty, UnityEngine.GUIContent)
+  spec.csharp:
+  - uid: UnityEditor.PropertyDrawer.OnGUI(UnityEngine.Rect,UnityEditor.SerializedProperty,UnityEngine.GUIContent)
+    name: OnGUI
+    isExternal: true
+  - name: (
+  - uid: UnityEngine.Rect
+    name: Rect
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: UnityEditor.SerializedProperty
+    name: SerializedProperty
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: UnityEngine.GUIContent
+    name: GUIContent
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: UnityEditor.PropertyDrawer.OnGUI(UnityEngine.Rect,UnityEditor.SerializedProperty,UnityEngine.GUIContent)
+    name: OnGUI
+    isExternal: true
+  - name: (
+  - uid: UnityEngine.Rect
+    name: Rect
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: UnityEditor.SerializedProperty
+    name: SerializedProperty
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: UnityEngine.GUIContent
+    name: GUIContent
+    isExternal: true
+  - name: )
+- uid: Foundry.Networking.Fusion.Editor.MappedNetworkPropertyDrawers.OnGUI*
+  commentId: Overload:Foundry.Networking.Fusion.Editor.MappedNetworkPropertyDrawers.OnGUI
+  href: Foundry.Networking.Fusion.Editor.MappedNetworkPropertyDrawers.html#Foundry.Networking.Fusion.Editor.MappedNetworkPropertyDrawers.OnGUI(UnityEngine.Rect,UnityEditor.SerializedProperty,UnityEngine.GUIContent)
+  name: OnGUI
+  nameWithType: MappedNetworkPropertyDrawers.OnGUI
+  fullName: Foundry.Networking.Fusion.Editor.MappedNetworkPropertyDrawers.OnGUI
+- uid: UnityEngine.Rect
+  commentId: T:UnityEngine.Rect
+  parent: UnityEngine
+  isExternal: true
+  name: Rect
+  nameWithType: Rect
+  fullName: UnityEngine.Rect

@@ -1,0 +1,467 @@
+### YamlMime:ManagedReference
+items:
+- uid: Foundry.Networking.FusionNetTransformProps
+  commentId: T:Foundry.Networking.FusionNetTransformProps
+  id: FusionNetTransformProps
+  parent: Foundry.Networking
+  children:
+  - Foundry.Networking.FusionNetTransformProps.interpolationDataSource
+  - Foundry.Networking.FusionNetTransformProps.interpolationSpace
+  - Foundry.Networking.FusionNetTransformProps.isRigidbody
+  - Foundry.Networking.FusionNetTransformProps.noInterpolationWhenOwned
+  langs:
+  - csharp
+  - vb
+  name: FusionNetTransformProps
+  nameWithType: FusionNetTransformProps
+  fullName: Foundry.Networking.FusionNetTransformProps
+  type: Class
+  source:
+    remote:
+      path: package/Scripts/MappedComponentProps.cs
+      branch: main
+      repo: https://github.com/FoundryXR/FusionNetworkProvider.git
+    id: FusionNetTransformProps
+    path: ../Scripts/MappedComponentProps.cs
+    startLine: 7
+  assemblies:
+  - Foundry.Networking.Fusion
+  namespace: Foundry.Networking
+  syntax:
+    content: >-
+      [Serializable]
+
+      public class FusionNetTransformProps
+    content.vb: >-
+      <Serializable>
+
+      Public Class FusionNetTransformProps
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+  attributes:
+  - type: System.SerializableAttribute
+    ctor: System.SerializableAttribute.#ctor
+    arguments: []
+- uid: Foundry.Networking.FusionNetTransformProps.interpolationDataSource
+  commentId: F:Foundry.Networking.FusionNetTransformProps.interpolationDataSource
+  id: interpolationDataSource
+  parent: Foundry.Networking.FusionNetTransformProps
+  langs:
+  - csharp
+  - vb
+  name: interpolationDataSource
+  nameWithType: FusionNetTransformProps.interpolationDataSource
+  fullName: Foundry.Networking.FusionNetTransformProps.interpolationDataSource
+  type: Field
+  source:
+    remote:
+      path: package/Scripts/MappedComponentProps.cs
+      branch: main
+      repo: https://github.com/FoundryXR/FusionNetworkProvider.git
+    id: interpolationDataSource
+    path: ../Scripts/MappedComponentProps.cs
+    startLine: 10
+  assemblies:
+  - Foundry.Networking.Fusion
+  namespace: Foundry.Networking
+  syntax:
+    content: public NetworkBehaviour.InterpolationDataSources interpolationDataSource
+    return:
+      type: Fusion.NetworkBehaviour.InterpolationDataSources
+    content.vb: Public interpolationDataSource As NetworkBehaviour.InterpolationDataSources
+- uid: Foundry.Networking.FusionNetTransformProps.noInterpolationWhenOwned
+  commentId: F:Foundry.Networking.FusionNetTransformProps.noInterpolationWhenOwned
+  id: noInterpolationWhenOwned
+  parent: Foundry.Networking.FusionNetTransformProps
+  langs:
+  - csharp
+  - vb
+  name: noInterpolationWhenOwned
+  nameWithType: FusionNetTransformProps.noInterpolationWhenOwned
+  fullName: Foundry.Networking.FusionNetTransformProps.noInterpolationWhenOwned
+  type: Field
+  source:
+    remote:
+      path: package/Scripts/MappedComponentProps.cs
+      branch: main
+      repo: https://github.com/FoundryXR/FusionNetworkProvider.git
+    id: noInterpolationWhenOwned
+    path: ../Scripts/MappedComponentProps.cs
+    startLine: 11
+  assemblies:
+  - Foundry.Networking.Fusion
+  namespace: Foundry.Networking
+  syntax:
+    content: public bool noInterpolationWhenOwned
+    return:
+      type: System.Boolean
+    content.vb: Public noInterpolationWhenOwned As Boolean
+- uid: Foundry.Networking.FusionNetTransformProps.interpolationSpace
+  commentId: F:Foundry.Networking.FusionNetTransformProps.interpolationSpace
+  id: interpolationSpace
+  parent: Foundry.Networking.FusionNetTransformProps
+  langs:
+  - csharp
+  - vb
+  name: interpolationSpace
+  nameWithType: FusionNetTransformProps.interpolationSpace
+  fullName: Foundry.Networking.FusionNetTransformProps.interpolationSpace
+  type: Field
+  source:
+    remote:
+      path: package/Scripts/MappedComponentProps.cs
+      branch: main
+      repo: https://github.com/FoundryXR/FusionNetworkProvider.git
+    id: interpolationSpace
+    path: ../Scripts/MappedComponentProps.cs
+    startLine: 12
+  assemblies:
+  - Foundry.Networking.Fusion
+  namespace: Foundry.Networking
+  syntax:
+    content: public Spaces interpolationSpace
+    return:
+      type: Fusion.Spaces
+    content.vb: Public interpolationSpace As Spaces
+- uid: Foundry.Networking.FusionNetTransformProps.isRigidbody
+  commentId: F:Foundry.Networking.FusionNetTransformProps.isRigidbody
+  id: isRigidbody
+  parent: Foundry.Networking.FusionNetTransformProps
+  langs:
+  - csharp
+  - vb
+  name: isRigidbody
+  nameWithType: FusionNetTransformProps.isRigidbody
+  fullName: Foundry.Networking.FusionNetTransformProps.isRigidbody
+  type: Field
+  source:
+    remote:
+      path: package/Scripts/MappedComponentProps.cs
+      branch: main
+      repo: https://github.com/FoundryXR/FusionNetworkProvider.git
+    id: isRigidbody
+    path: ../Scripts/MappedComponentProps.cs
+    startLine: 13
+  assemblies:
+  - Foundry.Networking.Fusion
+  namespace: Foundry.Networking
+  syntax:
+    content: public bool isRigidbody
+    return:
+      type: System.Boolean
+    content.vb: Public isRigidbody As Boolean
+references:
+- uid: Foundry.Networking
+  commentId: N:Foundry.Networking
+  href: Foundry.html
+  name: Foundry.Networking
+  nameWithType: Foundry.Networking
+  fullName: Foundry.Networking
+  spec.csharp:
+  - uid: Foundry
+    name: Foundry
+    href: Foundry.html
+  - name: .
+  - uid: Foundry.Networking
+    name: Networking
+    href: Foundry.Networking.html
+  spec.vb:
+  - uid: Foundry
+    name: Foundry
+    href: Foundry.html
+  - name: .
+  - uid: Foundry.Networking
+    name: Networking
+    href: Foundry.Networking.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Fusion.NetworkBehaviour.InterpolationDataSources
+  commentId: T:Fusion.NetworkBehaviour.InterpolationDataSources
+  parent: Fusion
+  isExternal: true
+  name: NetworkBehaviour.InterpolationDataSources
+  nameWithType: NetworkBehaviour.InterpolationDataSources
+  fullName: Fusion.NetworkBehaviour.InterpolationDataSources
+  spec.csharp:
+  - uid: Fusion.NetworkBehaviour
+    name: NetworkBehaviour
+    isExternal: true
+  - name: .
+  - uid: Fusion.NetworkBehaviour.InterpolationDataSources
+    name: InterpolationDataSources
+    isExternal: true
+  spec.vb:
+  - uid: Fusion.NetworkBehaviour
+    name: NetworkBehaviour
+    isExternal: true
+  - name: .
+  - uid: Fusion.NetworkBehaviour.InterpolationDataSources
+    name: InterpolationDataSources
+    isExternal: true
+- uid: Fusion
+  commentId: N:Fusion
+  isExternal: true
+  name: Fusion
+  nameWithType: Fusion
+  fullName: Fusion
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: Fusion.Spaces
+  commentId: T:Fusion.Spaces
+  parent: Fusion
+  isExternal: true
+  name: Spaces
+  nameWithType: Spaces
+  fullName: Fusion.Spaces

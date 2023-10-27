@@ -1,0 +1,31 @@
+{
+    "DocfxOutputPath": "_site",
+    "DocfxConfigPath": "docfx.json",
+    "DocfxTemplate": "",
+    "DocfxMetadata": [
+        {
+            "Key": "_appTitle",
+            "Value": "Fusion for Foundry"
+        },
+        {
+            "Key": "_appName",
+            "Value": "Fusion Networking For Foundry"
+        },
+        {
+            "Key": "_appFooter",
+            "Value": "Fusion Networking Provider for Foundry"
+        },
+        {
+            "Key": "_appLogoPath",
+            "Value": "Media/foundry_icon.png"
+        },
+        {
+            "Key": "_appFaviconPath",
+            "Value": "Media/foundry_icon.ico"
+        },
+        {
+            "Key": "_disableContribution",
+            "Value": "true"
+        }
+    ]
+}

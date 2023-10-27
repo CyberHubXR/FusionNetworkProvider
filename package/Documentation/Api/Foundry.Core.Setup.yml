@@ -1,0 +1,23 @@
+### YamlMime:ManagedReference
+items:
+- uid: Foundry.Core.Setup
+  commentId: N:Foundry.Core.Setup
+  id: Foundry.Core.Setup
+  children:
+  - Foundry.Core.Setup.FusionDependencyInstaller
+  langs:
+  - csharp
+  - vb
+  name: Foundry.Core.Setup
+  nameWithType: Foundry.Core.Setup
+  fullName: Foundry.Core.Setup
+  type: Namespace
+  assemblies:
+  - Foundry.Fusion.Setup
+references:
+- uid: Foundry.Core.Setup.FusionDependencyInstaller
+  commentId: T:Foundry.Core.Setup.FusionDependencyInstaller
+  href: Foundry.Core.Setup.FusionDependencyInstaller.html
+  name: FusionDependencyInstaller
+  nameWithType: FusionDependencyInstaller
+  fullName: Foundry.Core.Setup.FusionDependencyInstaller

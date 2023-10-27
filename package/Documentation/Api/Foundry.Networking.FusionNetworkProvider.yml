@@ -1,0 +1,1769 @@
+### YamlMime:ManagedReference
+items:
+- uid: Foundry.Networking.FusionNetworkProvider
+  commentId: T:Foundry.Networking.FusionNetworkProvider
+  id: FusionNetworkProvider
+  parent: Foundry.Networking
+  children:
+  - Foundry.Networking.FusionNetworkProvider.BindNetworkObject(UnityEngine.GameObject,System.Boolean)
+  - Foundry.Networking.FusionNetworkProvider.Destroy(UnityEngine.GameObject)
+  - Foundry.Networking.FusionNetworkProvider.Graph
+  - Foundry.Networking.FusionNetworkProvider.Instantiate(UnityEngine.GameObject,UnityEngine.Vector3,UnityEngine.Quaternion)
+  - Foundry.Networking.FusionNetworkProvider.IsClient
+  - Foundry.Networking.FusionNetworkProvider.IsGraphAuthority
+  - Foundry.Networking.FusionNetworkProvider.IsServer
+  - Foundry.Networking.FusionNetworkProvider.IsSessionConnected
+  - Foundry.Networking.FusionNetworkProvider.LocalPlayerId
+  - Foundry.Networking.FusionNetworkProvider.PlayerJoined
+  - Foundry.Networking.FusionNetworkProvider.PlayerLeft
+  - Foundry.Networking.FusionNetworkProvider.RegisterPrefab(UnityEngine.GameObject)
+  - Foundry.Networking.FusionNetworkProvider.RegisterSceneObjects(System.Collections.Generic.IList{UnityEngine.GameObject})
+  - Foundry.Networking.FusionNetworkProvider.SendPlayerJoined(System.Int32)
+  - Foundry.Networking.FusionNetworkProvider.SendPlayerLeft(System.Int32)
+  - Foundry.Networking.FusionNetworkProvider.SendSessionConnected
+  - Foundry.Networking.FusionNetworkProvider.SendSessionDisconnected(System.String)
+  - Foundry.Networking.FusionNetworkProvider.SendStartSessionFailed(System.String)
+  - Foundry.Networking.FusionNetworkProvider.SessionConnected
+  - Foundry.Networking.FusionNetworkProvider.SessionDisconnected
+  - Foundry.Networking.FusionNetworkProvider.StartSessionAsync(Foundry.Networking.SessionInfo)
+  - Foundry.Networking.FusionNetworkProvider.StartSessionFailed
+  - Foundry.Networking.FusionNetworkProvider.StopSessionAsync
+  - Foundry.Networking.FusionNetworkProvider.sessionType
+  langs:
+  - csharp
+  - vb
+  name: FusionNetworkProvider
+  nameWithType: FusionNetworkProvider
+  fullName: Foundry.Networking.FusionNetworkProvider
+  type: Class
+  source:
+    remote:
+      path: package/Scripts/Services/Implementation/FusionNetworkProvider.cs
+      branch: main
+      repo: https://github.com/FoundryXR/FusionNetworkProvider.git
+    id: FusionNetworkProvider
+    path: ../Scripts/Services/Implementation/FusionNetworkProvider.cs
+    startLine: 17
+  assemblies:
+  - Foundry.Networking.Fusion
+  namespace: Foundry.Networking
+  summary: Implementation of INetworkProvider for Fusion.
+  example: []
+  syntax:
+    content: 'public class FusionNetworkProvider : INetworkProvider'
+    content.vb: Public Class FusionNetworkProvider Implements INetworkProvider
+  inheritance:
+  - System.Object
+  implements:
+  - Foundry.Networking.INetworkProvider
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: Foundry.Networking.FusionNetworkProvider.IsSessionConnected
+  commentId: P:Foundry.Networking.FusionNetworkProvider.IsSessionConnected
+  id: IsSessionConnected
+  parent: Foundry.Networking.FusionNetworkProvider
+  langs:
+  - csharp
+  - vb
+  name: IsSessionConnected
+  nameWithType: FusionNetworkProvider.IsSessionConnected
+  fullName: Foundry.Networking.FusionNetworkProvider.IsSessionConnected
+  type: Property
+  source:
+    remote:
+      path: package/Scripts/Services/Implementation/FusionNetworkProvider.cs
+      branch: main
+      repo: https://github.com/FoundryXR/FusionNetworkProvider.git
+    id: IsSessionConnected
+    path: ../Scripts/Services/Implementation/FusionNetworkProvider.cs
+    startLine: 26
+  assemblies:
+  - Foundry.Networking.Fusion
+  namespace: Foundry.Networking
+  example: []
+  syntax:
+    content: public bool IsSessionConnected { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public ReadOnly Property IsSessionConnected As Boolean
+  overload: Foundry.Networking.FusionNetworkProvider.IsSessionConnected*
+  implements:
+  - Foundry.Networking.INetworkProvider.IsSessionConnected
+- uid: Foundry.Networking.FusionNetworkProvider.IsServer
+  commentId: P:Foundry.Networking.FusionNetworkProvider.IsServer
+  id: IsServer
+  parent: Foundry.Networking.FusionNetworkProvider
+  langs:
+  - csharp
+  - vb
+  name: IsServer
+  nameWithType: FusionNetworkProvider.IsServer
+  fullName: Foundry.Networking.FusionNetworkProvider.IsServer
+  type: Property
+  source:
+    remote:
+      path: package/Scripts/Services/Implementation/FusionNetworkProvider.cs
+      branch: main
+      repo: https://github.com/FoundryXR/FusionNetworkProvider.git
+    id: IsServer
+    path: ../Scripts/Services/Implementation/FusionNetworkProvider.cs
+    startLine: 27
+  assemblies:
+  - Foundry.Networking.Fusion
+  namespace: Foundry.Networking
+  summary: Returns true if this instance is hosting a server
+  example: []
+  syntax:
+    content: public bool IsServer { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public ReadOnly Property IsServer As Boolean
+  overload: Foundry.Networking.FusionNetworkProvider.IsServer*
+  implements:
+  - Foundry.Networking.INetworkProvider.IsServer
+- uid: Foundry.Networking.FusionNetworkProvider.IsClient
+  commentId: P:Foundry.Networking.FusionNetworkProvider.IsClient
+  id: IsClient
+  parent: Foundry.Networking.FusionNetworkProvider
+  langs:
+  - csharp
+  - vb
+  name: IsClient
+  nameWithType: FusionNetworkProvider.IsClient
+  fullName: Foundry.Networking.FusionNetworkProvider.IsClient
+  type: Property
+  source:
+    remote:
+      path: package/Scripts/Services/Implementation/FusionNetworkProvider.cs
+      branch: main
+      repo: https://github.com/FoundryXR/FusionNetworkProvider.git
+    id: IsClient
+    path: ../Scripts/Services/Implementation/FusionNetworkProvider.cs
+    startLine: 28
+  assemblies:
+  - Foundry.Networking.Fusion
+  namespace: Foundry.Networking
+  summary: Returns true if this instance is running as a client
+  example: []
+  syntax:
+    content: public bool IsClient { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public ReadOnly Property IsClient As Boolean
+  overload: Foundry.Networking.FusionNetworkProvider.IsClient*
+  implements:
+  - Foundry.Networking.INetworkProvider.IsClient
+- uid: Foundry.Networking.FusionNetworkProvider.IsGraphAuthority
+  commentId: P:Foundry.Networking.FusionNetworkProvider.IsGraphAuthority
+  id: IsGraphAuthority
+  parent: Foundry.Networking.FusionNetworkProvider
+  langs:
+  - csharp
+  - vb
+  name: IsGraphAuthority
+  nameWithType: FusionNetworkProvider.IsGraphAuthority
+  fullName: Foundry.Networking.FusionNetworkProvider.IsGraphAuthority
+  type: Property
+  source:
+    remote:
+      path: package/Scripts/Services/Implementation/FusionNetworkProvider.cs
+      branch: main
+      repo: https://github.com/FoundryXR/FusionNetworkProvider.git
+    id: IsGraphAuthority
+    path: ../Scripts/Services/Implementation/FusionNetworkProvider.cs
+    startLine: 30
+  assemblies:
+  - Foundry.Networking.Fusion
+  namespace: Foundry.Networking
+  summary: Returns true if this instance is the authority for the scene graph
+  example: []
+  syntax:
+    content: public bool IsGraphAuthority { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public ReadOnly Property IsGraphAuthority As Boolean
+  overload: Foundry.Networking.FusionNetworkProvider.IsGraphAuthority*
+  implements:
+  - Foundry.Networking.INetworkProvider.IsGraphAuthority
+- uid: Foundry.Networking.FusionNetworkProvider.LocalPlayerId
+  commentId: P:Foundry.Networking.FusionNetworkProvider.LocalPlayerId
+  id: LocalPlayerId
+  parent: Foundry.Networking.FusionNetworkProvider
+  langs:
+  - csharp
+  - vb
+  name: LocalPlayerId
+  nameWithType: FusionNetworkProvider.LocalPlayerId
+  fullName: Foundry.Networking.FusionNetworkProvider.LocalPlayerId
+  type: Property
+  source:
+    remote:
+      path: package/Scripts/Services/Implementation/FusionNetworkProvider.cs
+      branch: main
+      repo: https://github.com/FoundryXR/FusionNetworkProvider.git
+    id: LocalPlayerId
+    path: ../Scripts/Services/Implementation/FusionNetworkProvider.cs
+    startLine: 32
+  assemblies:
+  - Foundry.Networking.Fusion
+  namespace: Foundry.Networking
+  summary: Returns the ID of the local player
+  example: []
+  syntax:
+    content: public int LocalPlayerId { get; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public ReadOnly Property LocalPlayerId As Integer
+  overload: Foundry.Networking.FusionNetworkProvider.LocalPlayerId*
+  implements:
+  - Foundry.Networking.INetworkProvider.LocalPlayerId
+- uid: Foundry.Networking.FusionNetworkProvider.Graph
+  commentId: P:Foundry.Networking.FusionNetworkProvider.Graph
+  id: Graph
+  parent: Foundry.Networking.FusionNetworkProvider
+  langs:
+  - csharp
+  - vb
+  name: Graph
+  nameWithType: FusionNetworkProvider.Graph
+  fullName: Foundry.Networking.FusionNetworkProvider.Graph
+  type: Property
+  source:
+    remote:
+      path: package/Scripts/Services/Implementation/FusionNetworkProvider.cs
+      branch: main
+      repo: https://github.com/FoundryXR/FusionNetworkProvider.git
+    id: Graph
+    path: ../Scripts/Services/Implementation/FusionNetworkProvider.cs
+    startLine: 33
+  assemblies:
+  - Foundry.Networking.Fusion
+  namespace: Foundry.Networking
+  summary: Obtain the current network graph, may be null if no session is active
+  example: []
+  syntax:
+    content: public NetworkGraph Graph { get; }
+    parameters: []
+    return:
+      type: Foundry.Networking.NetworkGraph
+    content.vb: Public Property Graph As NetworkGraph
+  overload: Foundry.Networking.FusionNetworkProvider.Graph*
+  implements:
+  - Foundry.Networking.INetworkProvider.Graph
+- uid: Foundry.Networking.FusionNetworkProvider.StartSessionAsync(Foundry.Networking.SessionInfo)
+  commentId: M:Foundry.Networking.FusionNetworkProvider.StartSessionAsync(Foundry.Networking.SessionInfo)
+  id: StartSessionAsync(Foundry.Networking.SessionInfo)
+  parent: Foundry.Networking.FusionNetworkProvider
+  langs:
+  - csharp
+  - vb
+  name: StartSessionAsync(SessionInfo)
+  nameWithType: FusionNetworkProvider.StartSessionAsync(SessionInfo)
+  fullName: Foundry.Networking.FusionNetworkProvider.StartSessionAsync(Foundry.Networking.SessionInfo)
+  type: Method
+  source:
+    remote:
+      path: package/Scripts/Services/Implementation/FusionNetworkProvider.cs
+      branch: main
+      repo: https://github.com/FoundryXR/FusionNetworkProvider.git
+    id: StartSessionAsync
+    path: ../Scripts/Services/Implementation/FusionNetworkProvider.cs
+    startLine: 35
+  assemblies:
+  - Foundry.Networking.Fusion
+  namespace: Foundry.Networking
+  summary: Starts a network session asynchronously
+  remarks: >-
+    This method should create whatever context a networking system requires to create and maintain a session.
+
+    This session should not be tied to the lifetime of a scene, so any game objects created must be marked as
+
+    do no destroy on load.
+  example: []
+  syntax:
+    content: public Task StartSessionAsync(SessionInfo info)
+    parameters:
+    - id: info
+      type: Foundry.Networking.SessionInfo
+      description: Information about the session to start.
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: Public Function StartSessionAsync(info As SessionInfo) As Task
+  overload: Foundry.Networking.FusionNetworkProvider.StartSessionAsync*
+  implements:
+  - Foundry.Networking.INetworkProvider.StartSessionAsync(Foundry.Networking.SessionInfo)
+- uid: Foundry.Networking.FusionNetworkProvider.StopSessionAsync
+  commentId: M:Foundry.Networking.FusionNetworkProvider.StopSessionAsync
+  id: StopSessionAsync
+  parent: Foundry.Networking.FusionNetworkProvider
+  langs:
+  - csharp
+  - vb
+  name: StopSessionAsync()
+  nameWithType: FusionNetworkProvider.StopSessionAsync()
+  fullName: Foundry.Networking.FusionNetworkProvider.StopSessionAsync()
+  type: Method
+  source:
+    remote:
+      path: package/Scripts/Services/Implementation/FusionNetworkProvider.cs
+      branch: main
+      repo: https://github.com/FoundryXR/FusionNetworkProvider.git
+    id: StopSessionAsync
+    path: ../Scripts/Services/Implementation/FusionNetworkProvider.cs
+    startLine: 56
+  assemblies:
+  - Foundry.Networking.Fusion
+  namespace: Foundry.Networking
+  summary: Stops the current network session asynchronously
+  example: []
+  syntax:
+    content: public Task StopSessionAsync()
+    return:
+      type: System.Threading.Tasks.Task
+      description: Returns a task handle
+    content.vb: Public Function StopSessionAsync() As Task
+  overload: Foundry.Networking.FusionNetworkProvider.StopSessionAsync*
+  implements:
+  - Foundry.Networking.INetworkProvider.StopSessionAsync
+- uid: Foundry.Networking.FusionNetworkProvider.BindNetworkObject(UnityEngine.GameObject,System.Boolean)
+  commentId: M:Foundry.Networking.FusionNetworkProvider.BindNetworkObject(UnityEngine.GameObject,System.Boolean)
+  id: BindNetworkObject(UnityEngine.GameObject,System.Boolean)
+  parent: Foundry.Networking.FusionNetworkProvider
+  langs:
+  - csharp
+  - vb
+  name: BindNetworkObject(GameObject, bool)
+  nameWithType: FusionNetworkProvider.BindNetworkObject(GameObject, bool)
+  fullName: Foundry.Networking.FusionNetworkProvider.BindNetworkObject(UnityEngine.GameObject, bool)
+  type: Method
+  source:
+    remote:
+      path: package/Scripts/Services/Implementation/FusionNetworkProvider.cs
+      branch: main
+      repo: https://github.com/FoundryXR/FusionNetworkProvider.git
+    id: BindNetworkObject
+    path: ../Scripts/Services/Implementation/FusionNetworkProvider.cs
+    startLine: 89
+  assemblies:
+  - Foundry.Networking.Fusion
+  namespace: Foundry.Networking
+  summary: >-
+    Link foundry network components to native network components and complete any other necessary setup.
+
+    All child objects of the provided game object will be bound as well.
+  example: []
+  syntax:
+    content: public void BindNetworkObject(GameObject gameObject, bool isPrefab)
+    parameters:
+    - id: gameObject
+      type: UnityEngine.GameObject
+      description: Object to be bound
+    - id: isPrefab
+      type: System.Boolean
+      description: Whether the object is a prefab or not
+    content.vb: Public Sub BindNetworkObject(gameObject As GameObject, isPrefab As Boolean)
+  overload: Foundry.Networking.FusionNetworkProvider.BindNetworkObject*
+  implements:
+  - Foundry.Networking.INetworkProvider.BindNetworkObject(UnityEngine.GameObject,System.Boolean)
+  nameWithType.vb: FusionNetworkProvider.BindNetworkObject(GameObject, Boolean)
+  fullName.vb: Foundry.Networking.FusionNetworkProvider.BindNetworkObject(UnityEngine.GameObject, Boolean)
+  name.vb: BindNetworkObject(GameObject, Boolean)
+- uid: Foundry.Networking.FusionNetworkProvider.RegisterPrefab(UnityEngine.GameObject)
+  commentId: M:Foundry.Networking.FusionNetworkProvider.RegisterPrefab(UnityEngine.GameObject)
+  id: RegisterPrefab(UnityEngine.GameObject)
+  parent: Foundry.Networking.FusionNetworkProvider
+  langs:
+  - csharp
+  - vb
+  name: RegisterPrefab(GameObject)
+  nameWithType: FusionNetworkProvider.RegisterPrefab(GameObject)
+  fullName: Foundry.Networking.FusionNetworkProvider.RegisterPrefab(UnityEngine.GameObject)
+  type: Method
+  source:
+    remote:
+      path: package/Scripts/Services/Implementation/FusionNetworkProvider.cs
+      branch: main
+      repo: https://github.com/FoundryXR/FusionNetworkProvider.git
+    id: RegisterPrefab
+    path: ../Scripts/Services/Implementation/FusionNetworkProvider.cs
+    startLine: 227
+  assemblies:
+  - Foundry.Networking.Fusion
+  namespace: Foundry.Networking
+  summary: >-
+    Register a prefab to be used for later Instantiate calls. Prefabs must have had BindNetworkObject called on
+
+    them beforehand.
+  example: []
+  syntax:
+    content: public void RegisterPrefab(GameObject prefab)
+    parameters:
+    - id: prefab
+      type: UnityEngine.GameObject
+      description: Prefab to be registered
+    content.vb: Public Sub RegisterPrefab(prefab As GameObject)
+  overload: Foundry.Networking.FusionNetworkProvider.RegisterPrefab*
+  implements:
+  - Foundry.Networking.INetworkProvider.RegisterPrefab(UnityEngine.GameObject)
+- uid: Foundry.Networking.FusionNetworkProvider.RegisterSceneObjects(System.Collections.Generic.IList{UnityEngine.GameObject})
+  commentId: M:Foundry.Networking.FusionNetworkProvider.RegisterSceneObjects(System.Collections.Generic.IList{UnityEngine.GameObject})
+  id: RegisterSceneObjects(System.Collections.Generic.IList{UnityEngine.GameObject})
+  parent: Foundry.Networking.FusionNetworkProvider
+  langs:
+  - csharp
+  - vb
+  name: RegisterSceneObjects(IList<GameObject>)
+  nameWithType: FusionNetworkProvider.RegisterSceneObjects(IList<GameObject>)
+  fullName: Foundry.Networking.FusionNetworkProvider.RegisterSceneObjects(System.Collections.Generic.IList<UnityEngine.GameObject>)
+  type: Method
+  source:
+    remote:
+      path: package/Scripts/Services/Implementation/FusionNetworkProvider.cs
+      branch: main
+      repo: https://github.com/FoundryXR/FusionNetworkProvider.git
+    id: RegisterSceneObjects
+    path: ../Scripts/Services/Implementation/FusionNetworkProvider.cs
+    startLine: 254
+  assemblies:
+  - Foundry.Networking.Fusion
+  namespace: Foundry.Networking
+  summary: Register scene local network object instances. These objects will be bound over the network.
+  example: []
+  syntax:
+    content: public void RegisterSceneObjects(IList<GameObject> networkObjects)
+    parameters:
+    - id: networkObjects
+      type: System.Collections.Generic.IList{UnityEngine.GameObject}
+      description: List of objects to be registered, BindNetworkObject is expected to have already been called.
+    content.vb: Public Sub RegisterSceneObjects(networkObjects As IList(Of GameObject))
+  overload: Foundry.Networking.FusionNetworkProvider.RegisterSceneObjects*
+  implements:
+  - Foundry.Networking.INetworkProvider.RegisterSceneObjects(System.Collections.Generic.IList{UnityEngine.GameObject})
+  nameWithType.vb: FusionNetworkProvider.RegisterSceneObjects(IList(Of GameObject))
+  fullName.vb: Foundry.Networking.FusionNetworkProvider.RegisterSceneObjects(System.Collections.Generic.IList(Of UnityEngine.GameObject))
+  name.vb: RegisterSceneObjects(IList(Of GameObject))
+- uid: Foundry.Networking.FusionNetworkProvider.Instantiate(UnityEngine.GameObject,UnityEngine.Vector3,UnityEngine.Quaternion)
+  commentId: M:Foundry.Networking.FusionNetworkProvider.Instantiate(UnityEngine.GameObject,UnityEngine.Vector3,UnityEngine.Quaternion)
+  id: Instantiate(UnityEngine.GameObject,UnityEngine.Vector3,UnityEngine.Quaternion)
+  parent: Foundry.Networking.FusionNetworkProvider
+  langs:
+  - csharp
+  - vb
+  name: Instantiate(GameObject, Vector3, Quaternion)
+  nameWithType: FusionNetworkProvider.Instantiate(GameObject, Vector3, Quaternion)
+  fullName: Foundry.Networking.FusionNetworkProvider.Instantiate(UnityEngine.GameObject, UnityEngine.Vector3, UnityEngine.Quaternion)
+  type: Method
+  source:
+    remote:
+      path: package/Scripts/Services/Implementation/FusionNetworkProvider.cs
+      branch: main
+      repo: https://github.com/FoundryXR/FusionNetworkProvider.git
+    id: Instantiate
+    path: ../Scripts/Services/Implementation/FusionNetworkProvider.cs
+    startLine: 259
+  assemblies:
+  - Foundry.Networking.Fusion
+  namespace: Foundry.Networking
+  summary: Spawn a networked object instance over the network.
+  example: []
+  syntax:
+    content: public GameObject Instantiate(GameObject prefab, Vector3 position, Quaternion rotation)
+    parameters:
+    - id: prefab
+      type: UnityEngine.GameObject
+      description: Prefab to be spawned. Must be registered with this interface or the native provider.
+    - id: position
+      type: UnityEngine.Vector3
+      description: Position to spawn at
+    - id: rotation
+      type: UnityEngine.Quaternion
+      description: Rotation to spawn with
+    return:
+      type: UnityEngine.GameObject
+      description: Returns the instantiated game object
+    content.vb: Public Function Instantiate(prefab As GameObject, position As Vector3, rotation As Quaternion) As GameObject
+  overload: Foundry.Networking.FusionNetworkProvider.Instantiate*
+  implements:
+  - Foundry.Networking.INetworkProvider.Instantiate(UnityEngine.GameObject,UnityEngine.Vector3,UnityEngine.Quaternion)
+- uid: Foundry.Networking.FusionNetworkProvider.Destroy(UnityEngine.GameObject)
+  commentId: M:Foundry.Networking.FusionNetworkProvider.Destroy(UnityEngine.GameObject)
+  id: Destroy(UnityEngine.GameObject)
+  parent: Foundry.Networking.FusionNetworkProvider
+  langs:
+  - csharp
+  - vb
+  name: Destroy(GameObject)
+  nameWithType: FusionNetworkProvider.Destroy(GameObject)
+  fullName: Foundry.Networking.FusionNetworkProvider.Destroy(UnityEngine.GameObject)
+  type: Method
+  source:
+    remote:
+      path: package/Scripts/Services/Implementation/FusionNetworkProvider.cs
+      branch: main
+      repo: https://github.com/FoundryXR/FusionNetworkProvider.git
+    id: Destroy
+    path: ../Scripts/Services/Implementation/FusionNetworkProvider.cs
+    startLine: 266
+  assemblies:
+  - Foundry.Networking.Fusion
+  namespace: Foundry.Networking
+  summary: Destroy a networked object over the network.
+  example: []
+  syntax:
+    content: public void Destroy(GameObject gameObject)
+    parameters:
+    - id: gameObject
+      type: UnityEngine.GameObject
+      description: Object to be destroyed
+    content.vb: Public Sub Destroy(gameObject As GameObject)
+  overload: Foundry.Networking.FusionNetworkProvider.Destroy*
+  implements:
+  - Foundry.Networking.INetworkProvider.Destroy(UnityEngine.GameObject)
+- uid: Foundry.Networking.FusionNetworkProvider.sessionType
+  commentId: P:Foundry.Networking.FusionNetworkProvider.sessionType
+  id: sessionType
+  parent: Foundry.Networking.FusionNetworkProvider
+  langs:
+  - csharp
+  - vb
+  name: sessionType
+  nameWithType: FusionNetworkProvider.sessionType
+  fullName: Foundry.Networking.FusionNetworkProvider.sessionType
+  type: Property
+  source:
+    remote:
+      path: package/Scripts/Services/Implementation/FusionNetworkProvider.cs
+      branch: main
+      repo: https://github.com/FoundryXR/FusionNetworkProvider.git
+    id: sessionType
+    path: ../Scripts/Services/Implementation/FusionNetworkProvider.cs
+    startLine: 271
+  assemblies:
+  - Foundry.Networking.Fusion
+  namespace: Foundry.Networking
+  example: []
+  syntax:
+    content: public SessionType sessionType { get; }
+    parameters: []
+    return:
+      type: Foundry.Networking.SessionType
+    content.vb: Public Property sessionType As SessionType
+  overload: Foundry.Networking.FusionNetworkProvider.sessionType*
+  implements:
+  - Foundry.Networking.INetworkProvider.sessionType
+- uid: Foundry.Networking.FusionNetworkProvider.SessionConnected
+  commentId: E:Foundry.Networking.FusionNetworkProvider.SessionConnected
+  id: SessionConnected
+  parent: Foundry.Networking.FusionNetworkProvider
+  langs:
+  - csharp
+  - vb
+  name: SessionConnected
+  nameWithType: FusionNetworkProvider.SessionConnected
+  fullName: Foundry.Networking.FusionNetworkProvider.SessionConnected
+  type: Event
+  source:
+    remote:
+      path: package/Scripts/Services/Implementation/FusionNetworkProvider.cs
+      branch: main
+      repo: https://github.com/FoundryXR/FusionNetworkProvider.git
+    id: SessionConnected
+    path: ../Scripts/Services/Implementation/FusionNetworkProvider.cs
+    startLine: 277
+  assemblies:
+  - Foundry.Networking.Fusion
+  namespace: Foundry.Networking
+  summary: Raised when a session has connected
+  example: []
+  syntax:
+    content: public event NetworkEventHandler SessionConnected
+    return:
+      type: Foundry.Networking.NetworkEventHandler
+    content.vb: Public Event SessionConnected As NetworkEventHandler
+  implements:
+  - Foundry.Networking.INetworkProvider.SessionConnected
+- uid: Foundry.Networking.FusionNetworkProvider.StartSessionFailed
+  commentId: E:Foundry.Networking.FusionNetworkProvider.StartSessionFailed
+  id: StartSessionFailed
+  parent: Foundry.Networking.FusionNetworkProvider
+  langs:
+  - csharp
+  - vb
+  name: StartSessionFailed
+  nameWithType: FusionNetworkProvider.StartSessionFailed
+  fullName: Foundry.Networking.FusionNetworkProvider.StartSessionFailed
+  type: Event
+  source:
+    remote:
+      path: package/Scripts/Services/Implementation/FusionNetworkProvider.cs
+      branch: main
+      repo: https://github.com/FoundryXR/FusionNetworkProvider.git
+    id: StartSessionFailed
+    path: ../Scripts/Services/Implementation/FusionNetworkProvider.cs
+    startLine: 278
+  assemblies:
+  - Foundry.Networking.Fusion
+  namespace: Foundry.Networking
+  summary: Raised when a session has failed to start
+  example: []
+  syntax:
+    content: public event NetworkErrorEventHandler StartSessionFailed
+    return:
+      type: Foundry.Networking.NetworkErrorEventHandler
+    content.vb: Public Event StartSessionFailed As NetworkErrorEventHandler
+  implements:
+  - Foundry.Networking.INetworkProvider.StartSessionFailed
+- uid: Foundry.Networking.FusionNetworkProvider.SessionDisconnected
+  commentId: E:Foundry.Networking.FusionNetworkProvider.SessionDisconnected
+  id: SessionDisconnected
+  parent: Foundry.Networking.FusionNetworkProvider
+  langs:
+  - csharp
+  - vb
+  name: SessionDisconnected
+  nameWithType: FusionNetworkProvider.SessionDisconnected
+  fullName: Foundry.Networking.FusionNetworkProvider.SessionDisconnected
+  type: Event
+  source:
+    remote:
+      path: package/Scripts/Services/Implementation/FusionNetworkProvider.cs
+      branch: main
+      repo: https://github.com/FoundryXR/FusionNetworkProvider.git
+    id: SessionDisconnected
+    path: ../Scripts/Services/Implementation/FusionNetworkProvider.cs
+    startLine: 279
+  assemblies:
+  - Foundry.Networking.Fusion
+  namespace: Foundry.Networking
+  summary: Raised when a session has disconnected.
+  example: []
+  syntax:
+    content: public event NetworkErrorEventHandler SessionDisconnected
+    return:
+      type: Foundry.Networking.NetworkErrorEventHandler
+    content.vb: Public Event SessionDisconnected As NetworkErrorEventHandler
+  implements:
+  - Foundry.Networking.INetworkProvider.SessionDisconnected
+- uid: Foundry.Networking.FusionNetworkProvider.PlayerJoined
+  commentId: E:Foundry.Networking.FusionNetworkProvider.PlayerJoined
+  id: PlayerJoined
+  parent: Foundry.Networking.FusionNetworkProvider
+  langs:
+  - csharp
+  - vb
+  name: PlayerJoined
+  nameWithType: FusionNetworkProvider.PlayerJoined
+  fullName: Foundry.Networking.FusionNetworkProvider.PlayerJoined
+  type: Event
+  source:
+    remote:
+      path: package/Scripts/Services/Implementation/FusionNetworkProvider.cs
+      branch: main
+      repo: https://github.com/FoundryXR/FusionNetworkProvider.git
+    id: PlayerJoined
+    path: ../Scripts/Services/Implementation/FusionNetworkProvider.cs
+    startLine: 280
+  assemblies:
+  - Foundry.Networking.Fusion
+  namespace: Foundry.Networking
+  summary: Raised when a player has joined the session
+  example: []
+  syntax:
+    content: public event NetworkPlayerEventHandler PlayerJoined
+    return:
+      type: Foundry.Networking.NetworkPlayerEventHandler
+    content.vb: Public Event PlayerJoined As NetworkPlayerEventHandler
+  implements:
+  - Foundry.Networking.INetworkProvider.PlayerJoined
+- uid: Foundry.Networking.FusionNetworkProvider.PlayerLeft
+  commentId: E:Foundry.Networking.FusionNetworkProvider.PlayerLeft
+  id: PlayerLeft
+  parent: Foundry.Networking.FusionNetworkProvider
+  langs:
+  - csharp
+  - vb
+  name: PlayerLeft
+  nameWithType: FusionNetworkProvider.PlayerLeft
+  fullName: Foundry.Networking.FusionNetworkProvider.PlayerLeft
+  type: Event
+  source:
+    remote:
+      path: package/Scripts/Services/Implementation/FusionNetworkProvider.cs
+      branch: main
+      repo: https://github.com/FoundryXR/FusionNetworkProvider.git
+    id: PlayerLeft
+    path: ../Scripts/Services/Implementation/FusionNetworkProvider.cs
+    startLine: 281
+  assemblies:
+  - Foundry.Networking.Fusion
+  namespace: Foundry.Networking
+  summary: Raised when a player has left the session
+  example: []
+  syntax:
+    content: public event NetworkPlayerEventHandler PlayerLeft
+    return:
+      type: Foundry.Networking.NetworkPlayerEventHandler
+    content.vb: Public Event PlayerLeft As NetworkPlayerEventHandler
+  implements:
+  - Foundry.Networking.INetworkProvider.PlayerLeft
+- uid: Foundry.Networking.FusionNetworkProvider.SendSessionConnected
+  commentId: M:Foundry.Networking.FusionNetworkProvider.SendSessionConnected
+  id: SendSessionConnected
+  parent: Foundry.Networking.FusionNetworkProvider
+  langs:
+  - csharp
+  - vb
+  name: SendSessionConnected()
+  nameWithType: FusionNetworkProvider.SendSessionConnected()
+  fullName: Foundry.Networking.FusionNetworkProvider.SendSessionConnected()
+  type: Method
+  source:
+    remote:
+      path: package/Scripts/Services/Implementation/FusionNetworkProvider.cs
+      branch: main
+      repo: https://github.com/FoundryXR/FusionNetworkProvider.git
+    id: SendSessionConnected
+    path: ../Scripts/Services/Implementation/FusionNetworkProvider.cs
+    startLine: 283
+  assemblies:
+  - Foundry.Networking.Fusion
+  namespace: Foundry.Networking
+  syntax:
+    content: public void SendSessionConnected()
+    content.vb: Public Sub SendSessionConnected()
+  overload: Foundry.Networking.FusionNetworkProvider.SendSessionConnected*
+- uid: Foundry.Networking.FusionNetworkProvider.SendSessionDisconnected(System.String)
+  commentId: M:Foundry.Networking.FusionNetworkProvider.SendSessionDisconnected(System.String)
+  id: SendSessionDisconnected(System.String)
+  parent: Foundry.Networking.FusionNetworkProvider
+  langs:
+  - csharp
+  - vb
+  name: SendSessionDisconnected(string)
+  nameWithType: FusionNetworkProvider.SendSessionDisconnected(string)
+  fullName: Foundry.Networking.FusionNetworkProvider.SendSessionDisconnected(string)
+  type: Method
+  source:
+    remote:
+      path: package/Scripts/Services/Implementation/FusionNetworkProvider.cs
+      branch: main
+      repo: https://github.com/FoundryXR/FusionNetworkProvider.git
+    id: SendSessionDisconnected
+    path: ../Scripts/Services/Implementation/FusionNetworkProvider.cs
+    startLine: 293
+  assemblies:
+  - Foundry.Networking.Fusion
+  namespace: Foundry.Networking
+  syntax:
+    content: public void SendSessionDisconnected(string reason)
+    parameters:
+    - id: reason
+      type: System.String
+    content.vb: Public Sub SendSessionDisconnected(reason As String)
+  overload: Foundry.Networking.FusionNetworkProvider.SendSessionDisconnected*
+  nameWithType.vb: FusionNetworkProvider.SendSessionDisconnected(String)
+  fullName.vb: Foundry.Networking.FusionNetworkProvider.SendSessionDisconnected(String)
+  name.vb: SendSessionDisconnected(String)
+- uid: Foundry.Networking.FusionNetworkProvider.SendStartSessionFailed(System.String)
+  commentId: M:Foundry.Networking.FusionNetworkProvider.SendStartSessionFailed(System.String)
+  id: SendStartSessionFailed(System.String)
+  parent: Foundry.Networking.FusionNetworkProvider
+  langs:
+  - csharp
+  - vb
+  name: SendStartSessionFailed(string)
+  nameWithType: FusionNetworkProvider.SendStartSessionFailed(string)
+  fullName: Foundry.Networking.FusionNetworkProvider.SendStartSessionFailed(string)
+  type: Method
+  source:
+    remote:
+      path: package/Scripts/Services/Implementation/FusionNetworkProvider.cs
+      branch: main
+      repo: https://github.com/FoundryXR/FusionNetworkProvider.git
+    id: SendStartSessionFailed
+    path: ../Scripts/Services/Implementation/FusionNetworkProvider.cs
+    startLine: 299
+  assemblies:
+  - Foundry.Networking.Fusion
+  namespace: Foundry.Networking
+  syntax:
+    content: public void SendStartSessionFailed(string reason)
+    parameters:
+    - id: reason
+      type: System.String
+    content.vb: Public Sub SendStartSessionFailed(reason As String)
+  overload: Foundry.Networking.FusionNetworkProvider.SendStartSessionFailed*
+  nameWithType.vb: FusionNetworkProvider.SendStartSessionFailed(String)
+  fullName.vb: Foundry.Networking.FusionNetworkProvider.SendStartSessionFailed(String)
+  name.vb: SendStartSessionFailed(String)
+- uid: Foundry.Networking.FusionNetworkProvider.SendPlayerJoined(System.Int32)
+  commentId: M:Foundry.Networking.FusionNetworkProvider.SendPlayerJoined(System.Int32)
+  id: SendPlayerJoined(System.Int32)
+  parent: Foundry.Networking.FusionNetworkProvider
+  langs:
+  - csharp
+  - vb
+  name: SendPlayerJoined(int)
+  nameWithType: FusionNetworkProvider.SendPlayerJoined(int)
+  fullName: Foundry.Networking.FusionNetworkProvider.SendPlayerJoined(int)
+  type: Method
+  source:
+    remote:
+      path: package/Scripts/Services/Implementation/FusionNetworkProvider.cs
+      branch: main
+      repo: https://github.com/FoundryXR/FusionNetworkProvider.git
+    id: SendPlayerJoined
+    path: ../Scripts/Services/Implementation/FusionNetworkProvider.cs
+    startLine: 304
+  assemblies:
+  - Foundry.Networking.Fusion
+  namespace: Foundry.Networking
+  syntax:
+    content: public void SendPlayerJoined(int playerId)
+    parameters:
+    - id: playerId
+      type: System.Int32
+    content.vb: Public Sub SendPlayerJoined(playerId As Integer)
+  overload: Foundry.Networking.FusionNetworkProvider.SendPlayerJoined*
+  nameWithType.vb: FusionNetworkProvider.SendPlayerJoined(Integer)
+  fullName.vb: Foundry.Networking.FusionNetworkProvider.SendPlayerJoined(Integer)
+  name.vb: SendPlayerJoined(Integer)
+- uid: Foundry.Networking.FusionNetworkProvider.SendPlayerLeft(System.Int32)
+  commentId: M:Foundry.Networking.FusionNetworkProvider.SendPlayerLeft(System.Int32)
+  id: SendPlayerLeft(System.Int32)
+  parent: Foundry.Networking.FusionNetworkProvider
+  langs:
+  - csharp
+  - vb
+  name: SendPlayerLeft(int)
+  nameWithType: FusionNetworkProvider.SendPlayerLeft(int)
+  fullName: Foundry.Networking.FusionNetworkProvider.SendPlayerLeft(int)
+  type: Method
+  source:
+    remote:
+      path: package/Scripts/Services/Implementation/FusionNetworkProvider.cs
+      branch: main
+      repo: https://github.com/FoundryXR/FusionNetworkProvider.git
+    id: SendPlayerLeft
+    path: ../Scripts/Services/Implementation/FusionNetworkProvider.cs
+    startLine: 310
+  assemblies:
+  - Foundry.Networking.Fusion
+  namespace: Foundry.Networking
+  syntax:
+    content: public void SendPlayerLeft(int playerId)
+    parameters:
+    - id: playerId
+      type: System.Int32
+    content.vb: Public Sub SendPlayerLeft(playerId As Integer)
+  overload: Foundry.Networking.FusionNetworkProvider.SendPlayerLeft*
+  nameWithType.vb: FusionNetworkProvider.SendPlayerLeft(Integer)
+  fullName.vb: Foundry.Networking.FusionNetworkProvider.SendPlayerLeft(Integer)
+  name.vb: SendPlayerLeft(Integer)
+references:
+- uid: Foundry.Networking
+  commentId: N:Foundry.Networking
+  href: Foundry.html
+  name: Foundry.Networking
+  nameWithType: Foundry.Networking
+  fullName: Foundry.Networking
+  spec.csharp:
+  - uid: Foundry
+    name: Foundry
+    href: Foundry.html
+  - name: .
+  - uid: Foundry.Networking
+    name: Networking
+    href: Foundry.Networking.html
+  spec.vb:
+  - uid: Foundry
+    name: Foundry
+    href: Foundry.html
+  - name: .
+  - uid: Foundry.Networking
+    name: Networking
+    href: Foundry.Networking.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: Foundry.Networking.INetworkProvider
+  commentId: T:Foundry.Networking.INetworkProvider
+  parent: Foundry.Networking
+  name: INetworkProvider
+  nameWithType: INetworkProvider
+  fullName: Foundry.Networking.INetworkProvider
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Foundry.Networking.FusionNetworkProvider.IsSessionConnected*
+  commentId: Overload:Foundry.Networking.FusionNetworkProvider.IsSessionConnected
+  href: Foundry.Networking.FusionNetworkProvider.html#Foundry.Networking.FusionNetworkProvider.IsSessionConnected
+  name: IsSessionConnected
+  nameWithType: FusionNetworkProvider.IsSessionConnected
+  fullName: Foundry.Networking.FusionNetworkProvider.IsSessionConnected
+- uid: Foundry.Networking.INetworkProvider.IsSessionConnected
+  commentId: P:Foundry.Networking.INetworkProvider.IsSessionConnected
+  parent: Foundry.Networking.INetworkProvider
+  name: IsSessionConnected
+  nameWithType: INetworkProvider.IsSessionConnected
+  fullName: Foundry.Networking.INetworkProvider.IsSessionConnected
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: Foundry.Networking.FusionNetworkProvider.IsServer*
+  commentId: Overload:Foundry.Networking.FusionNetworkProvider.IsServer
+  href: Foundry.Networking.FusionNetworkProvider.html#Foundry.Networking.FusionNetworkProvider.IsServer
+  name: IsServer
+  nameWithType: FusionNetworkProvider.IsServer
+  fullName: Foundry.Networking.FusionNetworkProvider.IsServer
+- uid: Foundry.Networking.INetworkProvider.IsServer
+  commentId: P:Foundry.Networking.INetworkProvider.IsServer
+  parent: Foundry.Networking.INetworkProvider
+  name: IsServer
+  nameWithType: INetworkProvider.IsServer
+  fullName: Foundry.Networking.INetworkProvider.IsServer
+- uid: Foundry.Networking.FusionNetworkProvider.IsClient*
+  commentId: Overload:Foundry.Networking.FusionNetworkProvider.IsClient
+  href: Foundry.Networking.FusionNetworkProvider.html#Foundry.Networking.FusionNetworkProvider.IsClient
+  name: IsClient
+  nameWithType: FusionNetworkProvider.IsClient
+  fullName: Foundry.Networking.FusionNetworkProvider.IsClient
+- uid: Foundry.Networking.INetworkProvider.IsClient
+  commentId: P:Foundry.Networking.INetworkProvider.IsClient
+  parent: Foundry.Networking.INetworkProvider
+  name: IsClient
+  nameWithType: INetworkProvider.IsClient
+  fullName: Foundry.Networking.INetworkProvider.IsClient
+- uid: Foundry.Networking.FusionNetworkProvider.IsGraphAuthority*
+  commentId: Overload:Foundry.Networking.FusionNetworkProvider.IsGraphAuthority
+  href: Foundry.Networking.FusionNetworkProvider.html#Foundry.Networking.FusionNetworkProvider.IsGraphAuthority
+  name: IsGraphAuthority
+  nameWithType: FusionNetworkProvider.IsGraphAuthority
+  fullName: Foundry.Networking.FusionNetworkProvider.IsGraphAuthority
+- uid: Foundry.Networking.INetworkProvider.IsGraphAuthority
+  commentId: P:Foundry.Networking.INetworkProvider.IsGraphAuthority
+  parent: Foundry.Networking.INetworkProvider
+  name: IsGraphAuthority
+  nameWithType: INetworkProvider.IsGraphAuthority
+  fullName: Foundry.Networking.INetworkProvider.IsGraphAuthority
+- uid: Foundry.Networking.FusionNetworkProvider.LocalPlayerId*
+  commentId: Overload:Foundry.Networking.FusionNetworkProvider.LocalPlayerId
+  href: Foundry.Networking.FusionNetworkProvider.html#Foundry.Networking.FusionNetworkProvider.LocalPlayerId
+  name: LocalPlayerId
+  nameWithType: FusionNetworkProvider.LocalPlayerId
+  fullName: Foundry.Networking.FusionNetworkProvider.LocalPlayerId
+- uid: Foundry.Networking.INetworkProvider.LocalPlayerId
+  commentId: P:Foundry.Networking.INetworkProvider.LocalPlayerId
+  parent: Foundry.Networking.INetworkProvider
+  name: LocalPlayerId
+  nameWithType: INetworkProvider.LocalPlayerId
+  fullName: Foundry.Networking.INetworkProvider.LocalPlayerId
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: Foundry.Networking.FusionNetworkProvider.Graph*
+  commentId: Overload:Foundry.Networking.FusionNetworkProvider.Graph
+  href: Foundry.Networking.FusionNetworkProvider.html#Foundry.Networking.FusionNetworkProvider.Graph
+  name: Graph
+  nameWithType: FusionNetworkProvider.Graph
+  fullName: Foundry.Networking.FusionNetworkProvider.Graph
+- uid: Foundry.Networking.INetworkProvider.Graph
+  commentId: P:Foundry.Networking.INetworkProvider.Graph
+  parent: Foundry.Networking.INetworkProvider
+  name: Graph
+  nameWithType: INetworkProvider.Graph
+  fullName: Foundry.Networking.INetworkProvider.Graph
+- uid: Foundry.Networking.NetworkGraph
+  commentId: T:Foundry.Networking.NetworkGraph
+  parent: Foundry.Networking
+  name: NetworkGraph
+  nameWithType: NetworkGraph
+  fullName: Foundry.Networking.NetworkGraph
+- uid: Foundry.Networking.FusionNetworkProvider.StartSessionAsync*
+  commentId: Overload:Foundry.Networking.FusionNetworkProvider.StartSessionAsync
+  href: Foundry.Networking.FusionNetworkProvider.html#Foundry.Networking.FusionNetworkProvider.StartSessionAsync(Foundry.Networking.SessionInfo)
+  name: StartSessionAsync
+  nameWithType: FusionNetworkProvider.StartSessionAsync
+  fullName: Foundry.Networking.FusionNetworkProvider.StartSessionAsync
+- uid: Foundry.Networking.INetworkProvider.StartSessionAsync(Foundry.Networking.SessionInfo)
+  commentId: M:Foundry.Networking.INetworkProvider.StartSessionAsync(Foundry.Networking.SessionInfo)
+  parent: Foundry.Networking.INetworkProvider
+  name: StartSessionAsync(SessionInfo)
+  nameWithType: INetworkProvider.StartSessionAsync(SessionInfo)
+  fullName: Foundry.Networking.INetworkProvider.StartSessionAsync(Foundry.Networking.SessionInfo)
+  spec.csharp:
+  - uid: Foundry.Networking.INetworkProvider.StartSessionAsync(Foundry.Networking.SessionInfo)
+    name: StartSessionAsync
+  - name: (
+  - uid: Foundry.Networking.SessionInfo
+    name: SessionInfo
+  - name: )
+  spec.vb:
+  - uid: Foundry.Networking.INetworkProvider.StartSessionAsync(Foundry.Networking.SessionInfo)
+    name: StartSessionAsync
+  - name: (
+  - uid: Foundry.Networking.SessionInfo
+    name: SessionInfo
+  - name: )
+- uid: Foundry.Networking.SessionInfo
+  commentId: T:Foundry.Networking.SessionInfo
+  parent: Foundry.Networking
+  name: SessionInfo
+  nameWithType: SessionInfo
+  fullName: Foundry.Networking.SessionInfo
+- uid: System.Threading.Tasks.Task
+  commentId: T:System.Threading.Tasks.Task
+  parent: System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task
+  name: Task
+  nameWithType: Task
+  fullName: System.Threading.Tasks.Task
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+- uid: Foundry.Networking.FusionNetworkProvider.StopSessionAsync*
+  commentId: Overload:Foundry.Networking.FusionNetworkProvider.StopSessionAsync
+  href: Foundry.Networking.FusionNetworkProvider.html#Foundry.Networking.FusionNetworkProvider.StopSessionAsync
+  name: StopSessionAsync
+  nameWithType: FusionNetworkProvider.StopSessionAsync
+  fullName: Foundry.Networking.FusionNetworkProvider.StopSessionAsync
+- uid: Foundry.Networking.INetworkProvider.StopSessionAsync
+  commentId: M:Foundry.Networking.INetworkProvider.StopSessionAsync
+  parent: Foundry.Networking.INetworkProvider
+  name: StopSessionAsync()
+  nameWithType: INetworkProvider.StopSessionAsync()
+  fullName: Foundry.Networking.INetworkProvider.StopSessionAsync()
+  spec.csharp:
+  - uid: Foundry.Networking.INetworkProvider.StopSessionAsync
+    name: StopSessionAsync
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: Foundry.Networking.INetworkProvider.StopSessionAsync
+    name: StopSessionAsync
+  - name: (
+  - name: )
+- uid: Foundry.Networking.FusionNetworkProvider.BindNetworkObject*
+  commentId: Overload:Foundry.Networking.FusionNetworkProvider.BindNetworkObject
+  href: Foundry.Networking.FusionNetworkProvider.html#Foundry.Networking.FusionNetworkProvider.BindNetworkObject(UnityEngine.GameObject,System.Boolean)
+  name: BindNetworkObject
+  nameWithType: FusionNetworkProvider.BindNetworkObject
+  fullName: Foundry.Networking.FusionNetworkProvider.BindNetworkObject
+- uid: Foundry.Networking.INetworkProvider.BindNetworkObject(UnityEngine.GameObject,System.Boolean)
+  commentId: M:Foundry.Networking.INetworkProvider.BindNetworkObject(UnityEngine.GameObject,System.Boolean)
+  parent: Foundry.Networking.INetworkProvider
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: BindNetworkObject(GameObject, bool)
+  nameWithType: INetworkProvider.BindNetworkObject(GameObject, bool)
+  fullName: Foundry.Networking.INetworkProvider.BindNetworkObject(UnityEngine.GameObject, bool)
+  nameWithType.vb: INetworkProvider.BindNetworkObject(GameObject, Boolean)
+  fullName.vb: Foundry.Networking.INetworkProvider.BindNetworkObject(UnityEngine.GameObject, Boolean)
+  name.vb: BindNetworkObject(GameObject, Boolean)
+  spec.csharp:
+  - uid: Foundry.Networking.INetworkProvider.BindNetworkObject(UnityEngine.GameObject,System.Boolean)
+    name: BindNetworkObject
+  - name: (
+  - uid: UnityEngine.GameObject
+    name: GameObject
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+  spec.vb:
+  - uid: Foundry.Networking.INetworkProvider.BindNetworkObject(UnityEngine.GameObject,System.Boolean)
+    name: BindNetworkObject
+  - name: (
+  - uid: UnityEngine.GameObject
+    name: GameObject
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+- uid: UnityEngine.GameObject
+  commentId: T:UnityEngine.GameObject
+  parent: UnityEngine
+  isExternal: true
+  name: GameObject
+  nameWithType: GameObject
+  fullName: UnityEngine.GameObject
+- uid: UnityEngine
+  commentId: N:UnityEngine
+  isExternal: true
+  name: UnityEngine
+  nameWithType: UnityEngine
+  fullName: UnityEngine
+- uid: Foundry.Networking.FusionNetworkProvider.RegisterPrefab*
+  commentId: Overload:Foundry.Networking.FusionNetworkProvider.RegisterPrefab
+  href: Foundry.Networking.FusionNetworkProvider.html#Foundry.Networking.FusionNetworkProvider.RegisterPrefab(UnityEngine.GameObject)
+  name: RegisterPrefab
+  nameWithType: FusionNetworkProvider.RegisterPrefab
+  fullName: Foundry.Networking.FusionNetworkProvider.RegisterPrefab
+- uid: Foundry.Networking.INetworkProvider.RegisterPrefab(UnityEngine.GameObject)
+  commentId: M:Foundry.Networking.INetworkProvider.RegisterPrefab(UnityEngine.GameObject)
+  parent: Foundry.Networking.INetworkProvider
+  isExternal: true
+  name: RegisterPrefab(GameObject)
+  nameWithType: INetworkProvider.RegisterPrefab(GameObject)
+  fullName: Foundry.Networking.INetworkProvider.RegisterPrefab(UnityEngine.GameObject)
+  spec.csharp:
+  - uid: Foundry.Networking.INetworkProvider.RegisterPrefab(UnityEngine.GameObject)
+    name: RegisterPrefab
+  - name: (
+  - uid: UnityEngine.GameObject
+    name: GameObject
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: Foundry.Networking.INetworkProvider.RegisterPrefab(UnityEngine.GameObject)
+    name: RegisterPrefab
+  - name: (
+  - uid: UnityEngine.GameObject
+    name: GameObject
+    isExternal: true
+  - name: )
+- uid: Foundry.Networking.FusionNetworkProvider.RegisterSceneObjects*
+  commentId: Overload:Foundry.Networking.FusionNetworkProvider.RegisterSceneObjects
+  href: Foundry.Networking.FusionNetworkProvider.html#Foundry.Networking.FusionNetworkProvider.RegisterSceneObjects(System.Collections.Generic.IList{UnityEngine.GameObject})
+  name: RegisterSceneObjects
+  nameWithType: FusionNetworkProvider.RegisterSceneObjects
+  fullName: Foundry.Networking.FusionNetworkProvider.RegisterSceneObjects
+- uid: Foundry.Networking.INetworkProvider.RegisterSceneObjects(System.Collections.Generic.IList{UnityEngine.GameObject})
+  commentId: M:Foundry.Networking.INetworkProvider.RegisterSceneObjects(System.Collections.Generic.IList{UnityEngine.GameObject})
+  parent: Foundry.Networking.INetworkProvider
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ilist-1
+  name: RegisterSceneObjects(IList<GameObject>)
+  nameWithType: INetworkProvider.RegisterSceneObjects(IList<GameObject>)
+  fullName: Foundry.Networking.INetworkProvider.RegisterSceneObjects(System.Collections.Generic.IList<UnityEngine.GameObject>)
+  nameWithType.vb: INetworkProvider.RegisterSceneObjects(IList(Of GameObject))
+  fullName.vb: Foundry.Networking.INetworkProvider.RegisterSceneObjects(System.Collections.Generic.IList(Of UnityEngine.GameObject))
+  name.vb: RegisterSceneObjects(IList(Of GameObject))
+  spec.csharp:
+  - uid: Foundry.Networking.INetworkProvider.RegisterSceneObjects(System.Collections.Generic.IList{UnityEngine.GameObject})
+    name: RegisterSceneObjects
+  - name: (
+  - uid: System.Collections.Generic.IList`1
+    name: IList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ilist-1
+  - name: <
+  - uid: UnityEngine.GameObject
+    name: GameObject
+    isExternal: true
+  - name: '>'
+  - name: )
+  spec.vb:
+  - uid: Foundry.Networking.INetworkProvider.RegisterSceneObjects(System.Collections.Generic.IList{UnityEngine.GameObject})
+    name: RegisterSceneObjects
+  - name: (
+  - uid: System.Collections.Generic.IList`1
+    name: IList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ilist-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: UnityEngine.GameObject
+    name: GameObject
+    isExternal: true
+  - name: )
+  - name: )
+- uid: System.Collections.Generic.IList{UnityEngine.GameObject}
+  commentId: T:System.Collections.Generic.IList{UnityEngine.GameObject}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IList`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ilist-1
+  name: IList<GameObject>
+  nameWithType: IList<GameObject>
+  fullName: System.Collections.Generic.IList<UnityEngine.GameObject>
+  nameWithType.vb: IList(Of GameObject)
+  fullName.vb: System.Collections.Generic.IList(Of UnityEngine.GameObject)
+  name.vb: IList(Of GameObject)
+  spec.csharp:
+  - uid: System.Collections.Generic.IList`1
+    name: IList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ilist-1
+  - name: <
+  - uid: UnityEngine.GameObject
+    name: GameObject
+    isExternal: true
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IList`1
+    name: IList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ilist-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: UnityEngine.GameObject
+    name: GameObject
+    isExternal: true
+  - name: )
+- uid: System.Collections.Generic.IList`1
+  commentId: T:System.Collections.Generic.IList`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ilist-1
+  name: IList<T>
+  nameWithType: IList<T>
+  fullName: System.Collections.Generic.IList<T>
+  nameWithType.vb: IList(Of T)
+  fullName.vb: System.Collections.Generic.IList(Of T)
+  name.vb: IList(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IList`1
+    name: IList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ilist-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IList`1
+    name: IList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ilist-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: Foundry.Networking.FusionNetworkProvider.Instantiate*
+  commentId: Overload:Foundry.Networking.FusionNetworkProvider.Instantiate
+  href: Foundry.Networking.FusionNetworkProvider.html#Foundry.Networking.FusionNetworkProvider.Instantiate(UnityEngine.GameObject,UnityEngine.Vector3,UnityEngine.Quaternion)
+  name: Instantiate
+  nameWithType: FusionNetworkProvider.Instantiate
+  fullName: Foundry.Networking.FusionNetworkProvider.Instantiate
+- uid: Foundry.Networking.INetworkProvider.Instantiate(UnityEngine.GameObject,UnityEngine.Vector3,UnityEngine.Quaternion)
+  commentId: M:Foundry.Networking.INetworkProvider.Instantiate(UnityEngine.GameObject,UnityEngine.Vector3,UnityEngine.Quaternion)
+  parent: Foundry.Networking.INetworkProvider
+  isExternal: true
+  name: Instantiate(GameObject, Vector3, Quaternion)
+  nameWithType: INetworkProvider.Instantiate(GameObject, Vector3, Quaternion)
+  fullName: Foundry.Networking.INetworkProvider.Instantiate(UnityEngine.GameObject, UnityEngine.Vector3, UnityEngine.Quaternion)
+  spec.csharp:
+  - uid: Foundry.Networking.INetworkProvider.Instantiate(UnityEngine.GameObject,UnityEngine.Vector3,UnityEngine.Quaternion)
+    name: Instantiate
+  - name: (
+  - uid: UnityEngine.GameObject
+    name: GameObject
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: UnityEngine.Vector3
+    name: Vector3
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: UnityEngine.Quaternion
+    name: Quaternion
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: Foundry.Networking.INetworkProvider.Instantiate(UnityEngine.GameObject,UnityEngine.Vector3,UnityEngine.Quaternion)
+    name: Instantiate
+  - name: (
+  - uid: UnityEngine.GameObject
+    name: GameObject
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: UnityEngine.Vector3
+    name: Vector3
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: UnityEngine.Quaternion
+    name: Quaternion
+    isExternal: true
+  - name: )
+- uid: UnityEngine.Vector3
+  commentId: T:UnityEngine.Vector3
+  parent: UnityEngine
+  isExternal: true
+  name: Vector3
+  nameWithType: Vector3
+  fullName: UnityEngine.Vector3
+- uid: UnityEngine.Quaternion
+  commentId: T:UnityEngine.Quaternion
+  parent: UnityEngine
+  isExternal: true
+  name: Quaternion
+  nameWithType: Quaternion
+  fullName: UnityEngine.Quaternion
+- uid: Foundry.Networking.FusionNetworkProvider.Destroy*
+  commentId: Overload:Foundry.Networking.FusionNetworkProvider.Destroy
+  href: Foundry.Networking.FusionNetworkProvider.html#Foundry.Networking.FusionNetworkProvider.Destroy(UnityEngine.GameObject)
+  name: Destroy
+  nameWithType: FusionNetworkProvider.Destroy
+  fullName: Foundry.Networking.FusionNetworkProvider.Destroy
+- uid: Foundry.Networking.INetworkProvider.Destroy(UnityEngine.GameObject)
+  commentId: M:Foundry.Networking.INetworkProvider.Destroy(UnityEngine.GameObject)
+  parent: Foundry.Networking.INetworkProvider
+  isExternal: true
+  name: Destroy(GameObject)
+  nameWithType: INetworkProvider.Destroy(GameObject)
+  fullName: Foundry.Networking.INetworkProvider.Destroy(UnityEngine.GameObject)
+  spec.csharp:
+  - uid: Foundry.Networking.INetworkProvider.Destroy(UnityEngine.GameObject)
+    name: Destroy
+  - name: (
+  - uid: UnityEngine.GameObject
+    name: GameObject
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: Foundry.Networking.INetworkProvider.Destroy(UnityEngine.GameObject)
+    name: Destroy
+  - name: (
+  - uid: UnityEngine.GameObject
+    name: GameObject
+    isExternal: true
+  - name: )
+- uid: Foundry.Networking.FusionNetworkProvider.sessionType*
+  commentId: Overload:Foundry.Networking.FusionNetworkProvider.sessionType
+  href: Foundry.Networking.FusionNetworkProvider.html#Foundry.Networking.FusionNetworkProvider.sessionType
+  name: sessionType
+  nameWithType: FusionNetworkProvider.sessionType
+  fullName: Foundry.Networking.FusionNetworkProvider.sessionType
+- uid: Foundry.Networking.INetworkProvider.sessionType
+  commentId: P:Foundry.Networking.INetworkProvider.sessionType
+  parent: Foundry.Networking.INetworkProvider
+  name: sessionType
+  nameWithType: INetworkProvider.sessionType
+  fullName: Foundry.Networking.INetworkProvider.sessionType
+- uid: Foundry.Networking.SessionType
+  commentId: T:Foundry.Networking.SessionType
+  parent: Foundry.Networking
+  name: SessionType
+  nameWithType: SessionType
+  fullName: Foundry.Networking.SessionType
+- uid: Foundry.Networking.INetworkProvider.SessionConnected
+  commentId: E:Foundry.Networking.INetworkProvider.SessionConnected
+  parent: Foundry.Networking.INetworkProvider
+  name: SessionConnected
+  nameWithType: INetworkProvider.SessionConnected
+  fullName: Foundry.Networking.INetworkProvider.SessionConnected
+- uid: Foundry.Networking.NetworkEventHandler
+  commentId: T:Foundry.Networking.NetworkEventHandler
+  parent: Foundry.Networking
+  name: NetworkEventHandler
+  nameWithType: NetworkEventHandler
+  fullName: Foundry.Networking.NetworkEventHandler
+- uid: Foundry.Networking.INetworkProvider.StartSessionFailed
+  commentId: E:Foundry.Networking.INetworkProvider.StartSessionFailed
+  parent: Foundry.Networking.INetworkProvider
+  name: StartSessionFailed
+  nameWithType: INetworkProvider.StartSessionFailed
+  fullName: Foundry.Networking.INetworkProvider.StartSessionFailed
+- uid: Foundry.Networking.NetworkErrorEventHandler
+  commentId: T:Foundry.Networking.NetworkErrorEventHandler
+  parent: Foundry.Networking
+  name: NetworkErrorEventHandler
+  nameWithType: NetworkErrorEventHandler
+  fullName: Foundry.Networking.NetworkErrorEventHandler
+- uid: Foundry.Networking.INetworkProvider.SessionDisconnected
+  commentId: E:Foundry.Networking.INetworkProvider.SessionDisconnected
+  parent: Foundry.Networking.INetworkProvider
+  name: SessionDisconnected
+  nameWithType: INetworkProvider.SessionDisconnected
+  fullName: Foundry.Networking.INetworkProvider.SessionDisconnected
+- uid: Foundry.Networking.INetworkProvider.PlayerJoined
+  commentId: E:Foundry.Networking.INetworkProvider.PlayerJoined
+  parent: Foundry.Networking.INetworkProvider
+  name: PlayerJoined
+  nameWithType: INetworkProvider.PlayerJoined
+  fullName: Foundry.Networking.INetworkProvider.PlayerJoined
+- uid: Foundry.Networking.NetworkPlayerEventHandler
+  commentId: T:Foundry.Networking.NetworkPlayerEventHandler
+  parent: Foundry.Networking
+  name: NetworkPlayerEventHandler
+  nameWithType: NetworkPlayerEventHandler
+  fullName: Foundry.Networking.NetworkPlayerEventHandler
+- uid: Foundry.Networking.INetworkProvider.PlayerLeft
+  commentId: E:Foundry.Networking.INetworkProvider.PlayerLeft
+  parent: Foundry.Networking.INetworkProvider
+  name: PlayerLeft
+  nameWithType: INetworkProvider.PlayerLeft
+  fullName: Foundry.Networking.INetworkProvider.PlayerLeft
+- uid: Foundry.Networking.FusionNetworkProvider.SendSessionConnected*
+  commentId: Overload:Foundry.Networking.FusionNetworkProvider.SendSessionConnected
+  href: Foundry.Networking.FusionNetworkProvider.html#Foundry.Networking.FusionNetworkProvider.SendSessionConnected
+  name: SendSessionConnected
+  nameWithType: FusionNetworkProvider.SendSessionConnected
+  fullName: Foundry.Networking.FusionNetworkProvider.SendSessionConnected
+- uid: Foundry.Networking.FusionNetworkProvider.SendSessionDisconnected*
+  commentId: Overload:Foundry.Networking.FusionNetworkProvider.SendSessionDisconnected
+  href: Foundry.Networking.FusionNetworkProvider.html#Foundry.Networking.FusionNetworkProvider.SendSessionDisconnected(System.String)
+  name: SendSessionDisconnected
+  nameWithType: FusionNetworkProvider.SendSessionDisconnected
+  fullName: Foundry.Networking.FusionNetworkProvider.SendSessionDisconnected
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: Foundry.Networking.FusionNetworkProvider.SendStartSessionFailed*
+  commentId: Overload:Foundry.Networking.FusionNetworkProvider.SendStartSessionFailed
+  href: Foundry.Networking.FusionNetworkProvider.html#Foundry.Networking.FusionNetworkProvider.SendStartSessionFailed(System.String)
+  name: SendStartSessionFailed
+  nameWithType: FusionNetworkProvider.SendStartSessionFailed
+  fullName: Foundry.Networking.FusionNetworkProvider.SendStartSessionFailed
+- uid: Foundry.Networking.FusionNetworkProvider.SendPlayerJoined*
+  commentId: Overload:Foundry.Networking.FusionNetworkProvider.SendPlayerJoined
+  href: Foundry.Networking.FusionNetworkProvider.html#Foundry.Networking.FusionNetworkProvider.SendPlayerJoined(System.Int32)
+  name: SendPlayerJoined
+  nameWithType: FusionNetworkProvider.SendPlayerJoined
+  fullName: Foundry.Networking.FusionNetworkProvider.SendPlayerJoined
+- uid: Foundry.Networking.FusionNetworkProvider.SendPlayerLeft*
+  commentId: Overload:Foundry.Networking.FusionNetworkProvider.SendPlayerLeft
+  href: Foundry.Networking.FusionNetworkProvider.html#Foundry.Networking.FusionNetworkProvider.SendPlayerLeft(System.Int32)
+  name: SendPlayerLeft
+  nameWithType: FusionNetworkProvider.SendPlayerLeft
+  fullName: Foundry.Networking.FusionNetworkProvider.SendPlayerLeft

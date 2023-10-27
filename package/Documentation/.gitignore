@@ -1,0 +1,6 @@
+# Generated site files
+_site/
+_site.meta
+
+# Copied csproj files
+Temp/

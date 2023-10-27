@@ -1,0 +1,699 @@
+### YamlMime:ManagedReference
+items:
+- uid: Foundry.Core.Setup.FusionDependencyInstaller
+  commentId: T:Foundry.Core.Setup.FusionDependencyInstaller
+  id: FusionDependencyInstaller
+  parent: Foundry.Core.Setup
+  children:
+  - Foundry.Core.Setup.FusionDependencyInstaller.#ctor
+  - Foundry.Core.Setup.FusionDependencyInstaller.GetTaskState
+  - Foundry.Core.Setup.FusionDependencyInstaller.GetTasks
+  - Foundry.Core.Setup.FusionDependencyInstaller.ModuleName
+  - Foundry.Core.Setup.FusionDependencyInstaller.ModuleSource
+  langs:
+  - csharp
+  - vb
+  name: FusionDependencyInstaller
+  nameWithType: FusionDependencyInstaller
+  fullName: Foundry.Core.Setup.FusionDependencyInstaller
+  type: Class
+  source:
+    remote:
+      path: package/Setup/FusionDependencyInstaller.cs
+      branch: main
+      repo: https://github.com/FoundryXR/FusionNetworkProvider.git
+    id: FusionDependencyInstaller
+    path: ../Setup/FusionDependencyInstaller.cs
+    startLine: 8
+  assemblies:
+  - Foundry.Fusion.Setup
+  namespace: Foundry.Core.Setup
+  syntax:
+    content: 'public class FusionDependencyInstaller : IModuleSetupTasks'
+    content.vb: Public Class FusionDependencyInstaller Implements IModuleSetupTasks
+  inheritance:
+  - System.Object
+  implements:
+  - Foundry.Core.Setup.IModuleSetupTasks
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: Foundry.Core.Setup.FusionDependencyInstaller.#ctor
+  commentId: M:Foundry.Core.Setup.FusionDependencyInstaller.#ctor
+  id: '#ctor'
+  parent: Foundry.Core.Setup.FusionDependencyInstaller
+  langs:
+  - csharp
+  - vb
+  name: FusionDependencyInstaller()
+  nameWithType: FusionDependencyInstaller.FusionDependencyInstaller()
+  fullName: Foundry.Core.Setup.FusionDependencyInstaller.FusionDependencyInstaller()
+  type: Constructor
+  source:
+    remote:
+      path: package/Setup/FusionDependencyInstaller.cs
+      branch: main
+      repo: https://github.com/FoundryXR/FusionNetworkProvider.git
+    id: .ctor
+    path: ../Setup/FusionDependencyInstaller.cs
+    startLine: 13
+  assemblies:
+  - Foundry.Fusion.Setup
+  namespace: Foundry.Core.Setup
+  syntax:
+    content: public FusionDependencyInstaller()
+    content.vb: Public Sub New()
+  overload: Foundry.Core.Setup.FusionDependencyInstaller.#ctor*
+  nameWithType.vb: FusionDependencyInstaller.New()
+  fullName.vb: Foundry.Core.Setup.FusionDependencyInstaller.New()
+  name.vb: New()
+- uid: Foundry.Core.Setup.FusionDependencyInstaller.GetTaskState
+  commentId: M:Foundry.Core.Setup.FusionDependencyInstaller.GetTaskState
+  id: GetTaskState
+  parent: Foundry.Core.Setup.FusionDependencyInstaller
+  langs:
+  - csharp
+  - vb
+  name: GetTaskState()
+  nameWithType: FusionDependencyInstaller.GetTaskState()
+  fullName: Foundry.Core.Setup.FusionDependencyInstaller.GetTaskState()
+  type: Method
+  source:
+    remote:
+      path: package/Setup/FusionDependencyInstaller.cs
+      branch: main
+      repo: https://github.com/FoundryXR/FusionNetworkProvider.git
+    id: GetTaskState
+    path: ../Setup/FusionDependencyInstaller.cs
+    startLine: 19
+  assemblies:
+  - Foundry.Fusion.Setup
+  namespace: Foundry.Core.Setup
+  remarks: This is used by the FoundrySetupWizard to decide whether to pop-up and prompt the user to take action or not.
+  example: []
+  syntax:
+    content: public IModuleSetupTasks.State GetTaskState()
+    return:
+      type: Foundry.Core.Setup.IModuleSetupTasks.State
+      description: Current state of this module's setup tasks
+    content.vb: Public Function GetTaskState() As IModuleSetupTasks.State
+  overload: Foundry.Core.Setup.FusionDependencyInstaller.GetTaskState*
+  implements:
+  - Foundry.Core.Setup.IModuleSetupTasks.GetTaskState
+- uid: Foundry.Core.Setup.FusionDependencyInstaller.GetTasks
+  commentId: M:Foundry.Core.Setup.FusionDependencyInstaller.GetTasks
+  id: GetTasks
+  parent: Foundry.Core.Setup.FusionDependencyInstaller
+  langs:
+  - csharp
+  - vb
+  name: GetTasks()
+  nameWithType: FusionDependencyInstaller.GetTasks()
+  fullName: Foundry.Core.Setup.FusionDependencyInstaller.GetTasks()
+  type: Method
+  source:
+    remote:
+      path: package/Setup/FusionDependencyInstaller.cs
+      branch: main
+      repo: https://github.com/FoundryXR/FusionNetworkProvider.git
+    id: GetTasks
+    path: ../Setup/FusionDependencyInstaller.cs
+    startLine: 24
+  assemblies:
+  - Foundry.Fusion.Setup
+  namespace: Foundry.Core.Setup
+  example: []
+  syntax:
+    content: public List<SetupTaskList> GetTasks()
+    return:
+      type: System.Collections.Generic.List{Foundry.Core.Setup.SetupTaskList}
+      description: Uncompleted tasks that should be displayed in the FoundrySetupWizard, grouped by lists
+    content.vb: Public Function GetTasks() As List(Of SetupTaskList)
+  overload: Foundry.Core.Setup.FusionDependencyInstaller.GetTasks*
+  implements:
+  - Foundry.Core.Setup.IModuleSetupTasks.GetTasks
+- uid: Foundry.Core.Setup.FusionDependencyInstaller.ModuleName
+  commentId: M:Foundry.Core.Setup.FusionDependencyInstaller.ModuleName
+  id: ModuleName
+  parent: Foundry.Core.Setup.FusionDependencyInstaller
+  langs:
+  - csharp
+  - vb
+  name: ModuleName()
+  nameWithType: FusionDependencyInstaller.ModuleName()
+  fullName: Foundry.Core.Setup.FusionDependencyInstaller.ModuleName()
+  type: Method
+  source:
+    remote:
+      path: package/Setup/FusionDependencyInstaller.cs
+      branch: main
+      repo: https://github.com/FoundryXR/FusionNetworkProvider.git
+    id: ModuleName
+    path: ../Setup/FusionDependencyInstaller.cs
+    startLine: 48
+  assemblies:
+  - Foundry.Fusion.Setup
+  namespace: Foundry.Core.Setup
+  example: []
+  syntax:
+    content: public string ModuleName()
+    return:
+      type: System.String
+      description: The name of the module these tasks are for.
+    content.vb: Public Function ModuleName() As String
+  overload: Foundry.Core.Setup.FusionDependencyInstaller.ModuleName*
+  implements:
+  - Foundry.Core.Setup.IModuleSetupTasks.ModuleName
+- uid: Foundry.Core.Setup.FusionDependencyInstaller.ModuleSource
+  commentId: M:Foundry.Core.Setup.FusionDependencyInstaller.ModuleSource
+  id: ModuleSource
+  parent: Foundry.Core.Setup.FusionDependencyInstaller
+  langs:
+  - csharp
+  - vb
+  name: ModuleSource()
+  nameWithType: FusionDependencyInstaller.ModuleSource()
+  fullName: Foundry.Core.Setup.FusionDependencyInstaller.ModuleSource()
+  type: Method
+  source:
+    remote:
+      path: package/Setup/FusionDependencyInstaller.cs
+      branch: main
+      repo: https://github.com/FoundryXR/FusionNetworkProvider.git
+    id: ModuleSource
+    path: ../Setup/FusionDependencyInstaller.cs
+    startLine: 53
+  assemblies:
+  - Foundry.Fusion.Setup
+  namespace: Foundry.Core.Setup
+  example: []
+  syntax:
+    content: public string ModuleSource()
+    return:
+      type: System.String
+      description: The location of this module (com.example.package)
+    content.vb: Public Function ModuleSource() As String
+  overload: Foundry.Core.Setup.FusionDependencyInstaller.ModuleSource*
+  implements:
+  - Foundry.Core.Setup.IModuleSetupTasks.ModuleSource
+references:
+- uid: Foundry.Core.Setup
+  commentId: N:Foundry.Core.Setup
+  href: Foundry.html
+  name: Foundry.Core.Setup
+  nameWithType: Foundry.Core.Setup
+  fullName: Foundry.Core.Setup
+  spec.csharp:
+  - uid: Foundry
+    name: Foundry
+    href: Foundry.html
+  - name: .
+  - uid: Foundry.Core
+    name: Core
+    href: Foundry.Core.html
+  - name: .
+  - uid: Foundry.Core.Setup
+    name: Setup
+    href: Foundry.Core.Setup.html
+  spec.vb:
+  - uid: Foundry
+    name: Foundry
+    href: Foundry.html
+  - name: .
+  - uid: Foundry.Core
+    name: Core
+    href: Foundry.Core.html
+  - name: .
+  - uid: Foundry.Core.Setup
+    name: Setup
+    href: Foundry.Core.Setup.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: Foundry.Core.Setup.IModuleSetupTasks
+  commentId: T:Foundry.Core.Setup.IModuleSetupTasks
+  parent: Foundry.Core.Setup
+  name: IModuleSetupTasks
+  nameWithType: IModuleSetupTasks
+  fullName: Foundry.Core.Setup.IModuleSetupTasks
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Foundry.Core.Setup.FusionDependencyInstaller.#ctor*
+  commentId: Overload:Foundry.Core.Setup.FusionDependencyInstaller.#ctor
+  href: Foundry.Core.Setup.FusionDependencyInstaller.html#Foundry.Core.Setup.FusionDependencyInstaller.#ctor
+  name: FusionDependencyInstaller
+  nameWithType: FusionDependencyInstaller.FusionDependencyInstaller
+  fullName: Foundry.Core.Setup.FusionDependencyInstaller.FusionDependencyInstaller
+  nameWithType.vb: FusionDependencyInstaller.New
+  fullName.vb: Foundry.Core.Setup.FusionDependencyInstaller.New
+  name.vb: New
+- uid: Foundry.Core.Setup.FusionDependencyInstaller.GetTaskState*
+  commentId: Overload:Foundry.Core.Setup.FusionDependencyInstaller.GetTaskState
+  href: Foundry.Core.Setup.FusionDependencyInstaller.html#Foundry.Core.Setup.FusionDependencyInstaller.GetTaskState
+  name: GetTaskState
+  nameWithType: FusionDependencyInstaller.GetTaskState
+  fullName: Foundry.Core.Setup.FusionDependencyInstaller.GetTaskState
+- uid: Foundry.Core.Setup.IModuleSetupTasks.GetTaskState
+  commentId: M:Foundry.Core.Setup.IModuleSetupTasks.GetTaskState
+  parent: Foundry.Core.Setup.IModuleSetupTasks
+  name: GetTaskState()
+  nameWithType: IModuleSetupTasks.GetTaskState()
+  fullName: Foundry.Core.Setup.IModuleSetupTasks.GetTaskState()
+  spec.csharp:
+  - uid: Foundry.Core.Setup.IModuleSetupTasks.GetTaskState
+    name: GetTaskState
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: Foundry.Core.Setup.IModuleSetupTasks.GetTaskState
+    name: GetTaskState
+  - name: (
+  - name: )
+- uid: Foundry.Core.Setup.IModuleSetupTasks.State
+  commentId: T:Foundry.Core.Setup.IModuleSetupTasks.State
+  parent: Foundry.Core.Setup
+  name: IModuleSetupTasks.State
+  nameWithType: IModuleSetupTasks.State
+  fullName: Foundry.Core.Setup.IModuleSetupTasks.State
+  spec.csharp:
+  - uid: Foundry.Core.Setup.IModuleSetupTasks
+    name: IModuleSetupTasks
+  - name: .
+  - uid: Foundry.Core.Setup.IModuleSetupTasks.State
+    name: State
+  spec.vb:
+  - uid: Foundry.Core.Setup.IModuleSetupTasks
+    name: IModuleSetupTasks
+  - name: .
+  - uid: Foundry.Core.Setup.IModuleSetupTasks.State
+    name: State
+- uid: Foundry.Core.Setup.FusionDependencyInstaller.GetTasks*
+  commentId: Overload:Foundry.Core.Setup.FusionDependencyInstaller.GetTasks
+  href: Foundry.Core.Setup.FusionDependencyInstaller.html#Foundry.Core.Setup.FusionDependencyInstaller.GetTasks
+  name: GetTasks
+  nameWithType: FusionDependencyInstaller.GetTasks
+  fullName: Foundry.Core.Setup.FusionDependencyInstaller.GetTasks
+- uid: Foundry.Core.Setup.IModuleSetupTasks.GetTasks
+  commentId: M:Foundry.Core.Setup.IModuleSetupTasks.GetTasks
+  parent: Foundry.Core.Setup.IModuleSetupTasks
+  name: GetTasks()
+  nameWithType: IModuleSetupTasks.GetTasks()
+  fullName: Foundry.Core.Setup.IModuleSetupTasks.GetTasks()
+  spec.csharp:
+  - uid: Foundry.Core.Setup.IModuleSetupTasks.GetTasks
+    name: GetTasks
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: Foundry.Core.Setup.IModuleSetupTasks.GetTasks
+    name: GetTasks
+  - name: (
+  - name: )
+- uid: System.Collections.Generic.List{Foundry.Core.Setup.SetupTaskList}
+  commentId: T:System.Collections.Generic.List{Foundry.Core.Setup.SetupTaskList}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<SetupTaskList>
+  nameWithType: List<SetupTaskList>
+  fullName: System.Collections.Generic.List<Foundry.Core.Setup.SetupTaskList>
+  nameWithType.vb: List(Of SetupTaskList)
+  fullName.vb: System.Collections.Generic.List(Of Foundry.Core.Setup.SetupTaskList)
+  name.vb: List(Of SetupTaskList)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: Foundry.Core.Setup.SetupTaskList
+    name: SetupTaskList
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Foundry.Core.Setup.SetupTaskList
+    name: SetupTaskList
+  - name: )
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: Foundry.Core.Setup.FusionDependencyInstaller.ModuleName*
+  commentId: Overload:Foundry.Core.Setup.FusionDependencyInstaller.ModuleName
+  href: Foundry.Core.Setup.FusionDependencyInstaller.html#Foundry.Core.Setup.FusionDependencyInstaller.ModuleName
+  name: ModuleName
+  nameWithType: FusionDependencyInstaller.ModuleName
+  fullName: Foundry.Core.Setup.FusionDependencyInstaller.ModuleName
+- uid: Foundry.Core.Setup.IModuleSetupTasks.ModuleName
+  commentId: M:Foundry.Core.Setup.IModuleSetupTasks.ModuleName
+  parent: Foundry.Core.Setup.IModuleSetupTasks
+  name: ModuleName()
+  nameWithType: IModuleSetupTasks.ModuleName()
+  fullName: Foundry.Core.Setup.IModuleSetupTasks.ModuleName()
+  spec.csharp:
+  - uid: Foundry.Core.Setup.IModuleSetupTasks.ModuleName
+    name: ModuleName
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: Foundry.Core.Setup.IModuleSetupTasks.ModuleName
+    name: ModuleName
+  - name: (
+  - name: )
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: Foundry.Core.Setup.FusionDependencyInstaller.ModuleSource*
+  commentId: Overload:Foundry.Core.Setup.FusionDependencyInstaller.ModuleSource
+  href: Foundry.Core.Setup.FusionDependencyInstaller.html#Foundry.Core.Setup.FusionDependencyInstaller.ModuleSource
+  name: ModuleSource
+  nameWithType: FusionDependencyInstaller.ModuleSource
+  fullName: Foundry.Core.Setup.FusionDependencyInstaller.ModuleSource
+- uid: Foundry.Core.Setup.IModuleSetupTasks.ModuleSource
+  commentId: M:Foundry.Core.Setup.IModuleSetupTasks.ModuleSource
+  parent: Foundry.Core.Setup.IModuleSetupTasks
+  name: ModuleSource()
+  nameWithType: IModuleSetupTasks.ModuleSource()
+  fullName: Foundry.Core.Setup.IModuleSetupTasks.ModuleSource()
+  spec.csharp:
+  - uid: Foundry.Core.Setup.IModuleSetupTasks.ModuleSource
+    name: ModuleSource
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: Foundry.Core.Setup.IModuleSetupTasks.ModuleSource
+    name: ModuleSource
+  - name: (
+  - name: )
