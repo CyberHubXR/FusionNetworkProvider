@@ -1,0 +1,1640 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class FoundryRunnerManager
+ | Fusion for Foundry </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class FoundryRunnerManager
+ | Fusion for Foundry ">
+      
+      <link rel="icon" href="../Media/foundry_icon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/FoundryXR/FusionNetworkProvider/new/main/apiSpec/new?filename=Foundry_Networking_FoundryRunnerManager.md&amp;value=---%0Auid%3A%20Foundry.Networking.FoundryRunnerManager%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+  </head>
+
+  <script type="module" src="./../public/docfx.min.js"></script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../Media/foundry_icon.png" alt="Fusion Networking For Foundry">
+            Fusion Networking For Foundry
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="Foundry.Networking.FoundryRunnerManager">
+
+
+
+  <h1 id="Foundry_Networking_FoundryRunnerManager" data-uid="Foundry.Networking.FoundryRunnerManager" class="text-break">
+    Class FoundryRunnerManager
+  <a class="header-action link-secondary" title="View source" href="https://github.com/FoundryXR/FusionNetworkProvider/blob/main/package/Scripts/FoundryRunnerManager.cs/#L24"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="Foundry.html">Foundry</a>.<a class="xref" href="Foundry.Networking.html">Networking</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>Foundry.Networking.Fusion.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>A monobehavior that manages Core Fusion scripts and provides an interface for them to interact with the FusionNetworkProvider.</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class FoundryRunnerManager : NetworkBehaviour, ILogBuilder, ISpawned, IDespawned, INetworkRunnerCallbacks</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">Object</span></div>
+      <div><span class="xref">Component</span></div>
+      <div><span class="xref">Behaviour</span></div>
+      <div><span class="xref">MonoBehaviour</span></div>
+      <div><span class="xref">Behaviour</span></div>
+      <div><span class="xref">SimulationBehaviour</span></div>
+      <div><span class="xref">NetworkBehaviour</span></div>
+      <div><span class="xref">FoundryRunnerManager</span></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><span class="xref">ILogBuilder</span></div>
+      <div><span class="xref">ISpawned</span></div>
+      <div><span class="xref">IDespawned</span></div>
+      <div><span class="xref">INetworkRunnerCallbacks</span></div>
+    </dd>
+  </dl>
+
+
+  <dl class="typelist derived">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <span class="xref">NetworkBehaviour.Ptr</span>
+    </div>
+    <div>
+      <span class="xref">NetworkBehaviour.ObjectIndex</span>
+    </div>
+    <div>
+      <span class="xref">NetworkBehaviour.InvokeRpc</span>
+    </div>
+    <div>
+      <span class="xref">NetworkBehaviour.GetLocalAuthorityMask()</span>
+    </div>
+    <div>
+      <span class="xref">NetworkBehaviour.CopyStateFrom(NetworkBehaviour)</span>
+    </div>
+    <div>
+      <span class="xref">NetworkBehaviour.FixedUpdateNetwork()</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">NetworkBehaviour.CopyBackingFieldsToState(bool)</a>
+    </div>
+    <div>
+      <span class="xref">NetworkBehaviour.CopyStateToBackingFields()</span>
+    </div>
+    <div>
+      <span class="xref">NetworkBehaviour.Spawned()</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">NetworkBehaviour.Despawned(NetworkRunner, bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">NetworkBehaviour.GetInterpolationData(out InterpolationData, bool?)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">NetworkBehaviour.GetInterpolationData(out InterpolationData, out bool)</a>
+    </div>
+    <div>
+      <span class="xref">NetworkBehaviour.IsInterpolationDataPredicted()</span>
+    </div>
+    <div>
+      <span class="xref">NetworkBehaviour.OnChangeClearAll()</span>
+    </div>
+    <div>
+      <span class="xref">NetworkBehaviour.OnChangeRemove(NetworkBehaviourCallbackReference)</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">NetworkBehaviour.OnChangeAdd&lt;T&gt;(int, int, ChangedDelegate&lt;T&gt;, OnChangedTargets)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">NetworkBehaviour.OnChangeAdd&lt;T&gt;(string, ChangedDelegate&lt;T&gt;, OnChangedTargets)</a>
+    </div>
+    <div>
+      <span class="xref">NetworkBehaviour.GetInput&lt;T&gt;()</span>
+    </div>
+    <div>
+      <span class="xref">NetworkBehaviour.GetInput&lt;T&gt;(out T)</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">NetworkBehaviour.GetInterpolator(string)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">NetworkBehaviour.GetInterpolator&lt;T&gt;(string)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">NetworkBehaviour.NetworkSerialize(NetworkRunner, NetworkBehaviour, byte*)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">NetworkBehaviour.NetworkDeserialize(NetworkRunner, byte*, ref NetworkBehaviour)</a>
+    </div>
+    <div>
+      <span class="xref">NetworkBehaviour.NetworkWrap(NetworkRunner, NetworkBehaviour)</span>
+    </div>
+    <div>
+      <span class="xref">NetworkBehaviour.NetworkUnwrap(NetworkRunner, NetworkBehaviourId)</span>
+    </div>
+    <div>
+      <span class="xref">NetworkBehaviour.MakeRef&lt;T&gt;()</span>
+    </div>
+    <div>
+      <span class="xref">NetworkBehaviour.MakeRef&lt;T&gt;(T)</span>
+    </div>
+    <div>
+      <span class="xref">NetworkBehaviour.MakePtr&lt;T&gt;()</span>
+    </div>
+    <div>
+      <span class="xref">NetworkBehaviour.MakePtr&lt;T&gt;(T)</span>
+    </div>
+    <div>
+      <span class="xref">NetworkBehaviour.MakeInitializer&lt;T&gt;(T[])</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">NetworkBehaviour.MakeInitializer&lt;K, V&gt;(Dictionary&lt;K, V&gt;)</a>
+    </div>
+    <div>
+      <span class="xref">NetworkBehaviour.InvokeWeavedCode()</span>
+    </div>
+    <div>
+      <span class="xref">NetworkBehaviour.WordInfo</span>
+    </div>
+    <div>
+      <span class="xref">NetworkBehaviour.InterpolationDataSource</span>
+    </div>
+    <div>
+      <span class="xref">NetworkBehaviour.Id</span>
+    </div>
+    <div>
+      <span class="xref">NetworkBehaviour.DynamicWordCount</span>
+    </div>
+    <div>
+      <span class="xref">NetworkBehaviour.InvokeOnChangedForInitialNonZeroValues</span>
+    </div>
+    <div>
+      <span class="xref">SimulationBehaviour.Runner</span>
+    </div>
+    <div>
+      <span class="xref">SimulationBehaviour.Object</span>
+    </div>
+    <div>
+      <span class="xref">SimulationBehaviour.Render()</span>
+    </div>
+    <div>
+      <span class="xref">SimulationBehaviour.CanReceiveCallback</span>
+    </div>
+    <div>
+      <span class="xref">SimulationBehaviour.HasInputAuthority</span>
+    </div>
+    <div>
+      <span class="xref">SimulationBehaviour.HasStateAuthority</span>
+    </div>
+    <div>
+      <span class="xref">SimulationBehaviour.IsProxy</span>
+    </div>
+    <div>
+      <span class="xref">Behaviour.AddBehaviour&lt;T&gt;()</span>
+    </div>
+    <div>
+      <span class="xref">Behaviour.TryGetBehaviour&lt;T&gt;(out T)</span>
+    </div>
+    <div>
+      <span class="xref">Behaviour.GetBehaviour&lt;T&gt;()</span>
+    </div>
+    <div>
+      <span class="xref">Behaviour.DestroyBehaviour(Behaviour)</span>
+    </div>
+    <div>
+      <span class="xref">MonoBehaviour.IsInvoking()</span>
+    </div>
+    <div>
+      <span class="xref">MonoBehaviour.CancelInvoke()</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">MonoBehaviour.Invoke(string, float)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">MonoBehaviour.InvokeRepeating(string, float, float)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">MonoBehaviour.CancelInvoke(string)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">MonoBehaviour.IsInvoking(string)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">MonoBehaviour.StartCoroutine(string)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">MonoBehaviour.StartCoroutine(string, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.ienumerator">MonoBehaviour.StartCoroutine(IEnumerator)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.ienumerator">MonoBehaviour.StartCoroutine_Auto(IEnumerator)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.ienumerator">MonoBehaviour.StopCoroutine(IEnumerator)</a>
+    </div>
+    <div>
+      <span class="xref">MonoBehaviour.StopCoroutine(Coroutine)</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">MonoBehaviour.StopCoroutine(string)</a>
+    </div>
+    <div>
+      <span class="xref">MonoBehaviour.StopAllCoroutines()</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">MonoBehaviour.print(object)</a>
+    </div>
+    <div>
+      <span class="xref">MonoBehaviour.useGUILayout</span>
+    </div>
+    <div>
+      <span class="xref">MonoBehaviour.runInEditMode</span>
+    </div>
+    <div>
+      <span class="xref">Behaviour.enabled</span>
+    </div>
+    <div>
+      <span class="xref">Behaviour.isActiveAndEnabled</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Component.GetComponent(Type)</a>
+    </div>
+    <div>
+      <span class="xref">Component.GetComponent&lt;T&gt;()</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Component.TryGetComponent(Type, out Component)</a>
+    </div>
+    <div>
+      <span class="xref">Component.TryGetComponent&lt;T&gt;(out T)</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">Component.GetComponent(string)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Component.GetComponentInChildren(Type, bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Component.GetComponentInChildren(Type)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Component.GetComponentInChildren&lt;T&gt;(bool)</a>
+    </div>
+    <div>
+      <span class="xref">Component.GetComponentInChildren&lt;T&gt;()</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Component.GetComponentsInChildren(Type, bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Component.GetComponentsInChildren(Type)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Component.GetComponentsInChildren&lt;T&gt;(bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Component.GetComponentsInChildren&lt;T&gt;(bool, List&lt;T&gt;)</a>
+    </div>
+    <div>
+      <span class="xref">Component.GetComponentsInChildren&lt;T&gt;()</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">Component.GetComponentsInChildren&lt;T&gt;(List&lt;T&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Component.GetComponentInParent(Type, bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Component.GetComponentInParent(Type)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Component.GetComponentInParent&lt;T&gt;(bool)</a>
+    </div>
+    <div>
+      <span class="xref">Component.GetComponentInParent&lt;T&gt;()</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Component.GetComponentsInParent(Type, bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Component.GetComponentsInParent(Type)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Component.GetComponentsInParent&lt;T&gt;(bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Component.GetComponentsInParent&lt;T&gt;(bool, List&lt;T&gt;)</a>
+    </div>
+    <div>
+      <span class="xref">Component.GetComponentsInParent&lt;T&gt;()</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Component.GetComponents(Type)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Component.GetComponents(Type, List&lt;Component&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">Component.GetComponents&lt;T&gt;(List&lt;T&gt;)</a>
+    </div>
+    <div>
+      <span class="xref">Component.GetComponents&lt;T&gt;()</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">Component.CompareTag(string)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">Component.SendMessageUpwards(string, object, SendMessageOptions)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">Component.SendMessageUpwards(string, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">Component.SendMessageUpwards(string)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">Component.SendMessageUpwards(string, SendMessageOptions)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">Component.SendMessage(string, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">Component.SendMessage(string)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">Component.SendMessage(string, object, SendMessageOptions)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">Component.SendMessage(string, SendMessageOptions)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">Component.BroadcastMessage(string, object, SendMessageOptions)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">Component.BroadcastMessage(string, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">Component.BroadcastMessage(string)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">Component.BroadcastMessage(string, SendMessageOptions)</a>
+    </div>
+    <div>
+      <span class="xref">Component.transform</span>
+    </div>
+    <div>
+      <span class="xref">Component.gameObject</span>
+    </div>
+    <div>
+      <span class="xref">Component.tag</span>
+    </div>
+    <div>
+      <span class="xref">Object.GetInstanceID()</span>
+    </div>
+    <div>
+      <span class="xref">Object.GetHashCode()</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">Object.Equals(object)</a>
+    </div>
+    <div>
+      <span class="xref">Object.Instantiate(Object, Vector3, Quaternion)</span>
+    </div>
+    <div>
+      <span class="xref">Object.Instantiate(Object, Vector3, Quaternion, Transform)</span>
+    </div>
+    <div>
+      <span class="xref">Object.Instantiate(Object)</span>
+    </div>
+    <div>
+      <span class="xref">Object.Instantiate(Object, Transform)</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Object.Instantiate(Object, Transform, bool)</a>
+    </div>
+    <div>
+      <span class="xref">Object.Instantiate&lt;T&gt;(T)</span>
+    </div>
+    <div>
+      <span class="xref">Object.Instantiate&lt;T&gt;(T, Vector3, Quaternion)</span>
+    </div>
+    <div>
+      <span class="xref">Object.Instantiate&lt;T&gt;(T, Vector3, Quaternion, Transform)</span>
+    </div>
+    <div>
+      <span class="xref">Object.Instantiate&lt;T&gt;(T, Transform)</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Object.Instantiate&lt;T&gt;(T, Transform, bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">Object.Destroy(Object, float)</a>
+    </div>
+    <div>
+      <span class="xref">Object.Destroy(Object)</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Object.DestroyImmediate(Object, bool)</a>
+    </div>
+    <div>
+      <span class="xref">Object.DestroyImmediate(Object)</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Object.FindObjectsOfType(Type)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Object.FindObjectsOfType(Type, bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Object.FindObjectsByType(Type, FindObjectsSortMode)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Object.FindObjectsByType(Type, FindObjectsInactive, FindObjectsSortMode)</a>
+    </div>
+    <div>
+      <span class="xref">Object.DontDestroyOnLoad(Object)</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">Object.DestroyObject(Object, float)</a>
+    </div>
+    <div>
+      <span class="xref">Object.DestroyObject(Object)</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Object.FindSceneObjectsOfType(Type)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Object.FindObjectsOfTypeIncludingAssets(Type)</a>
+    </div>
+    <div>
+      <span class="xref">Object.FindObjectsOfType&lt;T&gt;()</span>
+    </div>
+    <div>
+      <span class="xref">Object.FindObjectsByType&lt;T&gt;(FindObjectsSortMode)</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Object.FindObjectsOfType&lt;T&gt;(bool)</a>
+    </div>
+    <div>
+      <span class="xref">Object.FindObjectsByType&lt;T&gt;(FindObjectsInactive, FindObjectsSortMode)</span>
+    </div>
+    <div>
+      <span class="xref">Object.FindObjectOfType&lt;T&gt;()</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Object.FindObjectOfType&lt;T&gt;(bool)</a>
+    </div>
+    <div>
+      <span class="xref">Object.FindFirstObjectByType&lt;T&gt;()</span>
+    </div>
+    <div>
+      <span class="xref">Object.FindAnyObjectByType&lt;T&gt;()</span>
+    </div>
+    <div>
+      <span class="xref">Object.FindFirstObjectByType&lt;T&gt;(FindObjectsInactive)</span>
+    </div>
+    <div>
+      <span class="xref">Object.FindAnyObjectByType&lt;T&gt;(FindObjectsInactive)</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Object.FindObjectsOfTypeAll(Type)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Object.FindObjectOfType(Type)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Object.FindFirstObjectByType(Type)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Object.FindAnyObjectByType(Type)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Object.FindObjectOfType(Type, bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Object.FindFirstObjectByType(Type, FindObjectsInactive)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Object.FindAnyObjectByType(Type, FindObjectsInactive)</a>
+    </div>
+    <div>
+      <span class="xref">Object.ToString()</span>
+    </div>
+    <div>
+      <span class="xref">Object.name</span>
+    </div>
+    <div>
+      <span class="xref">Object.hideFlags</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+  </dd></dl>
+
+
+
+
+
+
+  <h2 class="section" id="fields">Fields
+</h2>
+
+
+
+  <h3 id="Foundry_Networking_FoundryRunnerManager_recorder" data-uid="Foundry.Networking.FoundryRunnerManager.recorder">
+  recorder
+  <a class="header-action link-secondary" title="View source" href="https://github.com/FoundryXR/FusionNetworkProvider/blob/main/package/Scripts/FoundryRunnerManager.cs/#L29"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Recorder recorder</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">Recorder</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Foundry_Networking_FoundryRunnerManager_runner" data-uid="Foundry.Networking.FoundryRunnerManager.runner">
+  runner
+  <a class="header-action link-secondary" title="View source" href="https://github.com/FoundryXR/FusionNetworkProvider/blob/main/package/Scripts/FoundryRunnerManager.cs/#L26"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public NetworkRunner runner</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">NetworkRunner</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Foundry_Networking_FoundryRunnerManager_voiceClient" data-uid="Foundry.Networking.FoundryRunnerManager.voiceClient">
+  voiceClient
+  <a class="header-action link-secondary" title="View source" href="https://github.com/FoundryXR/FusionNetworkProvider/blob/main/package/Scripts/FoundryRunnerManager.cs/#L28"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public FusionVoiceClient voiceClient</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">FusionVoiceClient</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="Foundry_Networking_FoundryRunnerManager_IsClient_" data-uid="Foundry.Networking.FoundryRunnerManager.IsClient*"></a>
+
+  <h3 id="Foundry_Networking_FoundryRunnerManager_IsClient" data-uid="Foundry.Networking.FoundryRunnerManager.IsClient">
+  IsClient
+  <a class="header-action link-secondary" title="View source" href="https://github.com/FoundryXR/FusionNetworkProvider/blob/main/package/Scripts/FoundryRunnerManager.cs/#L30"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsClient { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Foundry_Networking_FoundryRunnerManager_IsServer_" data-uid="Foundry.Networking.FoundryRunnerManager.IsServer*"></a>
+
+  <h3 id="Foundry_Networking_FoundryRunnerManager_IsServer" data-uid="Foundry.Networking.FoundryRunnerManager.IsServer">
+  IsServer
+  <a class="header-action link-secondary" title="View source" href="https://github.com/FoundryXR/FusionNetworkProvider/blob/main/package/Scripts/FoundryRunnerManager.cs/#L31"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsServer { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Foundry_Networking_FoundryRunnerManager_LocalPlayerId_" data-uid="Foundry.Networking.FoundryRunnerManager.LocalPlayerId*"></a>
+
+  <h3 id="Foundry_Networking_FoundryRunnerManager_LocalPlayerId" data-uid="Foundry.Networking.FoundryRunnerManager.LocalPlayerId">
+  LocalPlayerId
+  <a class="header-action link-secondary" title="View source" href="https://github.com/FoundryXR/FusionNetworkProvider/blob/main/package/Scripts/FoundryRunnerManager.cs/#L33"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int LocalPlayerId { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Foundry_Networking_FoundryRunnerManager_MasterClientId_" data-uid="Foundry.Networking.FoundryRunnerManager.MasterClientId*"></a>
+
+  <h3 id="Foundry_Networking_FoundryRunnerManager_MasterClientId" data-uid="Foundry.Networking.FoundryRunnerManager.MasterClientId">
+  MasterClientId
+  <a class="header-action link-secondary" title="View source" href="https://github.com/FoundryXR/FusionNetworkProvider/blob/main/package/Scripts/FoundryRunnerManager.cs/#L35"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int MasterClientId { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="Foundry_Networking_FoundryRunnerManager_AddOrReplaceMappedId_" data-uid="Foundry.Networking.FoundryRunnerManager.AddOrReplaceMappedId*"></a>
+
+  <h3 id="Foundry_Networking_FoundryRunnerManager_AddOrReplaceMappedId_System_UInt32_Foundry_Networking_NetworkId_System_Boolean_" data-uid="Foundry.Networking.FoundryRunnerManager.AddOrReplaceMappedId(System.UInt32,Foundry.Networking.NetworkId,System.Boolean)">
+  AddOrReplaceMappedId(uint, NetworkId, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/FoundryXR/FusionNetworkProvider/blob/main/package/Scripts/FoundryRunnerManager.cs/#L77"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void AddOrReplaceMappedId(uint fusionId, NetworkId graphId, bool recordEvent = true)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>fusionId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint32">uint</a></dt>
+    <dd></dd>
+    <dt><code>graphId</code> <span class="xref">NetworkId</span></dt>
+    <dd></dd>
+    <dt><code>recordEvent</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Foundry_Networking_FoundryRunnerManager_Despawn_" data-uid="Foundry.Networking.FoundryRunnerManager.Despawn*"></a>
+
+  <h3 id="Foundry_Networking_FoundryRunnerManager_Despawn_UnityEngine_GameObject_" data-uid="Foundry.Networking.FoundryRunnerManager.Despawn(UnityEngine.GameObject)">
+  Despawn(GameObject)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/FoundryXR/FusionNetworkProvider/blob/main/package/Scripts/FoundryRunnerManager.cs/#L558"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Despawn(GameObject o)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">GameObject</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Foundry_Networking_FoundryRunnerManager_GetGraphId_" data-uid="Foundry.Networking.FoundryRunnerManager.GetGraphId*"></a>
+
+  <h3 id="Foundry_Networking_FoundryRunnerManager_GetGraphId_System_UInt32_" data-uid="Foundry.Networking.FoundryRunnerManager.GetGraphId(System.UInt32)">
+  GetGraphId(uint)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/FoundryXR/FusionNetworkProvider/blob/main/package/Scripts/FoundryRunnerManager.cs/#L104"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Get the graph id associated with a fusion id, if it exists.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static NetworkId GetGraphId(uint fusionId)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>fusionId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint32">uint</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">NetworkId</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Foundry_Networking_FoundryRunnerManager_GetGraphIdAsync_" data-uid="Foundry.Networking.FoundryRunnerManager.GetGraphIdAsync*"></a>
+
+  <h3 id="Foundry_Networking_FoundryRunnerManager_GetGraphIdAsync_System_UInt32_System_Action_Foundry_Networking_NetworkId__" data-uid="Foundry.Networking.FoundryRunnerManager.GetGraphIdAsync(System.UInt32,System.Action{Foundry.Networking.NetworkId})">
+  GetGraphIdAsync(uint, Action&lt;NetworkId&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/FoundryXR/FusionNetworkProvider/blob/main/package/Scripts/FoundryRunnerManager.cs/#L117"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Wait for the graph id associated with a fusion id to be assigned, then call the callback with the graph id.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void GetGraphIdAsync(uint fusionId, Action&lt;NetworkId&gt; callback)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>fusionId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint32">uint</a></dt>
+    <dd></dd>
+    <dt><code>callback</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-1">Action</a>&lt;<span class="xref">NetworkId</span>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.notimplementedexception">NotImplementedException</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+  <a id="Foundry_Networking_FoundryRunnerManager_OnConnectFailed_" data-uid="Foundry.Networking.FoundryRunnerManager.OnConnectFailed*"></a>
+
+  <h3 id="Foundry_Networking_FoundryRunnerManager_OnConnectFailed_Fusion_NetworkRunner_Fusion_Sockets_NetAddress_Fusion_Sockets_NetConnectFailedReason_" data-uid="Foundry.Networking.FoundryRunnerManager.OnConnectFailed(Fusion.NetworkRunner,Fusion.Sockets.NetAddress,Fusion.Sockets.NetConnectFailedReason)">
+  OnConnectFailed(NetworkRunner, NetAddress, NetConnectFailedReason)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/FoundryXR/FusionNetworkProvider/blob/main/package/Scripts/FoundryRunnerManager.cs/#L503"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Callback when <span class="xref">Fusion.NetworkRunner</span> fails to connect to a server or host.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void OnConnectFailed(NetworkRunner runner, NetAddress remoteAddress, NetConnectFailedReason reason)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>runner</code> <span class="xref">NetworkRunner</span></dt>
+    <dd></dd>
+    <dt><code>remoteAddress</code> <span class="xref">NetAddress</span></dt>
+    <dd></dd>
+    <dt><code>reason</code> <span class="xref">NetConnectFailedReason</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Foundry_Networking_FoundryRunnerManager_OnConnectRequest_" data-uid="Foundry.Networking.FoundryRunnerManager.OnConnectRequest*"></a>
+
+  <h3 id="Foundry_Networking_FoundryRunnerManager_OnConnectRequest_Fusion_NetworkRunner_Fusion_NetworkRunnerCallbackArgs_ConnectRequest_System_Byte___" data-uid="Foundry.Networking.FoundryRunnerManager.OnConnectRequest(Fusion.NetworkRunner,Fusion.NetworkRunnerCallbackArgs.ConnectRequest,System.Byte[])">
+  OnConnectRequest(NetworkRunner, ConnectRequest, byte[])
+  <a class="header-action link-secondary" title="View source" href="https://github.com/FoundryXR/FusionNetworkProvider/blob/main/package/Scripts/FoundryRunnerManager.cs/#L498"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Callback when <span class="xref">Fusion.NetworkRunner</span> receives a Connection Request from a Remote Client</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void OnConnectRequest(NetworkRunner runner, NetworkRunnerCallbackArgs.ConnectRequest request, byte[] token)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>runner</code> <span class="xref">NetworkRunner</span></dt>
+    <dd><p>Local NetworkRunner</p>
+</dd>
+    <dt><code>request</code> <span class="xref">NetworkRunnerCallbackArgs</span>.<span class="xref">ConnectRequest</span></dt>
+    <dd><p>Request information</p>
+</dd>
+    <dt><code>token</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>[]</dt>
+    <dd><p>Request Token</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Foundry_Networking_FoundryRunnerManager_OnConnectedToServer_" data-uid="Foundry.Networking.FoundryRunnerManager.OnConnectedToServer*"></a>
+
+  <h3 id="Foundry_Networking_FoundryRunnerManager_OnConnectedToServer_Fusion_NetworkRunner_" data-uid="Foundry.Networking.FoundryRunnerManager.OnConnectedToServer(Fusion.NetworkRunner)">
+  OnConnectedToServer(NetworkRunner)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/FoundryXR/FusionNetworkProvider/blob/main/package/Scripts/FoundryRunnerManager.cs/#L488"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Callback when <span class="xref">Fusion.NetworkRunner</span> successfully connects to a server or host.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void OnConnectedToServer(NetworkRunner runner)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>runner</code> <span class="xref">NetworkRunner</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Foundry_Networking_FoundryRunnerManager_OnCustomAuthenticationResponse_" data-uid="Foundry.Networking.FoundryRunnerManager.OnCustomAuthenticationResponse*"></a>
+
+  <h3 id="Foundry_Networking_FoundryRunnerManager_OnCustomAuthenticationResponse_Fusion_NetworkRunner_System_Collections_Generic_Dictionary_System_String_System_Object__" data-uid="Foundry.Networking.FoundryRunnerManager.OnCustomAuthenticationResponse(Fusion.NetworkRunner,System.Collections.Generic.Dictionary{System.String,System.Object})">
+  OnCustomAuthenticationResponse(NetworkRunner, Dictionary&lt;string, object&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/FoundryXR/FusionNetworkProvider/blob/main/package/Scripts/FoundryRunnerManager.cs/#L533"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Callback is invoked when the Authentication procedure returns a response from the Authentication Server</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void OnCustomAuthenticationResponse(NetworkRunner runner, Dictionary&lt;string, object&gt; data)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>runner</code> <span class="xref">NetworkRunner</span></dt>
+    <dd><p>The runner this object exists on</p>
+</dd>
+    <dt><code>data</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>&gt;</dt>
+    <dd><p>Custom Authentication Reply Values</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Foundry_Networking_FoundryRunnerManager_OnDisconnectedFromServer_" data-uid="Foundry.Networking.FoundryRunnerManager.OnDisconnectedFromServer*"></a>
+
+  <h3 id="Foundry_Networking_FoundryRunnerManager_OnDisconnectedFromServer_Fusion_NetworkRunner_" data-uid="Foundry.Networking.FoundryRunnerManager.OnDisconnectedFromServer(Fusion.NetworkRunner)">
+  OnDisconnectedFromServer(NetworkRunner)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/FoundryXR/FusionNetworkProvider/blob/main/package/Scripts/FoundryRunnerManager.cs/#L493"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Callback when <span class="xref">Fusion.NetworkRunner</span> disconnects from a server or host.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void OnDisconnectedFromServer(NetworkRunner runner)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>runner</code> <span class="xref">NetworkRunner</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Foundry_Networking_FoundryRunnerManager_OnHostMigration_" data-uid="Foundry.Networking.FoundryRunnerManager.OnHostMigration*"></a>
+
+  <h3 id="Foundry_Networking_FoundryRunnerManager_OnHostMigration_Fusion_NetworkRunner_Fusion_HostMigrationToken_" data-uid="Foundry.Networking.FoundryRunnerManager.OnHostMigration(Fusion.NetworkRunner,Fusion.HostMigrationToken)">
+  OnHostMigration(NetworkRunner, HostMigrationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/FoundryXR/FusionNetworkProvider/blob/main/package/Scripts/FoundryRunnerManager.cs/#L538"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Callback is invoked when the Host Migration process has started</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void OnHostMigration(NetworkRunner runner, HostMigrationToken hostMigrationToken)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>runner</code> <span class="xref">NetworkRunner</span></dt>
+    <dd><p>The runner this object exists on</p>
+</dd>
+    <dt><code>hostMigrationToken</code> <span class="xref">HostMigrationToken</span></dt>
+    <dd><p>Migration Token that stores all necessary information to restart the Fusion Runner</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Foundry_Networking_FoundryRunnerManager_OnInput_" data-uid="Foundry.Networking.FoundryRunnerManager.OnInput*"></a>
+
+  <h3 id="Foundry_Networking_FoundryRunnerManager_OnInput_Fusion_NetworkRunner_Fusion_NetworkInput_" data-uid="Foundry.Networking.FoundryRunnerManager.OnInput(Fusion.NetworkRunner,Fusion.NetworkInput)">
+  OnInput(NetworkRunner, NetworkInput)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/FoundryXR/FusionNetworkProvider/blob/main/package/Scripts/FoundryRunnerManager.cs/#L407"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Callback from <span class="xref">Fusion.NetworkRunner</span> that polls for user inputs.
+The <span class="xref">Fusion.NetworkInput</span> that is supplied expects:</p>
+<pre><code class="lang-csharp">input.Set(new CustomINetworkInput() { /* your values */ });</code></pre>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void OnInput(NetworkRunner runner, NetworkInput input)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>runner</code> <span class="xref">NetworkRunner</span></dt>
+    <dd></dd>
+    <dt><code>input</code> <span class="xref">NetworkInput</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Foundry_Networking_FoundryRunnerManager_OnInputMissing_" data-uid="Foundry.Networking.FoundryRunnerManager.OnInputMissing*"></a>
+
+  <h3 id="Foundry_Networking_FoundryRunnerManager_OnInputMissing_Fusion_NetworkRunner_Fusion_PlayerRef_Fusion_NetworkInput_" data-uid="Foundry.Networking.FoundryRunnerManager.OnInputMissing(Fusion.NetworkRunner,Fusion.PlayerRef,Fusion.NetworkInput)">
+  OnInputMissing(NetworkRunner, PlayerRef, NetworkInput)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/FoundryXR/FusionNetworkProvider/blob/main/package/Scripts/FoundryRunnerManager.cs/#L412"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void OnInputMissing(NetworkRunner runner, PlayerRef player, NetworkInput input)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>runner</code> <span class="xref">NetworkRunner</span></dt>
+    <dd></dd>
+    <dt><code>player</code> <span class="xref">PlayerRef</span></dt>
+    <dd></dd>
+    <dt><code>input</code> <span class="xref">NetworkInput</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Foundry_Networking_FoundryRunnerManager_OnPlayerJoined_" data-uid="Foundry.Networking.FoundryRunnerManager.OnPlayerJoined*"></a>
+
+  <h3 id="Foundry_Networking_FoundryRunnerManager_OnPlayerJoined_Fusion_NetworkRunner_Fusion_PlayerRef_" data-uid="Foundry.Networking.FoundryRunnerManager.OnPlayerJoined(Fusion.NetworkRunner,Fusion.PlayerRef)">
+  OnPlayerJoined(NetworkRunner, PlayerRef)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/FoundryXR/FusionNetworkProvider/blob/main/package/Scripts/FoundryRunnerManager.cs/#L338"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Callback from a <span class="xref">Fusion.NetworkRunner</span> when a new player has joined.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void OnPlayerJoined(NetworkRunner runner, PlayerRef player)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>runner</code> <span class="xref">NetworkRunner</span></dt>
+    <dd></dd>
+    <dt><code>player</code> <span class="xref">PlayerRef</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Foundry_Networking_FoundryRunnerManager_OnPlayerLeft_" data-uid="Foundry.Networking.FoundryRunnerManager.OnPlayerLeft*"></a>
+
+  <h3 id="Foundry_Networking_FoundryRunnerManager_OnPlayerLeft_Fusion_NetworkRunner_Fusion_PlayerRef_" data-uid="Foundry.Networking.FoundryRunnerManager.OnPlayerLeft(Fusion.NetworkRunner,Fusion.PlayerRef)">
+  OnPlayerLeft(NetworkRunner, PlayerRef)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/FoundryXR/FusionNetworkProvider/blob/main/package/Scripts/FoundryRunnerManager.cs/#L374"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Callback from a <span class="xref">Fusion.NetworkRunner</span> when a player has disconnected.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void OnPlayerLeft(NetworkRunner runner, PlayerRef player)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>runner</code> <span class="xref">NetworkRunner</span></dt>
+    <dd></dd>
+    <dt><code>player</code> <span class="xref">PlayerRef</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Foundry_Networking_FoundryRunnerManager_OnReliableDataReceived_" data-uid="Foundry.Networking.FoundryRunnerManager.OnReliableDataReceived*"></a>
+
+  <h3 id="Foundry_Networking_FoundryRunnerManager_OnReliableDataReceived_Fusion_NetworkRunner_Fusion_PlayerRef_System_ArraySegment_System_Byte__" data-uid="Foundry.Networking.FoundryRunnerManager.OnReliableDataReceived(Fusion.NetworkRunner,Fusion.PlayerRef,System.ArraySegment{System.Byte})">
+  OnReliableDataReceived(NetworkRunner, PlayerRef, ArraySegment&lt;byte&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/FoundryXR/FusionNetworkProvider/blob/main/package/Scripts/FoundryRunnerManager.cs/#L543"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void OnReliableDataReceived(NetworkRunner runner, PlayerRef player, ArraySegment&lt;byte&gt; data)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>runner</code> <span class="xref">NetworkRunner</span></dt>
+    <dd></dd>
+    <dt><code>player</code> <span class="xref">PlayerRef</span></dt>
+    <dd></dd>
+    <dt><code>data</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.arraysegment-1">ArraySegment</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Foundry_Networking_FoundryRunnerManager_OnSceneLoadDone_" data-uid="Foundry.Networking.FoundryRunnerManager.OnSceneLoadDone*"></a>
+
+  <h3 id="Foundry_Networking_FoundryRunnerManager_OnSceneLoadDone_Fusion_NetworkRunner_" data-uid="Foundry.Networking.FoundryRunnerManager.OnSceneLoadDone(Fusion.NetworkRunner)">
+  OnSceneLoadDone(NetworkRunner)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/FoundryXR/FusionNetworkProvider/blob/main/package/Scripts/FoundryRunnerManager.cs/#L548"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void OnSceneLoadDone(NetworkRunner runner)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>runner</code> <span class="xref">NetworkRunner</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Foundry_Networking_FoundryRunnerManager_OnSceneLoadStart_" data-uid="Foundry.Networking.FoundryRunnerManager.OnSceneLoadStart*"></a>
+
+  <h3 id="Foundry_Networking_FoundryRunnerManager_OnSceneLoadStart_Fusion_NetworkRunner_" data-uid="Foundry.Networking.FoundryRunnerManager.OnSceneLoadStart(Fusion.NetworkRunner)">
+  OnSceneLoadStart(NetworkRunner)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/FoundryXR/FusionNetworkProvider/blob/main/package/Scripts/FoundryRunnerManager.cs/#L553"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void OnSceneLoadStart(NetworkRunner runner)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>runner</code> <span class="xref">NetworkRunner</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Foundry_Networking_FoundryRunnerManager_OnSessionListUpdated_" data-uid="Foundry.Networking.FoundryRunnerManager.OnSessionListUpdated*"></a>
+
+  <h3 id="Foundry_Networking_FoundryRunnerManager_OnSessionListUpdated_Fusion_NetworkRunner_System_Collections_Generic_List_Fusion_SessionInfo__" data-uid="Foundry.Networking.FoundryRunnerManager.OnSessionListUpdated(Fusion.NetworkRunner,System.Collections.Generic.List{Fusion.SessionInfo})">
+  OnSessionListUpdated(NetworkRunner, List&lt;SessionInfo&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/FoundryXR/FusionNetworkProvider/blob/main/package/Scripts/FoundryRunnerManager.cs/#L528"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>This callback is invoked when a new List of Sessions is received from Photon Cloud</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void OnSessionListUpdated(NetworkRunner runner, List&lt;SessionInfo&gt; sessionList)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>runner</code> <span class="xref">NetworkRunner</span></dt>
+    <dd><p>The runner this object exists on</p>
+</dd>
+    <dt><code>sessionList</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<span class="xref">SessionInfo</span>&gt;</dt>
+    <dd><p>Updated list of Session</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Foundry_Networking_FoundryRunnerManager_OnShutdown_" data-uid="Foundry.Networking.FoundryRunnerManager.OnShutdown*"></a>
+
+  <h3 id="Foundry_Networking_FoundryRunnerManager_OnShutdown_Fusion_NetworkRunner_Fusion_ShutdownReason_" data-uid="Foundry.Networking.FoundryRunnerManager.OnShutdown(Fusion.NetworkRunner,Fusion.ShutdownReason)">
+  OnShutdown(NetworkRunner, ShutdownReason)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/FoundryXR/FusionNetworkProvider/blob/main/package/Scripts/FoundryRunnerManager.cs/#L417"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Called when the runner is shutdown</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void OnShutdown(NetworkRunner runner, ShutdownReason shutdownReason)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>runner</code> <span class="xref">NetworkRunner</span></dt>
+    <dd><p>The runner being shutdown</p>
+</dd>
+    <dt><code>shutdownReason</code> <span class="xref">ShutdownReason</span></dt>
+    <dd><p>Describes the reason Fusion was Shutdown</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Foundry_Networking_FoundryRunnerManager_OnUserSimulationMessage_" data-uid="Foundry.Networking.FoundryRunnerManager.OnUserSimulationMessage*"></a>
+
+  <h3 id="Foundry_Networking_FoundryRunnerManager_OnUserSimulationMessage_Fusion_NetworkRunner_Fusion_SimulationMessagePtr_" data-uid="Foundry.Networking.FoundryRunnerManager.OnUserSimulationMessage(Fusion.NetworkRunner,Fusion.SimulationMessagePtr)">
+  OnUserSimulationMessage(NetworkRunner, SimulationMessagePtr)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/FoundryXR/FusionNetworkProvider/blob/main/package/Scripts/FoundryRunnerManager.cs/#L523"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>This callback is invoked when a manually dispatched simulation message is received from a remote peer</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void OnUserSimulationMessage(NetworkRunner runner, SimulationMessagePtr message)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>runner</code> <span class="xref">NetworkRunner</span></dt>
+    <dd><p>The runner this message is for</p>
+</dd>
+    <dt><code>message</code> <span class="xref">SimulationMessagePtr</span></dt>
+    <dd><p>The message pointer</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Foundry_Networking_FoundryRunnerManager_RemoveMappedId_" data-uid="Foundry.Networking.FoundryRunnerManager.RemoveMappedId*"></a>
+
+  <h3 id="Foundry_Networking_FoundryRunnerManager_RemoveMappedId_System_UInt32_Foundry_Networking_NetworkId_" data-uid="Foundry.Networking.FoundryRunnerManager.RemoveMappedId(System.UInt32,Foundry.Networking.NetworkId)">
+  RemoveMappedId(uint, NetworkId)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/FoundryXR/FusionNetworkProvider/blob/main/package/Scripts/FoundryRunnerManager.cs/#L89"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void RemoveMappedId(uint fusionId, NetworkId graphId)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>fusionId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint32">uint</a></dt>
+    <dd></dd>
+    <dt><code>graphId</code> <span class="xref">NetworkId</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Foundry_Networking_FoundryRunnerManager_StartSession_" data-uid="Foundry.Networking.FoundryRunnerManager.StartSession*"></a>
+
+  <h3 id="Foundry_Networking_FoundryRunnerManager_StartSession_Foundry_Networking_SessionInfo_" data-uid="Foundry.Networking.FoundryRunnerManager.StartSession(Foundry.Networking.SessionInfo)">
+  StartSession(SessionInfo)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/FoundryXR/FusionNetworkProvider/blob/main/package/Scripts/FoundryRunnerManager.cs/#L298"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task StartSession(SessionInfo info)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>info</code> <span class="xref">SessionInfo</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+
+    <footer class="border-top">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          Fusion Networking Provider for Foundry
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

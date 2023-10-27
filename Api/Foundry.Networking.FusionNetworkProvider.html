@@ -1,0 +1,973 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class FusionNetworkProvider
+ | Fusion for Foundry </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class FusionNetworkProvider
+ | Fusion for Foundry ">
+      
+      <link rel="icon" href="../Media/foundry_icon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/FoundryXR/FusionNetworkProvider/new/main/apiSpec/new?filename=Foundry_Networking_FusionNetworkProvider.md&amp;value=---%0Auid%3A%20Foundry.Networking.FusionNetworkProvider%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+  </head>
+
+  <script type="module" src="./../public/docfx.min.js"></script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../Media/foundry_icon.png" alt="Fusion Networking For Foundry">
+            Fusion Networking For Foundry
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="Foundry.Networking.FusionNetworkProvider">
+
+
+
+  <h1 id="Foundry_Networking_FusionNetworkProvider" data-uid="Foundry.Networking.FusionNetworkProvider" class="text-break">
+    Class FusionNetworkProvider
+  <a class="header-action link-secondary" title="View source" href="https://github.com/FoundryXR/FusionNetworkProvider/blob/main/package/Scripts/Services/Implementation/FusionNetworkProvider.cs/#L18"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="Foundry.html">Foundry</a>.<a class="xref" href="Foundry.Networking.html">Networking</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>Foundry.Networking.Fusion.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>Implementation of INetworkProvider for Fusion.</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class FusionNetworkProvider : INetworkProvider</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">FusionNetworkProvider</span></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><span class="xref">INetworkProvider</span></div>
+    </dd>
+  </dl>
+
+
+  <dl class="typelist derived">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </dd></dl>
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="Foundry_Networking_FusionNetworkProvider_Graph_" data-uid="Foundry.Networking.FusionNetworkProvider.Graph*"></a>
+
+  <h3 id="Foundry_Networking_FusionNetworkProvider_Graph" data-uid="Foundry.Networking.FusionNetworkProvider.Graph">
+  Graph
+  <a class="header-action link-secondary" title="View source" href="https://github.com/FoundryXR/FusionNetworkProvider/blob/main/package/Scripts/Services/Implementation/FusionNetworkProvider.cs/#L34"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Obtain the current network graph, may be null if no session is active</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public NetworkGraph Graph { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">NetworkGraph</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Foundry_Networking_FusionNetworkProvider_IsClient_" data-uid="Foundry.Networking.FusionNetworkProvider.IsClient*"></a>
+
+  <h3 id="Foundry_Networking_FusionNetworkProvider_IsClient" data-uid="Foundry.Networking.FusionNetworkProvider.IsClient">
+  IsClient
+  <a class="header-action link-secondary" title="View source" href="https://github.com/FoundryXR/FusionNetworkProvider/blob/main/package/Scripts/Services/Implementation/FusionNetworkProvider.cs/#L29"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns true if this instance is running as a client</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsClient { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Foundry_Networking_FusionNetworkProvider_IsGraphAuthority_" data-uid="Foundry.Networking.FusionNetworkProvider.IsGraphAuthority*"></a>
+
+  <h3 id="Foundry_Networking_FusionNetworkProvider_IsGraphAuthority" data-uid="Foundry.Networking.FusionNetworkProvider.IsGraphAuthority">
+  IsGraphAuthority
+  <a class="header-action link-secondary" title="View source" href="https://github.com/FoundryXR/FusionNetworkProvider/blob/main/package/Scripts/Services/Implementation/FusionNetworkProvider.cs/#L31"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns true if this instance is the authority for the scene graph</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsGraphAuthority { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Foundry_Networking_FusionNetworkProvider_IsServer_" data-uid="Foundry.Networking.FusionNetworkProvider.IsServer*"></a>
+
+  <h3 id="Foundry_Networking_FusionNetworkProvider_IsServer" data-uid="Foundry.Networking.FusionNetworkProvider.IsServer">
+  IsServer
+  <a class="header-action link-secondary" title="View source" href="https://github.com/FoundryXR/FusionNetworkProvider/blob/main/package/Scripts/Services/Implementation/FusionNetworkProvider.cs/#L28"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns true if this instance is hosting a server</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsServer { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Foundry_Networking_FusionNetworkProvider_IsSessionConnected_" data-uid="Foundry.Networking.FusionNetworkProvider.IsSessionConnected*"></a>
+
+  <h3 id="Foundry_Networking_FusionNetworkProvider_IsSessionConnected" data-uid="Foundry.Networking.FusionNetworkProvider.IsSessionConnected">
+  IsSessionConnected
+  <a class="header-action link-secondary" title="View source" href="https://github.com/FoundryXR/FusionNetworkProvider/blob/main/package/Scripts/Services/Implementation/FusionNetworkProvider.cs/#L27"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsSessionConnected { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Foundry_Networking_FusionNetworkProvider_LocalPlayerId_" data-uid="Foundry.Networking.FusionNetworkProvider.LocalPlayerId*"></a>
+
+  <h3 id="Foundry_Networking_FusionNetworkProvider_LocalPlayerId" data-uid="Foundry.Networking.FusionNetworkProvider.LocalPlayerId">
+  LocalPlayerId
+  <a class="header-action link-secondary" title="View source" href="https://github.com/FoundryXR/FusionNetworkProvider/blob/main/package/Scripts/Services/Implementation/FusionNetworkProvider.cs/#L33"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns the ID of the local player</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int LocalPlayerId { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Foundry_Networking_FusionNetworkProvider_sessionType_" data-uid="Foundry.Networking.FusionNetworkProvider.sessionType*"></a>
+
+  <h3 id="Foundry_Networking_FusionNetworkProvider_sessionType" data-uid="Foundry.Networking.FusionNetworkProvider.sessionType">
+  sessionType
+  <a class="header-action link-secondary" title="View source" href="https://github.com/FoundryXR/FusionNetworkProvider/blob/main/package/Scripts/Services/Implementation/FusionNetworkProvider.cs/#L272"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public SessionType sessionType { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">SessionType</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="Foundry_Networking_FusionNetworkProvider_BindNetworkObject_" data-uid="Foundry.Networking.FusionNetworkProvider.BindNetworkObject*"></a>
+
+  <h3 id="Foundry_Networking_FusionNetworkProvider_BindNetworkObject_UnityEngine_GameObject_System_Boolean_" data-uid="Foundry.Networking.FusionNetworkProvider.BindNetworkObject(UnityEngine.GameObject,System.Boolean)">
+  BindNetworkObject(GameObject, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/FoundryXR/FusionNetworkProvider/blob/main/package/Scripts/Services/Implementation/FusionNetworkProvider.cs/#L90"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Link foundry network components to native network components and complete any other necessary setup.
+All child objects of the provided game object will be bound as well.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void BindNetworkObject(GameObject gameObject, bool isPrefab)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>gameObject</code> <span class="xref">GameObject</span></dt>
+    <dd><p>Object to be bound</p>
+</dd>
+    <dt><code>isPrefab</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>Whether the object is a prefab or not</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Foundry_Networking_FusionNetworkProvider_Destroy_" data-uid="Foundry.Networking.FusionNetworkProvider.Destroy*"></a>
+
+  <h3 id="Foundry_Networking_FusionNetworkProvider_Destroy_UnityEngine_GameObject_" data-uid="Foundry.Networking.FusionNetworkProvider.Destroy(UnityEngine.GameObject)">
+  Destroy(GameObject)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/FoundryXR/FusionNetworkProvider/blob/main/package/Scripts/Services/Implementation/FusionNetworkProvider.cs/#L267"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Destroy a networked object over the network.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Destroy(GameObject gameObject)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>gameObject</code> <span class="xref">GameObject</span></dt>
+    <dd><p>Object to be destroyed</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Foundry_Networking_FusionNetworkProvider_Instantiate_" data-uid="Foundry.Networking.FusionNetworkProvider.Instantiate*"></a>
+
+  <h3 id="Foundry_Networking_FusionNetworkProvider_Instantiate_UnityEngine_GameObject_UnityEngine_Vector3_UnityEngine_Quaternion_" data-uid="Foundry.Networking.FusionNetworkProvider.Instantiate(UnityEngine.GameObject,UnityEngine.Vector3,UnityEngine.Quaternion)">
+  Instantiate(GameObject, Vector3, Quaternion)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/FoundryXR/FusionNetworkProvider/blob/main/package/Scripts/Services/Implementation/FusionNetworkProvider.cs/#L260"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Spawn a networked object instance over the network.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public GameObject Instantiate(GameObject prefab, Vector3 position, Quaternion rotation)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>prefab</code> <span class="xref">GameObject</span></dt>
+    <dd><p>Prefab to be spawned. Must be registered with this interface or the native provider.</p>
+</dd>
+    <dt><code>position</code> <span class="xref">Vector3</span></dt>
+    <dd><p>Position to spawn at</p>
+</dd>
+    <dt><code>rotation</code> <span class="xref">Quaternion</span></dt>
+    <dd><p>Rotation to spawn with</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">GameObject</span></dt>
+    <dd><p>Returns the instantiated game object</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Foundry_Networking_FusionNetworkProvider_RegisterPrefab_" data-uid="Foundry.Networking.FusionNetworkProvider.RegisterPrefab*"></a>
+
+  <h3 id="Foundry_Networking_FusionNetworkProvider_RegisterPrefab_UnityEngine_GameObject_" data-uid="Foundry.Networking.FusionNetworkProvider.RegisterPrefab(UnityEngine.GameObject)">
+  RegisterPrefab(GameObject)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/FoundryXR/FusionNetworkProvider/blob/main/package/Scripts/Services/Implementation/FusionNetworkProvider.cs/#L228"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Register a prefab to be used for later Instantiate calls. Prefabs must have had BindNetworkObject called on
+them beforehand.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void RegisterPrefab(GameObject prefab)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>prefab</code> <span class="xref">GameObject</span></dt>
+    <dd><p>Prefab to be registered</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Foundry_Networking_FusionNetworkProvider_RegisterSceneObjects_" data-uid="Foundry.Networking.FusionNetworkProvider.RegisterSceneObjects*"></a>
+
+  <h3 id="Foundry_Networking_FusionNetworkProvider_RegisterSceneObjects_System_Collections_Generic_IList_UnityEngine_GameObject__" data-uid="Foundry.Networking.FusionNetworkProvider.RegisterSceneObjects(System.Collections.Generic.IList{UnityEngine.GameObject})">
+  RegisterSceneObjects(IList&lt;GameObject&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/FoundryXR/FusionNetworkProvider/blob/main/package/Scripts/Services/Implementation/FusionNetworkProvider.cs/#L255"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Register scene local network object instances. These objects will be bound over the network.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void RegisterSceneObjects(IList&lt;GameObject&gt; networkObjects)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>networkObjects</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ilist-1">IList</a>&lt;<span class="xref">GameObject</span>&gt;</dt>
+    <dd><p>List of objects to be registered, BindNetworkObject is expected to have already been called.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Foundry_Networking_FusionNetworkProvider_SendPlayerJoined_" data-uid="Foundry.Networking.FusionNetworkProvider.SendPlayerJoined*"></a>
+
+  <h3 id="Foundry_Networking_FusionNetworkProvider_SendPlayerJoined_System_Int32_" data-uid="Foundry.Networking.FusionNetworkProvider.SendPlayerJoined(System.Int32)">
+  SendPlayerJoined(int)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/FoundryXR/FusionNetworkProvider/blob/main/package/Scripts/Services/Implementation/FusionNetworkProvider.cs/#L305"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SendPlayerJoined(int playerId)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>playerId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Foundry_Networking_FusionNetworkProvider_SendPlayerLeft_" data-uid="Foundry.Networking.FusionNetworkProvider.SendPlayerLeft*"></a>
+
+  <h3 id="Foundry_Networking_FusionNetworkProvider_SendPlayerLeft_System_Int32_" data-uid="Foundry.Networking.FusionNetworkProvider.SendPlayerLeft(System.Int32)">
+  SendPlayerLeft(int)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/FoundryXR/FusionNetworkProvider/blob/main/package/Scripts/Services/Implementation/FusionNetworkProvider.cs/#L311"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SendPlayerLeft(int playerId)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>playerId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Foundry_Networking_FusionNetworkProvider_SendSessionConnected_" data-uid="Foundry.Networking.FusionNetworkProvider.SendSessionConnected*"></a>
+
+  <h3 id="Foundry_Networking_FusionNetworkProvider_SendSessionConnected" data-uid="Foundry.Networking.FusionNetworkProvider.SendSessionConnected">
+  SendSessionConnected()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/FoundryXR/FusionNetworkProvider/blob/main/package/Scripts/Services/Implementation/FusionNetworkProvider.cs/#L284"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SendSessionConnected()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Foundry_Networking_FusionNetworkProvider_SendSessionDisconnected_" data-uid="Foundry.Networking.FusionNetworkProvider.SendSessionDisconnected*"></a>
+
+  <h3 id="Foundry_Networking_FusionNetworkProvider_SendSessionDisconnected_System_String_" data-uid="Foundry.Networking.FusionNetworkProvider.SendSessionDisconnected(System.String)">
+  SendSessionDisconnected(string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/FoundryXR/FusionNetworkProvider/blob/main/package/Scripts/Services/Implementation/FusionNetworkProvider.cs/#L294"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SendSessionDisconnected(string reason)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>reason</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Foundry_Networking_FusionNetworkProvider_SendStartSessionFailed_" data-uid="Foundry.Networking.FusionNetworkProvider.SendStartSessionFailed*"></a>
+
+  <h3 id="Foundry_Networking_FusionNetworkProvider_SendStartSessionFailed_System_String_" data-uid="Foundry.Networking.FusionNetworkProvider.SendStartSessionFailed(System.String)">
+  SendStartSessionFailed(string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/FoundryXR/FusionNetworkProvider/blob/main/package/Scripts/Services/Implementation/FusionNetworkProvider.cs/#L300"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SendStartSessionFailed(string reason)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>reason</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Foundry_Networking_FusionNetworkProvider_StartSessionAsync_" data-uid="Foundry.Networking.FusionNetworkProvider.StartSessionAsync*"></a>
+
+  <h3 id="Foundry_Networking_FusionNetworkProvider_StartSessionAsync_Foundry_Networking_SessionInfo_" data-uid="Foundry.Networking.FusionNetworkProvider.StartSessionAsync(Foundry.Networking.SessionInfo)">
+  StartSessionAsync(SessionInfo)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/FoundryXR/FusionNetworkProvider/blob/main/package/Scripts/Services/Implementation/FusionNetworkProvider.cs/#L36"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Starts a network session asynchronously</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task StartSessionAsync(SessionInfo info)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>info</code> <span class="xref">SessionInfo</span></dt>
+    <dd><p>Information about the session to start.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="Foundry_Networking_FusionNetworkProvider_StartSessionAsync_Foundry_Networking_SessionInfo__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>This method should create whatever context a networking system requires to create and maintain a session.
+This session should not be tied to the lifetime of a scene, so any game objects created must be marked as
+do no destroy on load.</p>
+</div>
+
+
+
+
+  <a id="Foundry_Networking_FusionNetworkProvider_StopSessionAsync_" data-uid="Foundry.Networking.FusionNetworkProvider.StopSessionAsync*"></a>
+
+  <h3 id="Foundry_Networking_FusionNetworkProvider_StopSessionAsync" data-uid="Foundry.Networking.FusionNetworkProvider.StopSessionAsync">
+  StopSessionAsync()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/FoundryXR/FusionNetworkProvider/blob/main/package/Scripts/Services/Implementation/FusionNetworkProvider.cs/#L57"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Stops the current network session asynchronously</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task StopSessionAsync()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></dt>
+    <dd><p>Returns a task handle</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="events">Events
+</h2>
+
+
+
+  <h3 id="Foundry_Networking_FusionNetworkProvider_PlayerJoined" data-uid="Foundry.Networking.FusionNetworkProvider.PlayerJoined">
+  PlayerJoined
+  <a class="header-action link-secondary" title="View source" href="https://github.com/FoundryXR/FusionNetworkProvider/blob/main/package/Scripts/Services/Implementation/FusionNetworkProvider.cs/#L281"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Raised when a player has joined the session</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event NetworkPlayerEventHandler PlayerJoined</code></pre>
+  </div>
+
+
+
+
+
+
+  <h4 class="section">Event Type</h4>
+  <dl class="parameters">
+    <dt><span class="xref">NetworkPlayerEventHandler</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h3 id="Foundry_Networking_FusionNetworkProvider_PlayerLeft" data-uid="Foundry.Networking.FusionNetworkProvider.PlayerLeft">
+  PlayerLeft
+  <a class="header-action link-secondary" title="View source" href="https://github.com/FoundryXR/FusionNetworkProvider/blob/main/package/Scripts/Services/Implementation/FusionNetworkProvider.cs/#L282"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Raised when a player has left the session</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event NetworkPlayerEventHandler PlayerLeft</code></pre>
+  </div>
+
+
+
+
+
+
+  <h4 class="section">Event Type</h4>
+  <dl class="parameters">
+    <dt><span class="xref">NetworkPlayerEventHandler</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h3 id="Foundry_Networking_FusionNetworkProvider_SessionConnected" data-uid="Foundry.Networking.FusionNetworkProvider.SessionConnected">
+  SessionConnected
+  <a class="header-action link-secondary" title="View source" href="https://github.com/FoundryXR/FusionNetworkProvider/blob/main/package/Scripts/Services/Implementation/FusionNetworkProvider.cs/#L278"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Raised when a session has connected</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event NetworkEventHandler SessionConnected</code></pre>
+  </div>
+
+
+
+
+
+
+  <h4 class="section">Event Type</h4>
+  <dl class="parameters">
+    <dt><span class="xref">NetworkEventHandler</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h3 id="Foundry_Networking_FusionNetworkProvider_SessionDisconnected" data-uid="Foundry.Networking.FusionNetworkProvider.SessionDisconnected">
+  SessionDisconnected
+  <a class="header-action link-secondary" title="View source" href="https://github.com/FoundryXR/FusionNetworkProvider/blob/main/package/Scripts/Services/Implementation/FusionNetworkProvider.cs/#L280"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Raised when a session has disconnected.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event NetworkErrorEventHandler SessionDisconnected</code></pre>
+  </div>
+
+
+
+
+
+
+  <h4 class="section">Event Type</h4>
+  <dl class="parameters">
+    <dt><span class="xref">NetworkErrorEventHandler</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h3 id="Foundry_Networking_FusionNetworkProvider_StartSessionFailed" data-uid="Foundry.Networking.FusionNetworkProvider.StartSessionFailed">
+  StartSessionFailed
+  <a class="header-action link-secondary" title="View source" href="https://github.com/FoundryXR/FusionNetworkProvider/blob/main/package/Scripts/Services/Implementation/FusionNetworkProvider.cs/#L279"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Raised when a session has failed to start</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event NetworkErrorEventHandler StartSessionFailed</code></pre>
+  </div>
+
+
+
+
+
+
+  <h4 class="section">Event Type</h4>
+  <dl class="parameters">
+    <dt><span class="xref">NetworkErrorEventHandler</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+</article>
+
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+
+    <footer class="border-top">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          Fusion Networking Provider for Foundry
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,237 @@
+{
+  "source_base_path": "/home/runner/work/FusionNetworkProvider/FusionNetworkProvider/package/Documentation",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "Api/Foundry.Core.Setup.FusionDependencyInstaller.yml",
+      "output": {
+        ".html": {
+          "relative_path": "Api/Foundry.Core.Setup.FusionDependencyInstaller.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "Api/Foundry.Core.Setup.yml",
+      "output": {
+        ".html": {
+          "relative_path": "Api/Foundry.Core.Setup.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "Api/Foundry.Fusion.Setup.FusionSuggestedConfigurationChecker.yml",
+      "output": {
+        ".html": {
+          "relative_path": "Api/Foundry.Fusion.Setup.FusionSuggestedConfigurationChecker.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "Api/Foundry.Fusion.Setup.yml",
+      "output": {
+        ".html": {
+          "relative_path": "Api/Foundry.Fusion.Setup.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "Api/Foundry.Networking.FoundryRunnerManager.yml",
+      "output": {
+        ".html": {
+          "relative_path": "Api/Foundry.Networking.FoundryRunnerManager.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "Api/Foundry.Networking.Fusion.Editor.MappedNetworkPropertyDrawers.yml",
+      "output": {
+        ".html": {
+          "relative_path": "Api/Foundry.Networking.Fusion.Editor.MappedNetworkPropertyDrawers.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "Api/Foundry.Networking.Fusion.Editor.PropDrawExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "Api/Foundry.Networking.Fusion.Editor.PropDrawExtensions.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "Api/Foundry.Networking.Fusion.Editor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "Api/Foundry.Networking.Fusion.Editor.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "Api/Foundry.Networking.FusionModuleConfig.yml",
+      "output": {
+        ".html": {
+          "relative_path": "Api/Foundry.Networking.FusionModuleConfig.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "Api/Foundry.Networking.FusionModuleDefinition.yml",
+      "output": {
+        ".html": {
+          "relative_path": "Api/Foundry.Networking.FusionModuleDefinition.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "Api/Foundry.Networking.FusionNetTransformProps.yml",
+      "output": {
+        ".html": {
+          "relative_path": "Api/Foundry.Networking.FusionNetTransformProps.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "Api/Foundry.Networking.FusionNetworkProvider.yml",
+      "output": {
+        ".html": {
+          "relative_path": "Api/Foundry.Networking.FusionNetworkProvider.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "Api/Foundry.Networking.FusionNetworkTransformAPI.yml",
+      "output": {
+        ".html": {
+          "relative_path": "Api/Foundry.Networking.FusionNetworkTransformAPI.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "Api/Foundry.Networking.SyncedNetworkGraphId.yml",
+      "output": {
+        ".html": {
+          "relative_path": "Api/Foundry.Networking.SyncedNetworkGraphId.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "Api/Foundry.Networking.yml",
+      "output": {
+        ".html": {
+          "relative_path": "Api/Foundry.Networking.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "Api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "Api/toc.html"
+        },
+        ".json": {
+          "relative_path": "Api/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Media/foundry_icon.ico",
+      "output": {
+        "resource": {
+          "relative_path": "Media/foundry_icon.ico"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Media/foundry_icon.ico.meta",
+      "output": {
+        "resource": {
+          "relative_path": "Media/foundry_icon.ico.meta"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Media/foundry_icon.png",
+      "output": {
+        "resource": {
+          "relative_path": "Media/foundry_icon.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Media/foundry_icon.png.meta",
+      "output": {
+        "resource": {
+          "relative_path": "Media/foundry_icon.png.meta"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html"
+        },
+        ".json": {
+          "relative_path": "toc.json"
+        }
+      },
+      "version": ""
+    }
+  ],
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}

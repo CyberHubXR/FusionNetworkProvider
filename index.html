@@ -1,0 +1,132 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Overview | Fusion for Foundry </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Overview | Fusion for Foundry ">
+      
+      <link rel="icon" href="Media/foundry_icon.ico">
+      <link rel="stylesheet" href="public/docfx.min.css">
+      <link rel="stylesheet" href="public/main.css">
+      <meta name="docfx:navrel" content="toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/FoundryXR/FusionNetworkProvider/blob/main/package/Documentation/index.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+  </head>
+
+  <script type="module" src="./public/docfx.min.js"></script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="index.html">
+            <img id="logo" class="svg" src="Media/foundry_icon.png" alt="Fusion Networking For Foundry">
+            Fusion Networking For Foundry
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h2 id="overview">Overview</h2>
+
+<p>This package provides networking for Foundry using the Fusion networking framework. Users can take advantage of both
+Foundry's networking features and Fusion's networking features at the same time if they wish.</p>
+<h2 id="installation-instructions">Installation instructions</h2>
+<p>Install <a href="https://foundryxr.github.io/FoundryCore/">Foundry Core</a> first, once you've done that you can install this
+package from the package manager.</p>
+<p>To enable this network provider open the foundry config window from the menu bar at <code>Foundry -&gt; Config Manager</code> and set
+the network provider to <code>Photon Fusion + Voice</code>. The window may set this automatically for you if this is the only
+provider installed, but we still need to at least open the window for the setting to be applied.</p>
+<h2 id="requirements">Requirements</h2>
+<p>The setup wizard will automatically prompt you to install needed dependencies, and provide links to relevant docs, but
+here are some direct links for completeness sake.</p>
+<ul>
+<li><a href="https://dashboard.photonengine.com/download/fusion/photon-fusion-1.1.8-f-725.unitypackage">Photon Fusion</a> (v1.1.8 stable) (Handles the networking backend)</li>
+<li><a href="https://assetstore.unity.com/packages/tools/audio/photon-voice-2-130518">Photon Voice</a> (v2.53) (Handles voice chat through fusion)</li>
+</ul>
+<h2 id="limitations">Limitations</h2>
+<p>Due to the abstracted nature of Foundry's networking system, some features of Fusion may not exposed directly. If you
+do need something exposed you find you can't directly access let us know and we'll see if we can find a solution or add
+it to the package.</p>
+<h2 id="advanced-topics">Advanced topics</h2>
+<h3 id="mixing-networkbehaviours-and-foundry-networkcomponents">Mixing NetworkBehaviours and Foundry NetworkComponents</h3>
+<p>The networking system is built so that you can use both NetworkBehaviours and Foundry NetworkComponents at the same time
+if you wish. If you're only using foundry components than you don't need a Fusion NetworkObject script added to your object
+if you don't want to, but if you want to use both you'll need to add one. When we bind a prefab or scene object at runtime
+it checks if a Fusion NetworkObject exists or not and will use an existing Object and scripts if they exist, otherwise
+it will add them for you.</p>
+
+</article>
+
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+
+    <footer class="border-top">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          Fusion Networking Provider for Foundry
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
