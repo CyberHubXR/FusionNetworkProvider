@@ -56,7 +56,7 @@ namespace Foundry.Networking
 
         public Task StopSessionAsync()
         {
-            Destroy(_networkContextHolder);
+            GameObject.Destroy(_networkContextHolder);
             return Task.CompletedTask;
         }
 

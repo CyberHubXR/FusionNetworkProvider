@@ -88,6 +88,8 @@ namespace Foundry.Networking
 
         public static void RemoveMappedId(uint fusionId, NetworkId graphId)
         {
+            if (!provider.IsSessionConnected)
+                return;
             // If the id doesn't match, that probbably means fusion reassigned the id to a new object, and we don't want to remove the new mapping.
             if (!fusionIdToGraphId[fusionId].Equals(graphId))
                 return;
