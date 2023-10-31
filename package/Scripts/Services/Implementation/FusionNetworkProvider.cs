@@ -148,6 +148,13 @@ namespace Foundry.Networking
                     api.netTransform = transform;
                     foundryNetTransform.api = api;
                 }
+                
+                if (gameObject.TryGetComponent(out NetworkVoiceOutput voiceOutput))
+                {
+                    var speaker = gameObject.AddComponent<Photon.Voice.Unity.Speaker>();
+                    var voiceNetworkObject = gameObject.AddComponent<Photon.Voice.Fusion.VoiceNetworkObject>();
+                    voiceOutput.nativeScript = voiceNetworkObject;
+                }
                 #endregion Component Mapping
             }
 

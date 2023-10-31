@@ -1,0 +1,699 @@
+### YamlMime:ManagedReference
+items:
+- uid: Foundry.Networking.FusionModuleDefinition
+  commentId: T:Foundry.Networking.FusionModuleDefinition
+  id: FusionModuleDefinition
+  parent: Foundry.Networking
+  children:
+  - Foundry.Networking.FusionModuleDefinition.GetModuleConfig
+  - Foundry.Networking.FusionModuleDefinition.GetProvidedServices
+  - Foundry.Networking.FusionModuleDefinition.GetUsedService
+  - Foundry.Networking.FusionModuleDefinition.ModuleName
+  langs:
+  - csharp
+  - vb
+  name: FusionModuleDefinition
+  nameWithType: FusionModuleDefinition
+  fullName: Foundry.Networking.FusionModuleDefinition
+  type: Class
+  source:
+    remote:
+      path: package/Scripts/Editor/FusionModuleDefinition.cs
+      branch: main
+      repo: https://github.com/FoundryXR/FusionNetworkProvider.git
+    id: FusionModuleDefinition
+    path: ../Scripts/Editor/FusionModuleDefinition.cs
+    startLine: 7
+  assemblies:
+  - Foundry.Networking.Fusion.Editor
+  namespace: Foundry.Networking
+  syntax:
+    content: 'public class FusionModuleDefinition : IModuleDefinition'
+    content.vb: Public Class FusionModuleDefinition Implements IModuleDefinition
+  inheritance:
+  - System.Object
+  implements:
+  - Foundry.Core.Editor.IModuleDefinition
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: Foundry.Networking.FusionModuleDefinition.ModuleName
+  commentId: M:Foundry.Networking.FusionModuleDefinition.ModuleName
+  id: ModuleName
+  parent: Foundry.Networking.FusionModuleDefinition
+  langs:
+  - csharp
+  - vb
+  name: ModuleName()
+  nameWithType: FusionModuleDefinition.ModuleName()
+  fullName: Foundry.Networking.FusionModuleDefinition.ModuleName()
+  type: Method
+  source:
+    remote:
+      path: package/Scripts/Editor/FusionModuleDefinition.cs
+      branch: main
+      repo: https://github.com/FoundryXR/FusionNetworkProvider.git
+    id: ModuleName
+    path: ../Scripts/Editor/FusionModuleDefinition.cs
+    startLine: 9
+  assemblies:
+  - Foundry.Networking.Fusion.Editor
+  namespace: Foundry.Networking
+  summary: Name of the module, used for display purposes
+  example: []
+  syntax:
+    content: public string ModuleName()
+    return:
+      type: System.String
+    content.vb: Public Function ModuleName() As String
+  overload: Foundry.Networking.FusionModuleDefinition.ModuleName*
+  implements:
+  - Foundry.Core.Editor.IModuleDefinition.ModuleName
+- uid: Foundry.Networking.FusionModuleDefinition.GetProvidedServices
+  commentId: M:Foundry.Networking.FusionModuleDefinition.GetProvidedServices
+  id: GetProvidedServices
+  parent: Foundry.Networking.FusionModuleDefinition
+  langs:
+  - csharp
+  - vb
+  name: GetProvidedServices()
+  nameWithType: FusionModuleDefinition.GetProvidedServices()
+  fullName: Foundry.Networking.FusionModuleDefinition.GetProvidedServices()
+  type: Method
+  source:
+    remote:
+      path: package/Scripts/Editor/FusionModuleDefinition.cs
+      branch: main
+      repo: https://github.com/FoundryXR/FusionNetworkProvider.git
+    id: GetProvidedServices
+    path: ../Scripts/Editor/FusionModuleDefinition.cs
+    startLine: 14
+  assemblies:
+  - Foundry.Networking.Fusion.Editor
+  namespace: Foundry.Networking
+  summary: Return a list of all the services this module provides
+  example: []
+  syntax:
+    content: public List<ProvidedService> GetProvidedServices()
+    return:
+      type: System.Collections.Generic.List{Foundry.Core.Editor.ProvidedService}
+      description: ''
+    content.vb: Public Function GetProvidedServices() As List(Of ProvidedService)
+  overload: Foundry.Networking.FusionModuleDefinition.GetProvidedServices*
+  implements:
+  - Foundry.Core.Editor.IModuleDefinition.GetProvidedServices
+- uid: Foundry.Networking.FusionModuleDefinition.GetUsedService
+  commentId: M:Foundry.Networking.FusionModuleDefinition.GetUsedService
+  id: GetUsedService
+  parent: Foundry.Networking.FusionModuleDefinition
+  langs:
+  - csharp
+  - vb
+  name: GetUsedService()
+  nameWithType: FusionModuleDefinition.GetUsedService()
+  fullName: Foundry.Networking.FusionModuleDefinition.GetUsedService()
+  type: Method
+  source:
+    remote:
+      path: package/Scripts/Editor/FusionModuleDefinition.cs
+      branch: main
+      repo: https://github.com/FoundryXR/FusionNetworkProvider.git
+    id: GetUsedService
+    path: ../Scripts/Editor/FusionModuleDefinition.cs
+    startLine: 26
+  assemblies:
+  - Foundry.Networking.Fusion.Editor
+  namespace: Foundry.Networking
+  summary: Returns a list of all the services used by this module, and if they are required or not
+  example: []
+  syntax:
+    content: public List<UsedService> GetUsedService()
+    return:
+      type: System.Collections.Generic.List{Foundry.Core.Editor.UsedService}
+    content.vb: Public Function GetUsedService() As List(Of UsedService)
+  overload: Foundry.Networking.FusionModuleDefinition.GetUsedService*
+  implements:
+  - Foundry.Core.Editor.IModuleDefinition.GetUsedService
+- uid: Foundry.Networking.FusionModuleDefinition.GetModuleConfig
+  commentId: M:Foundry.Networking.FusionModuleDefinition.GetModuleConfig
+  id: GetModuleConfig
+  parent: Foundry.Networking.FusionModuleDefinition
+  langs:
+  - csharp
+  - vb
+  name: GetModuleConfig()
+  nameWithType: FusionModuleDefinition.GetModuleConfig()
+  fullName: Foundry.Networking.FusionModuleDefinition.GetModuleConfig()
+  type: Method
+  source:
+    remote:
+      path: package/Scripts/Editor/FusionModuleDefinition.cs
+      branch: main
+      repo: https://github.com/FoundryXR/FusionNetworkProvider.git
+    id: GetModuleConfig
+    path: ../Scripts/Editor/FusionModuleDefinition.cs
+    startLine: 38
+  assemblies:
+  - Foundry.Networking.Fusion.Editor
+  namespace: Foundry.Networking
+  summary: Get or create an instance of a module's config object
+  example: []
+  syntax:
+    content: public FoundryModuleConfig GetModuleConfig()
+    return:
+      type: Foundry.FoundryModuleConfig
+    content.vb: Public Function GetModuleConfig() As FoundryModuleConfig
+  overload: Foundry.Networking.FusionModuleDefinition.GetModuleConfig*
+  implements:
+  - Foundry.Core.Editor.IModuleDefinition.GetModuleConfig
+references:
+- uid: Foundry.Networking
+  commentId: N:Foundry.Networking
+  href: Foundry.html
+  name: Foundry.Networking
+  nameWithType: Foundry.Networking
+  fullName: Foundry.Networking
+  spec.csharp:
+  - uid: Foundry
+    name: Foundry
+    href: Foundry.html
+  - name: .
+  - uid: Foundry.Networking
+    name: Networking
+    href: Foundry.Networking.html
+  spec.vb:
+  - uid: Foundry
+    name: Foundry
+    href: Foundry.html
+  - name: .
+  - uid: Foundry.Networking
+    name: Networking
+    href: Foundry.Networking.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: Foundry.Core.Editor.IModuleDefinition
+  commentId: T:Foundry.Core.Editor.IModuleDefinition
+  parent: Foundry.Core.Editor
+  name: IModuleDefinition
+  nameWithType: IModuleDefinition
+  fullName: Foundry.Core.Editor.IModuleDefinition
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Foundry.Core.Editor
+  commentId: N:Foundry.Core.Editor
+  name: Foundry.Core.Editor
+  nameWithType: Foundry.Core.Editor
+  fullName: Foundry.Core.Editor
+  spec.csharp:
+  - uid: Foundry
+    name: Foundry
+  - name: .
+  - uid: Foundry.Core
+    name: Core
+  - name: .
+  - uid: Foundry.Core.Editor
+    name: Editor
+  spec.vb:
+  - uid: Foundry
+    name: Foundry
+  - name: .
+  - uid: Foundry.Core
+    name: Core
+  - name: .
+  - uid: Foundry.Core.Editor
+    name: Editor
+- uid: Foundry.Networking.FusionModuleDefinition.ModuleName*
+  commentId: Overload:Foundry.Networking.FusionModuleDefinition.ModuleName
+  href: Foundry.Networking.FusionModuleDefinition.html#Foundry.Networking.FusionModuleDefinition.ModuleName
+  name: ModuleName
+  nameWithType: FusionModuleDefinition.ModuleName
+  fullName: Foundry.Networking.FusionModuleDefinition.ModuleName
+- uid: Foundry.Core.Editor.IModuleDefinition.ModuleName
+  commentId: M:Foundry.Core.Editor.IModuleDefinition.ModuleName
+  parent: Foundry.Core.Editor.IModuleDefinition
+  name: ModuleName()
+  nameWithType: IModuleDefinition.ModuleName()
+  fullName: Foundry.Core.Editor.IModuleDefinition.ModuleName()
+  spec.csharp:
+  - uid: Foundry.Core.Editor.IModuleDefinition.ModuleName
+    name: ModuleName
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: Foundry.Core.Editor.IModuleDefinition.ModuleName
+    name: ModuleName
+  - name: (
+  - name: )
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: Foundry.Networking.FusionModuleDefinition.GetProvidedServices*
+  commentId: Overload:Foundry.Networking.FusionModuleDefinition.GetProvidedServices
+  href: Foundry.Networking.FusionModuleDefinition.html#Foundry.Networking.FusionModuleDefinition.GetProvidedServices
+  name: GetProvidedServices
+  nameWithType: FusionModuleDefinition.GetProvidedServices
+  fullName: Foundry.Networking.FusionModuleDefinition.GetProvidedServices
+- uid: Foundry.Core.Editor.IModuleDefinition.GetProvidedServices
+  commentId: M:Foundry.Core.Editor.IModuleDefinition.GetProvidedServices
+  parent: Foundry.Core.Editor.IModuleDefinition
+  name: GetProvidedServices()
+  nameWithType: IModuleDefinition.GetProvidedServices()
+  fullName: Foundry.Core.Editor.IModuleDefinition.GetProvidedServices()
+  spec.csharp:
+  - uid: Foundry.Core.Editor.IModuleDefinition.GetProvidedServices
+    name: GetProvidedServices
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: Foundry.Core.Editor.IModuleDefinition.GetProvidedServices
+    name: GetProvidedServices
+  - name: (
+  - name: )
+- uid: System.Collections.Generic.List{Foundry.Core.Editor.ProvidedService}
+  commentId: T:System.Collections.Generic.List{Foundry.Core.Editor.ProvidedService}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<ProvidedService>
+  nameWithType: List<ProvidedService>
+  fullName: System.Collections.Generic.List<Foundry.Core.Editor.ProvidedService>
+  nameWithType.vb: List(Of ProvidedService)
+  fullName.vb: System.Collections.Generic.List(Of Foundry.Core.Editor.ProvidedService)
+  name.vb: List(Of ProvidedService)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: Foundry.Core.Editor.ProvidedService
+    name: ProvidedService
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Foundry.Core.Editor.ProvidedService
+    name: ProvidedService
+  - name: )
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: Foundry.Networking.FusionModuleDefinition.GetUsedService*
+  commentId: Overload:Foundry.Networking.FusionModuleDefinition.GetUsedService
+  href: Foundry.Networking.FusionModuleDefinition.html#Foundry.Networking.FusionModuleDefinition.GetUsedService
+  name: GetUsedService
+  nameWithType: FusionModuleDefinition.GetUsedService
+  fullName: Foundry.Networking.FusionModuleDefinition.GetUsedService
+- uid: Foundry.Core.Editor.IModuleDefinition.GetUsedService
+  commentId: M:Foundry.Core.Editor.IModuleDefinition.GetUsedService
+  parent: Foundry.Core.Editor.IModuleDefinition
+  name: GetUsedService()
+  nameWithType: IModuleDefinition.GetUsedService()
+  fullName: Foundry.Core.Editor.IModuleDefinition.GetUsedService()
+  spec.csharp:
+  - uid: Foundry.Core.Editor.IModuleDefinition.GetUsedService
+    name: GetUsedService
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: Foundry.Core.Editor.IModuleDefinition.GetUsedService
+    name: GetUsedService
+  - name: (
+  - name: )
+- uid: System.Collections.Generic.List{Foundry.Core.Editor.UsedService}
+  commentId: T:System.Collections.Generic.List{Foundry.Core.Editor.UsedService}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<UsedService>
+  nameWithType: List<UsedService>
+  fullName: System.Collections.Generic.List<Foundry.Core.Editor.UsedService>
+  nameWithType.vb: List(Of UsedService)
+  fullName.vb: System.Collections.Generic.List(Of Foundry.Core.Editor.UsedService)
+  name.vb: List(Of UsedService)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: Foundry.Core.Editor.UsedService
+    name: UsedService
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Foundry.Core.Editor.UsedService
+    name: UsedService
+  - name: )
+- uid: Foundry.Networking.FusionModuleDefinition.GetModuleConfig*
+  commentId: Overload:Foundry.Networking.FusionModuleDefinition.GetModuleConfig
+  href: Foundry.Networking.FusionModuleDefinition.html#Foundry.Networking.FusionModuleDefinition.GetModuleConfig
+  name: GetModuleConfig
+  nameWithType: FusionModuleDefinition.GetModuleConfig
+  fullName: Foundry.Networking.FusionModuleDefinition.GetModuleConfig
+- uid: Foundry.Core.Editor.IModuleDefinition.GetModuleConfig
+  commentId: M:Foundry.Core.Editor.IModuleDefinition.GetModuleConfig
+  parent: Foundry.Core.Editor.IModuleDefinition
+  name: GetModuleConfig()
+  nameWithType: IModuleDefinition.GetModuleConfig()
+  fullName: Foundry.Core.Editor.IModuleDefinition.GetModuleConfig()
+  spec.csharp:
+  - uid: Foundry.Core.Editor.IModuleDefinition.GetModuleConfig
+    name: GetModuleConfig
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: Foundry.Core.Editor.IModuleDefinition.GetModuleConfig
+    name: GetModuleConfig
+  - name: (
+  - name: )
+- uid: Foundry.FoundryModuleConfig
+  commentId: T:Foundry.FoundryModuleConfig
+  parent: Foundry
+  name: FoundryModuleConfig
+  nameWithType: FoundryModuleConfig
+  fullName: Foundry.FoundryModuleConfig
+- uid: Foundry
+  commentId: N:Foundry
+  name: Foundry
+  nameWithType: Foundry
+  fullName: Foundry

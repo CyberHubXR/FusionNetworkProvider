@@ -1,0 +1,23 @@
+### YamlMime:ManagedReference
+items:
+- uid: Foundry.Fusion.Setup
+  commentId: N:Foundry.Fusion.Setup
+  id: Foundry.Fusion.Setup
+  children:
+  - Foundry.Fusion.Setup.FusionSuggestedConfigurationChecker
+  langs:
+  - csharp
+  - vb
+  name: Foundry.Fusion.Setup
+  nameWithType: Foundry.Fusion.Setup
+  fullName: Foundry.Fusion.Setup
+  type: Namespace
+  assemblies:
+  - Foundry.Networking.Fusion.Setup.Settings
+references:
+- uid: Foundry.Fusion.Setup.FusionSuggestedConfigurationChecker
+  commentId: T:Foundry.Fusion.Setup.FusionSuggestedConfigurationChecker
+  href: Foundry.Fusion.Setup.FusionSuggestedConfigurationChecker.html
+  name: FusionSuggestedConfigurationChecker
+  nameWithType: FusionSuggestedConfigurationChecker
+  fullName: Foundry.Fusion.Setup.FusionSuggestedConfigurationChecker

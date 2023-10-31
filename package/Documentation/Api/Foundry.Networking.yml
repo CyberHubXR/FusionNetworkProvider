@@ -1,0 +1,65 @@
+### YamlMime:ManagedReference
+items:
+- uid: Foundry.Networking
+  commentId: N:Foundry.Networking
+  id: Foundry.Networking
+  children:
+  - Foundry.Networking.FoundryRunnerManager
+  - Foundry.Networking.FusionModuleConfig
+  - Foundry.Networking.FusionModuleDefinition
+  - Foundry.Networking.FusionNetTransformProps
+  - Foundry.Networking.FusionNetworkProvider
+  - Foundry.Networking.FusionNetworkTransformAPI
+  - Foundry.Networking.SyncedNetworkGraphId
+  langs:
+  - csharp
+  - vb
+  name: Foundry.Networking
+  nameWithType: Foundry.Networking
+  fullName: Foundry.Networking
+  type: Namespace
+  assemblies:
+  - Foundry.Networking.Fusion
+references:
+- uid: Foundry.Networking.FusionModuleConfig
+  commentId: T:Foundry.Networking.FusionModuleConfig
+  href: Foundry.Networking.FusionModuleConfig.html
+  name: FusionModuleConfig
+  nameWithType: FusionModuleConfig
+  fullName: Foundry.Networking.FusionModuleConfig
+- uid: Foundry.Networking.SyncedNetworkGraphId
+  commentId: T:Foundry.Networking.SyncedNetworkGraphId
+  href: Foundry.Networking.SyncedNetworkGraphId.html
+  name: SyncedNetworkGraphId
+  nameWithType: SyncedNetworkGraphId
+  fullName: Foundry.Networking.SyncedNetworkGraphId
+- uid: Foundry.Networking.FoundryRunnerManager
+  commentId: T:Foundry.Networking.FoundryRunnerManager
+  href: Foundry.Networking.FoundryRunnerManager.html
+  name: FoundryRunnerManager
+  nameWithType: FoundryRunnerManager
+  fullName: Foundry.Networking.FoundryRunnerManager
+- uid: Foundry.Networking.FusionNetworkProvider
+  commentId: T:Foundry.Networking.FusionNetworkProvider
+  href: Foundry.Networking.FusionNetworkProvider.html
+  name: FusionNetworkProvider
+  nameWithType: FusionNetworkProvider
+  fullName: Foundry.Networking.FusionNetworkProvider
+- uid: Foundry.Networking.FusionNetTransformProps
+  commentId: T:Foundry.Networking.FusionNetTransformProps
+  href: Foundry.Networking.FusionNetTransformProps.html
+  name: FusionNetTransformProps
+  nameWithType: FusionNetTransformProps
+  fullName: Foundry.Networking.FusionNetTransformProps
+- uid: Foundry.Networking.FusionNetworkTransformAPI
+  commentId: T:Foundry.Networking.FusionNetworkTransformAPI
+  href: Foundry.Networking.FusionNetworkTransformAPI.html
+  name: FusionNetworkTransformAPI
+  nameWithType: FusionNetworkTransformAPI
+  fullName: Foundry.Networking.FusionNetworkTransformAPI
+- uid: Foundry.Networking.FusionModuleDefinition
+  commentId: T:Foundry.Networking.FusionModuleDefinition
+  href: Foundry.Networking.FusionModuleDefinition.html
+  name: FusionModuleDefinition
+  nameWithType: FusionModuleDefinition
+  fullName: Foundry.Networking.FusionModuleDefinition

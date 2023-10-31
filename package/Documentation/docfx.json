@@ -1,0 +1,60 @@
+{
+  "metadata": [
+    {
+      "src": [
+        {
+          "src": "..\\..\\..\\Fusion Gauntlet",
+          "files": [
+            "Foundry.Networking.Fusion.csproj",
+            "Foundry.Fusion.Setup.csproj",
+            "Foundry.Networking.Fusion.Editor.csproj",
+            "Foundry.Networking.Fusion.Setup.Settings.csproj"
+          ]
+        }
+      ],
+      "dest": "Api"
+    }
+  ],
+  "build": {
+    "content": [
+      {
+        "files": [
+          "toc.yml",
+          "index.md"
+        ]
+      },
+      {
+        "files": [
+          "Api/toc.yml",
+          "Api/**/*.yml",
+          "Api/**/*.md"
+        ]
+      },
+      {
+        "files": [
+          "Manual/**/*.md",
+          "Manual/**/*.yml"
+        ]
+      }
+    ],
+    "resource": [
+      {
+        "files": [
+          "Media/**"
+        ]
+      }
+    ],
+    "overwrite": "",
+    "dest": "",
+    "globalMetadataFiles": [
+      "metadata.json"
+    ],
+    "template": [
+      "default",
+      "modern"
+    ],
+    "postProcessors": [],
+    "keepFileLink": false,
+    "disableGitFeatures": false
+  }
+}

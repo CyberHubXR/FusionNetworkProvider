@@ -1,0 +1,69 @@
+### YamlMime:ManagedReference
+items:
+- uid: Foundry.Networking.Fusion.Editor
+  commentId: N:Foundry.Networking.Fusion.Editor
+  id: Foundry.Networking.Fusion.Editor
+  children:
+  - Foundry.Networking.Fusion.Editor.MappedNetworkPropertyDrawers
+  - Foundry.Networking.Fusion.Editor.PropDrawExtensions
+  langs:
+  - csharp
+  - vb
+  name: Foundry.Networking.Fusion.Editor
+  nameWithType: Foundry.Networking.Fusion.Editor
+  fullName: Foundry.Networking.Fusion.Editor
+  type: Namespace
+  assemblies:
+  - Foundry.Networking.Fusion.Editor
+references:
+- uid: Foundry.Networking.Fusion.Editor.MappedNetworkPropertyDrawers
+  commentId: T:Foundry.Networking.Fusion.Editor.MappedNetworkPropertyDrawers
+  href: Foundry.Networking.Fusion.Editor.MappedNetworkPropertyDrawers.html
+  name: MappedNetworkPropertyDrawers
+  nameWithType: MappedNetworkPropertyDrawers
+  fullName: Foundry.Networking.Fusion.Editor.MappedNetworkPropertyDrawers
+- uid: Foundry.Networking.Fusion.Editor.PropDrawExtensions
+  commentId: T:Foundry.Networking.Fusion.Editor.PropDrawExtensions
+  parent: Foundry.Networking.Fusion.Editor
+  href: Foundry.Networking.Fusion.Editor.PropDrawExtensions.html
+  name: PropDrawExtensions
+  nameWithType: PropDrawExtensions
+  fullName: Foundry.Networking.Fusion.Editor.PropDrawExtensions
+- uid: Foundry.Networking.Fusion.Editor
+  commentId: N:Foundry.Networking.Fusion.Editor
+  href: Foundry.html
+  name: Foundry.Networking.Fusion.Editor
+  nameWithType: Foundry.Networking.Fusion.Editor
+  fullName: Foundry.Networking.Fusion.Editor
+  spec.csharp:
+  - uid: Foundry
+    name: Foundry
+    href: Foundry.html
+  - name: .
+  - uid: Foundry.Networking
+    name: Networking
+    href: Foundry.Networking.html
+  - name: .
+  - uid: Foundry.Networking.Fusion
+    name: Fusion
+    href: Foundry.Networking.Fusion.html
+  - name: .
+  - uid: Foundry.Networking.Fusion.Editor
+    name: Editor
+    href: Foundry.Networking.Fusion.Editor.html
+  spec.vb:
+  - uid: Foundry
+    name: Foundry
+    href: Foundry.html
+  - name: .
+  - uid: Foundry.Networking
+    name: Networking
+    href: Foundry.Networking.html
+  - name: .
+  - uid: Foundry.Networking.Fusion
+    name: Fusion
+    href: Foundry.Networking.Fusion.html
+  - name: .
+  - uid: Foundry.Networking.Fusion.Editor
+    name: Editor
+    href: Foundry.Networking.Fusion.Editor.html

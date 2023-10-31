@@ -1,0 +1,391 @@
+### YamlMime:ManagedReference
+items:
+- uid: Foundry.Networking.Fusion.Editor.PropDrawExtensions
+  commentId: T:Foundry.Networking.Fusion.Editor.PropDrawExtensions
+  id: PropDrawExtensions
+  parent: Foundry.Networking.Fusion.Editor
+  children:
+  - Foundry.Networking.Fusion.Editor.PropDrawExtensions.GetSerializedValue``1(UnityEditor.PropertyDrawer,UnityEditor.SerializedProperty)
+  langs:
+  - csharp
+  - vb
+  name: PropDrawExtensions
+  nameWithType: PropDrawExtensions
+  fullName: Foundry.Networking.Fusion.Editor.PropDrawExtensions
+  type: Class
+  source:
+    remote:
+      path: package/Scripts/Editor/MappedNetworkPropertyDrawers.cs
+      branch: main
+      repo: https://github.com/FoundryXR/FusionNetworkProvider.git
+    id: PropDrawExtensions
+    path: ../Scripts/Editor/MappedNetworkPropertyDrawers.cs
+    startLine: 56
+  assemblies:
+  - Foundry.Networking.Fusion.Editor
+  namespace: Foundry.Networking.Fusion.Editor
+  syntax:
+    content: public static class PropDrawExtensions
+    content.vb: Public Module PropDrawExtensions
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: Foundry.Networking.Fusion.Editor.PropDrawExtensions.GetSerializedValue``1(UnityEditor.PropertyDrawer,UnityEditor.SerializedProperty)
+  commentId: M:Foundry.Networking.Fusion.Editor.PropDrawExtensions.GetSerializedValue``1(UnityEditor.PropertyDrawer,UnityEditor.SerializedProperty)
+  id: GetSerializedValue``1(UnityEditor.PropertyDrawer,UnityEditor.SerializedProperty)
+  isExtensionMethod: true
+  parent: Foundry.Networking.Fusion.Editor.PropDrawExtensions
+  langs:
+  - csharp
+  - vb
+  name: GetSerializedValue<T>(PropertyDrawer, SerializedProperty)
+  nameWithType: PropDrawExtensions.GetSerializedValue<T>(PropertyDrawer, SerializedProperty)
+  fullName: Foundry.Networking.Fusion.Editor.PropDrawExtensions.GetSerializedValue<T>(UnityEditor.PropertyDrawer, UnityEditor.SerializedProperty)
+  type: Method
+  source:
+    remote:
+      path: package/Scripts/Editor/MappedNetworkPropertyDrawers.cs
+      branch: main
+      repo: https://github.com/FoundryXR/FusionNetworkProvider.git
+    id: GetSerializedValue
+    path: ../Scripts/Editor/MappedNetworkPropertyDrawers.cs
+    startLine: 58
+  assemblies:
+  - Foundry.Networking.Fusion.Editor
+  namespace: Foundry.Networking.Fusion.Editor
+  syntax:
+    content: public static T GetSerializedValue<T>(this PropertyDrawer propertyDrawer, SerializedProperty property)
+    parameters:
+    - id: propertyDrawer
+      type: UnityEditor.PropertyDrawer
+    - id: property
+      type: UnityEditor.SerializedProperty
+    typeParameters:
+    - id: T
+    return:
+      type: '{T}'
+    content.vb: Public Shared Function GetSerializedValue(Of T)(propertyDrawer As PropertyDrawer, [property] As SerializedProperty) As T
+  overload: Foundry.Networking.Fusion.Editor.PropDrawExtensions.GetSerializedValue*
+  nameWithType.vb: PropDrawExtensions.GetSerializedValue(Of T)(PropertyDrawer, SerializedProperty)
+  fullName.vb: Foundry.Networking.Fusion.Editor.PropDrawExtensions.GetSerializedValue(Of T)(UnityEditor.PropertyDrawer, UnityEditor.SerializedProperty)
+  name.vb: GetSerializedValue(Of T)(PropertyDrawer, SerializedProperty)
+references:
+- uid: Foundry.Networking.Fusion.Editor
+  commentId: N:Foundry.Networking.Fusion.Editor
+  href: Foundry.html
+  name: Foundry.Networking.Fusion.Editor
+  nameWithType: Foundry.Networking.Fusion.Editor
+  fullName: Foundry.Networking.Fusion.Editor
+  spec.csharp:
+  - uid: Foundry
+    name: Foundry
+    href: Foundry.html
+  - name: .
+  - uid: Foundry.Networking
+    name: Networking
+    href: Foundry.Networking.html
+  - name: .
+  - uid: Foundry.Networking.Fusion
+    name: Fusion
+    href: Foundry.Networking.Fusion.html
+  - name: .
+  - uid: Foundry.Networking.Fusion.Editor
+    name: Editor
+    href: Foundry.Networking.Fusion.Editor.html
+  spec.vb:
+  - uid: Foundry
+    name: Foundry
+    href: Foundry.html
+  - name: .
+  - uid: Foundry.Networking
+    name: Networking
+    href: Foundry.Networking.html
+  - name: .
+  - uid: Foundry.Networking.Fusion
+    name: Fusion
+    href: Foundry.Networking.Fusion.html
+  - name: .
+  - uid: Foundry.Networking.Fusion.Editor
+    name: Editor
+    href: Foundry.Networking.Fusion.Editor.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Foundry.Networking.Fusion.Editor.PropDrawExtensions.GetSerializedValue*
+  commentId: Overload:Foundry.Networking.Fusion.Editor.PropDrawExtensions.GetSerializedValue
+  href: Foundry.Networking.Fusion.Editor.PropDrawExtensions.html#Foundry.Networking.Fusion.Editor.PropDrawExtensions.GetSerializedValue``1(UnityEditor.PropertyDrawer,UnityEditor.SerializedProperty)
+  name: GetSerializedValue
+  nameWithType: PropDrawExtensions.GetSerializedValue
+  fullName: Foundry.Networking.Fusion.Editor.PropDrawExtensions.GetSerializedValue
+- uid: UnityEditor.PropertyDrawer
+  commentId: T:UnityEditor.PropertyDrawer
+  parent: UnityEditor
+  isExternal: true
+  name: PropertyDrawer
+  nameWithType: PropertyDrawer
+  fullName: UnityEditor.PropertyDrawer
+- uid: UnityEditor.SerializedProperty
+  commentId: T:UnityEditor.SerializedProperty
+  parent: UnityEditor
+  isExternal: true
+  name: SerializedProperty
+  nameWithType: SerializedProperty
+  fullName: UnityEditor.SerializedProperty
+- uid: '{T}'
+  commentId: '!:T'
+  definition: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: UnityEditor
+  commentId: N:UnityEditor
+  isExternal: true
+  name: UnityEditor
+  nameWithType: UnityEditor
+  fullName: UnityEditor
+- uid: T
+  commentId: '!:T'
+  name: T
+  nameWithType: T
+  fullName: T
