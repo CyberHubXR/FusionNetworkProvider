@@ -222,7 +222,7 @@ namespace Foundry.Networking
         void Update()
         {
             //Dirty work-around to make sure this gets called on the main thread.
-            if (sessionStarted)
+            if (sessionStarted && !FoundryApp.GetService<ISceneNavigator>().IsNavigating)
             {
                 sceneManager.InitScene();
                 sessionStarted = false;
@@ -282,6 +282,13 @@ namespace Foundry.Networking
                 var idMapDelta = SerializeIdMapDelta();
                 if (graphDelta.data.Length == 0 && idMapDelta.Length == 0)
                     continue;
+                
+                if (graphDelta.data.Length + idMapDelta.Length > 6536)
+                {
+                    Debug.LogError($"Graph delta is too large to send over the network! (graphDelta was {graphDelta.data.Length}, idMapData was {idMapDelta.Length}, max is 6536). This is a potential foundry bug, please report it to the Foundry team.");
+                    continue;
+                }
+                
                 // Report our changes to all the other players
                 foreach (var player in graphUpdateSubscribers)
                 {
@@ -350,6 +357,13 @@ namespace Foundry.Networking
                 // First serialize our current delta and send it out to all players, we do this to make sure we don't resend construction events to the player that just joined, as they would already have them.
                 var graphDelta = provider.Graph.GenerateDelta();
                 var idMapDelta = SerializeIdMapDelta();
+                
+                if (graphDelta.data.Length + idMapDelta.Length > 6536)
+                {
+                    Debug.LogError($"Graph delta is too large to send over the network! (graphDelta was {graphDelta.data.Length}, idMapData was {idMapDelta.Length}, max is 6536). This is a potential foundry bug, please report it to the Foundry team.");
+                    return;
+                }
+                
                 if (graphDelta.data.Length != 0)
                 {
                     // Report our changes to all players but the one that just joined
