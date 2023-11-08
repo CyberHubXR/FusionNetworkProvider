@@ -29,8 +29,8 @@ namespace Foundry.Networking
             {
                 if (Object?.Id.IsValid ?? false)
                 {
-                    if (cachedGraphId.IsValid() && !Object.HasStateAuthority)
-                        tryTakeAuthority = true;
+                    if (cachedGraphId.IsValid() && value.Owner == FoundryApp.GetService<INetworkProvider>().LocalPlayerId)
+                        tryTakeAuthority = !Object.HasStateAuthority;
                         
                     FoundryRunnerManager.AddOrReplaceMappedId(Object.Id.Raw, value);
                     cachedGraphId = value;
@@ -72,7 +72,7 @@ namespace Foundry.Networking
             if (tryTakeAuthority)
             {
                 Object.RequestStateAuthority(); // For some reason photon doesn't like this being called anywhere but from in it's callbacks 
-                tryTakeAuthority = false;
+                tryTakeAuthority = !Object.HasStateAuthority;
             }
         }
     }
