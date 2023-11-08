@@ -603,10 +603,8 @@ namespace Foundry.Networking
             }
             catch (Exception e)
             {
-                Debug.LogError("Failed to apply network graph delta: \"" + e.Message + "\"\n Source: " + e.Source + "\n Stack Trace: " + e.StackTrace);
-                #if UNITY_EDITOR
-                throw;
-                #endif
+                Debug.LogError("Failed to apply network graph delta");
+                Debug.LogException(e);
             }
 
             // If this was the first time we received an update to the graph (Only could be a full graph from the graph authority), we need to subscribe to updates from the other players.
