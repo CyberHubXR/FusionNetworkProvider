@@ -24,7 +24,7 @@ namespace Foundry.Networking
 
         #region Interface Implementations
 
-        public bool IsSessionConnected => _runnerManager;
+        public bool IsSessionConnected => _runnerManager?.runner.IsRunning ?? false;
         public bool IsServer => _runnerManager?.IsServer ?? false;
         public bool IsClient => _runnerManager?.IsClient ?? false;
 

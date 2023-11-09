@@ -354,32 +354,36 @@ namespace Foundry.Networking
             // When a player joins, we need to send them the current graph state.
             if (runner.IsServer || runner.IsSharedModeMasterClient)
             {
-                // First serialize our current delta and send it out to all players, we do this to make sure we don't resend construction events to the player that just joined, as they would already have them.
-                var graphDelta = provider.Graph.GenerateDelta();
-                var idMapDelta = SerializeIdMapDelta();
-                
-                if (graphDelta.data.Length + idMapDelta.Length > 6536)
+                if(graphUpdateSubscribers.Count > 0)
                 {
-                    Debug.LogError($"Graph delta is too large to send over the network! (graphDelta was {graphDelta.data.Length}, idMapData was {idMapDelta.Length}, max is 6536). This is a potential foundry bug, please report it to the Foundry team.");
-                    return;
-                }
-                
-                if (graphDelta.data.Length != 0)
-                {
-                    // Report our changes to all players but the one that just joined
-                    foreach (var p in graphUpdateSubscribers)
+                    // First serialize our current delta and send it out to all players, we do this to make sure we don't resend construction events to the player that just joined, as they would already have them.
+                    var graphDelta = provider.Graph.GenerateDelta();
+                    var idMapDelta = SerializeIdMapDelta();
+
+                    if (graphDelta.data.Length + idMapDelta.Length > 6536)
                     {
-                        if(player == runner.LocalPlayer || p == player)
-                            continue;
-                        RPC_SendGraphDeltaReliable(runner, player, graphDelta.data, idMapDelta);
+                        Debug.LogError($"Graph delta is too large to send over the network! (graphDelta was {graphDelta.data.Length}, idMapData was {idMapDelta.Length}, max is 6536). This is a potential foundry bug, please report it to the Foundry team.");
+                        return;
                     }
+
+                    if (graphDelta.data.Length != 0)
+                    {
+                        // Report our changes to all players but the one that just joined
+                        foreach (var p in graphUpdateSubscribers)
+                        {
+                            if (player == runner.LocalPlayer || p == player)
+                                continue;
+                            RPC_SendGraphDeltaReliable(runner, player, graphDelta.data, idMapDelta);
+                        }
+                    }
+
                 }
-                
+
                 // Send the full graph to the new joiner
-                graphDelta = provider.Graph.SerializeFull();
-                idMapDelta = SerializeIdMapFull();
-                RPC_SendGraphDeltaReliable(runner, player, graphDelta.data, idMapDelta);
-                
+                var fullGraph = provider.Graph.SerializeFull();
+                var fullIdMap = SerializeIdMapFull();
+                RPC_SendGraphDeltaReliable(runner, player, fullGraph.data, fullIdMap);
+
                 // Subscribe to graph changes for the new player, that way they at least don't miss any from the graph authority.
                 graphUpdateSubscribers.Add(player);
             }
