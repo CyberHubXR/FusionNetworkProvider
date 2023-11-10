@@ -31,6 +31,7 @@ namespace Foundry.Core.Setup
                 addFusionTask.name = "Photon Fusion";
                 addFusionTask.SetTextDescription("foundry.core requires the Photon Fusion SDK, refer to the Photon docs for the installation process.");
                 addFusionTask.action = SetupAction.OpenDocLink("https://doc.photonengine.com/fusion/current/getting-started/sdk-download");
+                addFusionTask.disableAfterAction = false;
                 tasks.Add(addFusionTask);
             }
 
@@ -40,6 +41,7 @@ namespace Foundry.Core.Setup
                 addVoiceTask.name = "Photon Voice";
                 addVoiceTask.SetTextDescription("foundry.core requires the Photon Voice SDK, clicking the install button will take you the official Photon docs that explain the installation process.");
                 addVoiceTask.action = SetupAction.OpenDocLink("https://doc.photonengine.com/voice/current/getting-started/voice-for-fusion#import_photon_voice");
+                addVoiceTask.disableAfterAction = false;
                 tasks.Add(addVoiceTask);
             }
 
