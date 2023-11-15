@@ -536,6 +536,7 @@ namespace Foundry.Networking
                     throw new ArgumentOutOfRangeException(nameof(reason), reason, null);
             }
             provider.SendStartSessionFailed(reasonText);
+            LoadingScreenManager.FailLoad("Fusion session failed to start. Reason: " + reason);
         }
 
         public void OnUserSimulationMessage(NetworkRunner runner, SimulationMessagePtr message)
