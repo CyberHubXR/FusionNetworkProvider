@@ -336,7 +336,7 @@ namespace Foundry.Networking
             return Task.Run(async () =>
             {
                 var res = await sgr;
-                if (res.Ok == false) { throw new InvalidOperationException("Fusion runner did not start properly. Will now shutdown. Reason: " + res.ShutdownReason); }
+                if (res.Ok == false) { throw new InvalidOperationException("Fusion runner did not start properly. Will now shutdown. Reason: " + res.ToString()); }
                 sessionStarted = true;
                 UpdateSharedModeMasterClientID();
             });
