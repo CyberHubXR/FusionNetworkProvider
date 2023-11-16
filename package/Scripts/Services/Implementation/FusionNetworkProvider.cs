@@ -5,6 +5,7 @@ using System.Linq;
 using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Threading.Tasks;
+using Foundry.Services;
 using Fusion;
 using Photon.Voice.Fusion;
 using Unity.Collections.LowLevel.Unsafe;
@@ -259,9 +260,9 @@ namespace Foundry.Networking
             registeredPrefabs.Add(prefab, prefabEntry);
         }
 
-        public void RegisterSceneObjects(IList<GameObject> networkObjects)
+        public Task CompleteSceneSetup(ISceneNavigationEntry scene)
         {
-            throw new NotImplementedException();
+           return _runnerManager.InitScene();
         }
 
         public GameObject Instantiate(GameObject prefab, Vector3 position, Quaternion rotation)

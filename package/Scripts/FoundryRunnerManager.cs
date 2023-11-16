@@ -219,15 +219,18 @@ namespace Foundry.Networking
                 
         }
 
-        void Update()
+        public Task InitScene()
         {
-            //Dirty work-around to make sure this gets called on the main thread.
-            if (sessionStarted && !FoundryApp.GetService<ISceneNavigator>().IsNavigating)
-            {
-                sceneManager.InitScene();
-                sessionStarted = false;
-                StartCoroutine(ReportGraphChanges());
-            }
+            return InitSceneAsync();
+        }
+
+        async Task InitSceneAsync()
+        {
+            while(!(sessionStarted && !FoundryApp.GetService<ISceneNavigator>().IsNavigating))
+                await Task.Yield();
+            sceneManager.InitScene();
+            sessionStarted = false;
+            StartCoroutine(ReportGraphChanges());
         }
 
         void UpdateSharedModeMasterClientID()
