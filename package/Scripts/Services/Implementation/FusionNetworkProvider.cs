@@ -18,55 +18,55 @@ namespace Foundry.Networking
     /// </summary>
     public class FusionNetworkProvider : INetworkProvider
     {
-        private GameObject _networkContextHolder;
-        private FoundryRunnerManager _runnerManager;
+        private GameObject networkContextHolder;
+        private FoundryRunnerManager runnerManager;
 
         private Dictionary<GameObject, RegisteredPrefab> registeredPrefabs = new();
 
         #region Interface Implementations
 
-        public bool IsSessionConnected => _runnerManager?.runner.IsRunning ?? false;
-        public bool IsServer => _runnerManager?.IsServer ?? false;
-        public bool IsClient => _runnerManager?.IsClient ?? false;
+        public bool IsSessionConnected => FoundryRunnerManager.runner && FoundryRunnerManager.runner.IsRunning;
+        public bool IsServer => runnerManager is { IsServer: true };
+        public bool IsClient => runnerManager is { IsClient: true };
 
-        public bool IsGraphAuthority => IsServer || (_runnerManager?.runner.IsSharedModeMasterClient ?? false);
+        public bool IsGraphAuthority => IsServer || (FoundryRunnerManager.runner && FoundryRunnerManager.runner.IsSharedModeMasterClient);
+        public int GraphAuthorityId => runnerManager.MasterClientId;
 
-        public int LocalPlayerId => _runnerManager.LocalPlayerId;
-        public NetworkGraph Graph { get; private set; }
+        public int LocalPlayerId => runnerManager.LocalPlayerId;
 
         public Task StartSessionAsync(SessionInfo info)
         {
             sessionType = info.sessionType;
-            _networkContextHolder = new GameObject("Network Context");
-            UnityEngine.Object.DontDestroyOnLoad(_networkContextHolder);
+            networkContextHolder = new GameObject("Network Context");
+            UnityEngine.Object.DontDestroyOnLoad(networkContextHolder);
             
-            var runner = _networkContextHolder.AddComponent<Fusion.NetworkRunner>();
-            var photonVoiceNetwork = _networkContextHolder.AddComponent<FusionVoiceClient>();
-            var recorder = _networkContextHolder.AddComponent<Photon.Voice.Unity.Recorder>();
+            var runner = networkContextHolder.AddComponent<Fusion.NetworkRunner>();
+            var photonVoiceNetwork = networkContextHolder.AddComponent<FusionVoiceClient>();
+            var recorder = networkContextHolder.AddComponent<Photon.Voice.Unity.Recorder>();
             photonVoiceNetwork.PrimaryRecorder = recorder;
             photonVoiceNetwork.UseFusionAppSettings = true;
             photonVoiceNetwork.UseFusionAuthValues = true;
             
-            _runnerManager = _networkContextHolder.AddComponent<FoundryRunnerManager>();
-            _runnerManager.runner = runner;
-            _runnerManager.voiceClient = photonVoiceNetwork;
-            _runnerManager.recorder = recorder;
+            runnerManager = networkContextHolder.AddComponent<FoundryRunnerManager>();
+            FoundryRunnerManager.runner = runner;
+            runnerManager.voiceClient = photonVoiceNetwork;
+            runnerManager.recorder = recorder;
 
-            return _runnerManager.StartSession(info);
+            return runnerManager.StartSession(info);
         }
 
         public Task StopSessionAsync()
         {
-            GameObject.Destroy(_networkContextHolder);
+            GameObject.Destroy(networkContextHolder);
             return Task.CompletedTask;
         }
 
         private class ConstructionMetadata
         {
-            public bool isRoot = false;
+            public bool IsRoot = false;
             public Foundry.Networking.NetworkObject foundryNetObject;
-            public List<Fusion.SimulationBehaviour> simBehaviours = new();
-            public List<Fusion.NetworkBehaviour> networkBehaviours = new();
+            public List<Fusion.SimulationBehaviour> SimBehaviours = new();
+            public List<Fusion.NetworkBehaviour> NetworkBehaviours = new();
 
             public void SearchObject(GameObject gameObject)
             {
@@ -83,8 +83,8 @@ namespace Foundry.Networking
                     }
                     return false;
                 });
-                simBehaviours.AddRange(sb);
-                networkBehaviours.AddRange(nb);
+                SimBehaviours.AddRange(sb);
+                NetworkBehaviours.AddRange(nb);
             }
         }
 
@@ -102,7 +102,7 @@ namespace Foundry.Networking
             {
                 var isRoot = metadata == null;
                 metadata = new ConstructionMetadata();
-                metadata.isRoot = isRoot;
+                metadata.IsRoot = isRoot;
                 metadata.foundryNetObject = foundryNetObject;
             }
             // If we have a network object, wait until later to search for behaviours so we have space to add some.
@@ -172,7 +172,7 @@ namespace Foundry.Networking
                 netObject = gameObject.AddComponent<Fusion.NetworkObject>();
             foundryNetObject.nativeScript = netObject;
             
-            gameObject.AddComponent<SyncedNetworkGraphId>();
+            var objectAPI = gameObject.AddComponent<FusionNetObjectAPI>();
             
             metadata.SearchObject(gameObject);
 
@@ -193,17 +193,17 @@ namespace Foundry.Networking
             if(!isPrefab)
                 netObject.Flags |= NetworkObjectFlags.TypeSceneObject;
             else
-                netObject.Flags |= metadata.isRoot ? NetworkObjectFlags.TypePrefab : NetworkObjectFlags.TypePrefabChild;
+                netObject.Flags |= metadata.IsRoot ? NetworkObjectFlags.TypePrefab : NetworkObjectFlags.TypePrefabChild;
             
             // Set guid
             netObject.NetworkGuid = Guid.Parse(foundryNetObject.guid);
             
             // Set behaviours
-            netObject.SimulationBehaviours = metadata.simBehaviours.ToArray();
-            netObject.NetworkedBehaviours = metadata.networkBehaviours.ToArray();
+            netObject.SimulationBehaviours = metadata.SimBehaviours.ToArray();
+            netObject.NetworkedBehaviours = metadata.NetworkBehaviours.ToArray();
             
             // Only add nested objects to the root object
-            if (!metadata.isRoot)
+            if (!metadata.IsRoot)
             {
                 childNetObjects.Add(netObject);
                 netObject.NestedObjects = new Fusion.NetworkObject[0];
@@ -262,19 +262,34 @@ namespace Foundry.Networking
 
         public Task CompleteSceneSetup(ISceneNavigationEntry scene)
         {
-           return _runnerManager.InitScene();
+           return runnerManager.InitScene();
         }
 
-        public GameObject Instantiate(GameObject prefab, Vector3 position, Quaternion rotation)
+        public Task SubscribeToStateChangesAsync(INetworkProvider.StateDeltaCallback onStateDelta)
+        {
+            return runnerManager.SubscribeToStateChangesAsync(onStateDelta);
+        }
+
+        public void SetSubscriberInitialStateCallback(Func<byte[]> callback)
+        {
+            runnerManager.SetSubscriberInitialStateCallback(callback);
+        }
+
+        public void SendStateDelta(byte[] delta)
+        {
+            runnerManager.SendStateDelta(delta);
+        }
+
+        public GameObject Spawn(GameObject prefab, Vector3 position, Quaternion rotation)
         {
             if (registeredPrefabs.TryGetValue(prefab, out var registeredPrefab))
-                return _runnerManager.runner.Spawn(registeredPrefab.ID, position, rotation, _runnerManager.runner.LocalPlayer).gameObject;
-            return _runnerManager.runner.Spawn(prefab, position, rotation, _runnerManager.runner.LocalPlayer).gameObject;
+                return FoundryRunnerManager.runner.Spawn(registeredPrefab.ID, position, rotation, FoundryRunnerManager.runner.LocalPlayer).gameObject;
+            return FoundryRunnerManager.runner.Spawn(prefab, position, rotation, FoundryRunnerManager.runner.LocalPlayer).gameObject;
         }
 
-        public void Destroy(GameObject gameObject)
+        public void Despawn(GameObject gameObject)
         {
-            _runnerManager.Despawn(gameObject);
+            runnerManager.Despawn(gameObject);
         }
 
         public SessionType sessionType { get; private set;  }
@@ -288,21 +303,17 @@ namespace Foundry.Networking
         public event NetworkErrorEventHandler SessionDisconnected;
         public event NetworkPlayerEventHandler PlayerJoined;
         public event NetworkPlayerEventHandler PlayerLeft;
+        
+        public event Func<int, byte[]> OnNewStateSubscriber;
 
         public void SendSessionConnected()
         {
-            Graph = new()
-            {
-                GetMasterID = () => _runnerManager.MasterClientId,
-                GetLocalPlayerID = () => LocalPlayerId
-            };
             SessionConnected?.Invoke();
         }
         
         public void SendSessionDisconnected(string reason)
         {
             SessionDisconnected?.Invoke(reason);
-            Graph = null;
         }
         
         public void SendStartSessionFailed(string reason)

@@ -19,9 +19,9 @@ namespace Foundry.Networking
             if (props.noInterpolationWhenOwned)
             {
                 netTransform.InterpolationDataSource = ft.IsOwner ? Fusion.NetworkBehaviour.InterpolationDataSources.NoInterpolation : props.interpolationDataSource;
-                ft.Object.OnIDChanged.AddListener((obj, player) =>
+                ft.Object.OnOwnerChanged.AddListener((obj, player) =>
                 {
-                    netTransform.InterpolationDataSource = player.Owner == ft.Object.NetworkProvider.LocalPlayerId ? Fusion.NetworkBehaviour.InterpolationDataSources.NoInterpolation : props.interpolationDataSource;
+                    netTransform.InterpolationDataSource = player == ft.Object.NetworkProvider.LocalPlayerId ? Fusion.NetworkBehaviour.InterpolationDataSources.NoInterpolation : props.interpolationDataSource;
                 });
             }
         }

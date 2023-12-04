@@ -23,7 +23,7 @@ namespace Foundry.Networking
     /// <see cref="FusionNetworkProvider"/>
     public class FoundryRunnerManager : NetworkBehaviour, INetworkRunnerCallbacks
     {
-        public NetworkRunner runner;
+        public static NetworkRunner runner;
         
         public FusionVoiceClient voiceClient;
         public Recorder recorder;
@@ -38,20 +38,9 @@ namespace Foundry.Networking
         
         private FoundryFusionSceneManager sceneManager;
         
-        private static HashSet<PlayerRef> graphUpdateSubscribers;
+        private static HashSet<PlayerRef> stateUpdateSubscribers;
 
-        private static bool graphInitalized = false;
-        
-        /// <summary>
-        /// This implementations method of linking a fusion network id to a foundry network id, we can't rely on
-        /// [Networked] properties because they only seem to be sync on a change and dont receive an initial value,
-        /// and RPC calls take a few ticks to arrive so we can't rely on them either. So we use this dictionary and send
-        /// changes to it along with our network graph data.
-        /// </summary>
-        /// 
-        private static Dictionary<uint, NetworkId> fusionIdToGraphId = new(); 
-        private static Dictionary<uint, Action<NetworkId>> fusionIdToGraphCallbacks = new();
-        private static Queue<IdAddEvent> idMapChanges = new();
+        private bool autoSubscribeToStateChanges = false;
         
         /// <summary>
         /// We only need an add event as we can clean up this list using OnDestroy() of the accessor scripts.
@@ -73,150 +62,12 @@ namespace Foundry.Networking
                 deserializer.Deserialize(ref graphId);
             }
         }
-
-        public static void AddOrReplaceMappedId(uint fusionId, NetworkId graphId, bool recordEvent = true)
-        {
-            fusionIdToGraphId[fusionId] = graphId;
-            if(!recordEvent)
-                return;
-            idMapChanges.Enqueue(new IdAddEvent
-            {
-                fusionId = fusionId,
-                graphId = graphId
-            });
-        }
-
-        public static void RemoveMappedId(uint fusionId, NetworkId graphId)
-        {
-            if (!provider.IsSessionConnected)
-                return;
-            // If the id doesn't match, that probbably means fusion reassigned the id to a new object, and we don't want to remove the new mapping.
-            if (!fusionIdToGraphId[fusionId].Equals(graphId))
-                return;
-            fusionIdToGraphId.Remove(fusionId);
-        }
-
-        /// <summary>
-        /// Get the graph id associated with a fusion id, if it exists.
-        /// </summary>
-        /// <param name="fusionId"></param>
-        /// <returns></returns>
-        public static NetworkId GetGraphId(uint fusionId)
-        {
-            if(fusionIdToGraphId.TryGetValue(fusionId, out var graphId))
-                return graphId;
-            return NetworkId.Invalid;
-        }
-        
-        /// <summary>
-        /// Wait for the graph id associated with a fusion id to be assigned, then call the callback with the graph id.
-        /// </summary>
-        /// <param name="fusionId"></param>
-        /// <param name="callback"></param>
-        /// <exception cref="NotImplementedException"></exception>
-        public static void GetGraphIdAsync(uint fusionId, Action<NetworkId> callback)
-        {
-            if(fusionIdToGraphId.TryGetValue(fusionId, out var graphId))
-            {
-                callback(graphId);
-                return;
-            }
-            
-            if(!fusionIdToGraphCallbacks.TryAdd(fusionId, callback))
-                fusionIdToGraphCallbacks[fusionId] += callback;
-        }
-
-        private static byte[] SerializeIdMapFull()
-        {
-            MemoryStream stream = new MemoryStream();
-            FoundrySerializer serializer = new(stream);
-            
-            int changeCount = fusionIdToGraphId.Count;
-            serializer.Serialize(in changeCount);
-            foreach(KeyValuePair<uint, NetworkId> pair in fusionIdToGraphId)
-            {
-                var change = new IdAddEvent
-                {
-                    fusionId = pair.Key,
-                    graphId = pair.Value
-                };
-                serializer.Serialize(in change);
-            }
-
-            return stream.ToArray();
-        }
-        
-        // When joining a session we need to report our local references that not everyone may have caught due to the lag in rpc subscription calls.
-        private static byte[] SerializeIdMapLocal()
-        {
-            MemoryStream stream = new MemoryStream();
-            FoundrySerializer serializer = new(stream);
-            
-            int changeCount = fusionIdToGraphId.Count;
-            serializer.Serialize(in changeCount);
-            foreach(KeyValuePair<uint, NetworkId> pair in fusionIdToGraphId)
-            {
-                if(pair.Value.Owner != provider.LocalPlayerId)
-                    continue;
-                
-                var change = new IdAddEvent
-                {
-                    fusionId = pair.Key,
-                    graphId = pair.Value
-                };
-                serializer.Serialize(in change);
-            }
-
-            return stream.ToArray();
-        }
-
-        private static byte[] SerializeIdMapDelta()
-        {
-            MemoryStream stream = new MemoryStream();
-            FoundrySerializer serializer = new(stream);
-            
-            int changeCount = idMapChanges.Count;
-            serializer.Serialize(in changeCount);
-            while (idMapChanges.Count > 0)
-            {
-                var change = idMapChanges.Dequeue();
-                serializer.Serialize(in change);
-            }
-
-            return stream.ToArray();
-        }
-
-        private static void ApplyIdMapDelta(byte[] mapDelta)
-        {
-            MemoryStream stream = new MemoryStream(mapDelta);
-            FoundryDeserializer deserializer = new(stream);
-            int changeCount = 0;
-            deserializer.Deserialize(ref changeCount);
-            while (changeCount > 0)
-            {
-                IdAddEvent change = new();
-                deserializer.Deserialize(ref change);
-                AddOrReplaceMappedId(change.fusionId, change.graphId, false);
-                
-                // Call any callbacks waiting on this id
-                if(fusionIdToGraphCallbacks.TryGetValue(change.fusionId, out var callback))
-                {
-                    callback(change.graphId);
-                    fusionIdToGraphCallbacks.Remove(change.fusionId);
-                }
-                --changeCount;
-            }
-        }
         
         void Start()
         {
             Debug.Assert(runner, "FoundryRunnerManager requires a Photon NetworkRunner to be assigned.");
             
-            graphUpdateSubscribers = new();
-            graphInitalized = runner.IsSharedModeMasterClient || runner.IsServer;
-            
-            
-                
+            stateUpdateSubscribers = new();
         }
 
         public Task InitScene()
@@ -226,11 +77,9 @@ namespace Foundry.Networking
 
         async Task InitSceneAsync()
         {
-            while(!(sessionStarted && !FoundryApp.GetService<ISceneNavigator>().IsNavigating))
+            while(FoundryApp.GetService<ISceneNavigator>().IsNavigating)
                 await Task.Yield();
             sceneManager.InitScene();
-            sessionStarted = false;
-            StartCoroutine(ReportGraphChanges());
         }
 
         void UpdateSharedModeMasterClientID()
@@ -270,40 +119,7 @@ namespace Foundry.Networking
                 }
             }
         }
-
-        IEnumerator ReportGraphChanges()
-        {
-            if (runner.IsServer)
-                throw new InvalidOperationException("Foundry's Network Graph does not support Fusion's server-client model at this time. Please tell us if you want this feature!");
-            while (runner.IsRunning)
-            {
-                //We yield at the beginning of the loop so that continue statements don't crash the editor.
-                yield return new WaitForSeconds(1f / runner.Simulation.Config.TickRate);
-                if(graphUpdateSubscribers.Count == 0)
-                    continue;
-                var graphDelta = provider.Graph.GenerateDelta();
-                var idMapDelta = SerializeIdMapDelta();
-                if (graphDelta.data.Length == 0 && idMapDelta.Length == 0)
-                    continue;
-                
-                if (graphDelta.data.Length + idMapDelta.Length > 6536)
-                {
-                    Debug.LogError($"Graph delta is too large to send over the network! (graphDelta was {graphDelta.data.Length}, idMapData was {idMapDelta.Length}, max is 6536). This is a potential foundry bug, please report it to the Foundry team.");
-                    continue;
-                }
-                
-                // Report our changes to all the other players
-                foreach (var player in graphUpdateSubscribers)
-                {
-                    if(player == runner.LocalPlayer)
-                        continue;
-                    RPC_SendGraphDeltaReliable(runner, player, graphDelta.data, idMapDelta);
-                }
-
-            }
-        }
-
-
+        
         private bool sessionStarted = false;
         public Task StartSession(SessionInfo info)
         {
@@ -347,82 +163,21 @@ namespace Foundry.Networking
 
         public void OnPlayerJoined(NetworkRunner runner, PlayerRef player)
         {
-            provider.SendPlayerJoined(player.PlayerId);
+            provider.SendPlayerJoined(player);
             if (player == runner.LocalPlayer)
                 return;
             
             // Subscribe to graph changes from the new player
-            RPC_SubscribeToGraphChanges(runner, player);
-            
-            // When a player joins, we need to send them the current graph state.
-            if (runner.IsServer || runner.IsSharedModeMasterClient)
-            {
-                if(graphUpdateSubscribers.Count > 0)
-                {
-                    // First serialize our current delta and send it out to all players, we do this to make sure we don't resend construction events to the player that just joined, as they would already have them.
-                    var graphDelta = provider.Graph.GenerateDelta();
-                    var idMapDelta = SerializeIdMapDelta();
-
-                    if (graphDelta.data.Length + idMapDelta.Length > 6536)
-                    {
-                        Debug.LogError($"Graph delta is too large to send over the network! (graphDelta was {graphDelta.data.Length}, idMapData was {idMapDelta.Length}, max is 6536). This is a potential foundry bug, please report it to the Foundry team.");
-                        return;
-                    }
-
-                    if (graphDelta.data.Length != 0)
-                    {
-                        // Report our changes to all players but the one that just joined
-                        foreach (var p in graphUpdateSubscribers)
-                        {
-                            if (player == runner.LocalPlayer || p == player)
-                                continue;
-                            RPC_SendGraphDeltaReliable(runner, player, graphDelta.data, idMapDelta);
-                        }
-                    }
-
-                }
-
-                // Send the full graph to the new joiner
-                var fullGraph = provider.Graph.SerializeFull();
-                var fullIdMap = SerializeIdMapFull();
-                RPC_SendGraphDeltaReliable(runner, player, fullGraph.data, fullIdMap);
-
-                // Subscribe to graph changes for the new player, that way they at least don't miss any from the graph authority.
-                graphUpdateSubscribers.Add(player);
-            }
+            if(autoSubscribeToStateChanges)
+                SubscribeAll();
         }
 
         public void OnPlayerLeft(NetworkRunner runner, PlayerRef player)
         {
-            if (graphUpdateSubscribers.Contains(player))
-            {
-                graphUpdateSubscribers.Remove(player);
-            }
-            provider.SendPlayerLeft(player.PlayerId);
+            stateUpdateSubscribers.Remove(player);
 
-            if (!runner.IsSharedModeMasterClient)
-                return;
-
-            var id = player.PlayerId;
-            var orphanedNodes = provider.Graph.idToNode.Select(pair => pair).Where(node => node.Key.Owner == id).ToList();
-            foreach (var node in orphanedNodes)
-            {
-                // Dirty work around for not re-deleting objects that were already deleted recursively.
-                if (!provider.Graph.idToNode.ContainsKey(node.Key))
-                    continue;
-                if (node.Value.AssociatedObject)
-                {
-                    // We could keep the old id, but it's probably better to just reassign it since we can to avoid collisions.
-                    provider.Graph.ChangeId(node.Key, provider.Graph.NewId(runner.LocalPlayer.PlayerId));
-                }
-                else
-                {
-                    // If the node is not associated with an object, we can just remove it, as it was probably orphaned.
-                    provider.Graph.RemoveNode(node.Key);
-                }
-            }
-            
             UpdateSharedModeMasterClientID();
+            provider.SendPlayerLeft(player);
         }
 
         public void OnInput(NetworkRunner runner, NetworkInput input)
@@ -582,50 +337,129 @@ namespace Foundry.Networking
             runner.Despawn(o.GetComponent<Fusion.NetworkObject>());
         }
         
+        static INetworkProvider.StateDeltaCallback stateDeltaCallback;
+        HashSet<PlayerRef> subscribedToStateFrom = new();
+        
+        public async Task SubscribeToStateChangesAsync(INetworkProvider.StateDeltaCallback onStateDelta)
+        {
+            stateDeltaCallback = (sender, delta)=>
+            {
+                subscribedToStateFrom.Add(sender);
+                onStateDelta(sender, delta);
+            };
+            
+            autoSubscribeToStateChanges = true;
+            await SubscribeAll();
+        }
+
+        private async Task SubscribeAll()
+        {
+            // Wait until this list is populated, because for some reason it's not populated immediately even though we await the start game method
+            // As the local player should be included, this should never be empty
+            while (!runner.ActivePlayers.Any())
+                await Task.Delay(50);
+            
+            int maxWait = 100000;
+
+            bool unsubedPlayers = true;
+            while(unsubedPlayers)
+            {
+                var playerSubTasks = runner.ActivePlayers.Where(p => p != LocalPlayerId && !subscribedToStateFrom.Contains(p)).Select(player =>
+                {
+                    RPC_SubscribeToGraphChanges(runner, player);
+                    return Task.Run(async () =>
+                    {
+                        int delay = 50;
+                        int tries = 0;
+                        while (!subscribedToStateFrom.Contains(player) && tries++ * delay < maxWait)
+                            await Task.Delay(delay);
+                    });
+                }).ToArray();
+                await Task.WhenAll(playerSubTasks);
+                unsubedPlayers = playerSubTasks.Length > 0;
+            }
+        }
+
+        public void SendStateDelta(byte[] delta)
+        {
+            foreach (var player in stateUpdateSubscribers)
+                RPC_SendStateDeltaReliable(runner, player, delta);
+        }
+
+        private static Func<byte[]> subscriberInitialState;
+        public void SetSubscriberInitialStateCallback(Func<byte[]> callback)
+        {
+            subscriberInitialState = callback;
+        }
+        
         [Rpc(sources: RpcSources.All, targets: RpcTargets.All, Channel = RpcChannel.Reliable, InvokeLocal = false)]
         static void RPC_SubscribeToGraphChanges(NetworkRunner runner, [RpcTarget] PlayerRef player, RpcInfo info = default)
         {
             // Make sure we don't double subscribe 
-            if (graphUpdateSubscribers.Contains(info.Source))
+            if (stateUpdateSubscribers.Contains(info.Source))
                 return;
             
-            graphUpdateSubscribers.Add(info.Source);
-            
-            //Update the new subscriber with the current map state
-            RPC_SendGraphDeltaReliable(runner, info.Source, new byte[0], SerializeIdMapFull());
+            stateUpdateSubscribers.Add(info.Source);
+
+            RPC_SendStateDeltaReliable(runner, info.Source, subscriberInitialState());
         }
         
         [Rpc(sources: RpcSources.All, targets: RpcTargets.All, Channel = RpcChannel.Reliable, InvokeLocal = false)]
-        static void RPC_SendGraphDeltaReliable(NetworkRunner runner, [RpcTarget] PlayerRef player, byte[] graphData, byte[] idMapData, RpcInfo info = default)
+        static void RPC_SendStateDeltaReliable(NetworkRunner runner, [RpcTarget] PlayerRef player, byte[] graphData, RpcInfo info = default)
         {
-            NetworkGraphDelta delta = new NetworkGraphDelta
-            {
-                data = graphData
-            };
             try
             {
-                if(idMapData.Length > 0)
-                    ApplyIdMapDelta(idMapData);
-                if(graphData.Length > 0)
-                    provider.Graph.ApplyDelta(ref delta, info.Source.PlayerId);
+                stateDeltaCallback(info.Source, graphData);
             }
             catch (Exception e)
             {
                 Debug.LogError("Failed to apply network graph delta");
                 Debug.LogException(e);
             }
-
-            // If this was the first time we received an update to the graph (Only could be a full graph from the graph authority), we need to subscribe to updates from the other players.
-            if (!graphInitalized)
+        }
+        
+        public static int ownerChangeCount = 0;
+        public static Dictionary<int, Action<bool>> ownershipChangeCallbacks = new();
+        
+        public static void ChangeOwner(NetworkId id, Fusion.NetworkObject networkObject, int newOwner, Action<bool> callback)
+        {
+            if (!provider.IsSessionConnected)
+                return;
+            
+            int callbackId = ownerChangeCount++;
+            ownershipChangeCallbacks.Add(callbackId, callback);
+            
+            RPC_ChangeOwner(runner, networkObject.StateAuthority, networkObject, id.Id, newOwner, callbackId);
+        }
+        
+        [Rpc(sources: RpcSources.All, targets: RpcTargets.All, Channel = RpcChannel.Reliable, InvokeLocal = false)]
+        static void RPC_ChangeOwner(NetworkRunner runner, [RpcTarget] PlayerRef currentObjectOwner, Fusion.NetworkObject netObject, uint objectId, int newOwner, int callbackId, RpcInfo info = default)
+        {
+            if (netObject.TryGetComponent(out Foundry.Networking.NetworkObject fno))
             {
-                foreach (var p in runner.ActivePlayers)
-                {
-                    if (p == runner.LocalPlayer)
-                        continue;
-                    RPC_SubscribeToGraphChanges(runner, p);
-                }
-
-                graphInitalized = true;
+                bool allowChange = fno.VerifyIDChangeRequest(newOwner);
+                if(allowChange)
+                    netObject.ReleaseStateAuthority();
+                RPC_ReceiveOwnershipChange(runner, info.Source, netObject, allowChange, callbackId);
+            }
+            else
+            {
+                bool changeAllowed = (bool)typeof(Fusion.NetworkObject)
+                    .GetField("AllowStateAuthorityOverride", BindingFlags.Instance | BindingFlags.NonPublic)
+                    .GetValue(netObject);
+                RPC_ReceiveOwnershipChange(runner, info.Source, netObject, changeAllowed, callbackId);
+            }
+        }
+        
+        [Rpc(sources: RpcSources.All, targets: RpcTargets.All, Channel = RpcChannel.Reliable, InvokeLocal = false)]
+        static void RPC_ReceiveOwnershipChange(NetworkRunner runner, [RpcTarget] PlayerRef listener, Fusion.NetworkObject netObject, bool result, int callbackId)
+        {
+            if(ownershipChangeCallbacks.TryGetValue(callbackId, out var callback))
+            {
+                if(result)
+                    netObject.RequestStateAuthority();
+                callback(result);
+                ownershipChangeCallbacks.Remove(callbackId);
             }
         }
     }
