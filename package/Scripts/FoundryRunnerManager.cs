@@ -105,7 +105,13 @@ namespace Foundry.Networking
             
             var localPlayerProp = clientProp.FieldType.GetProperty("LocalPlayer");
             Debug.Assert(localPlayerProp != null, "Internal Fusion API has changed. LocalPlayer cannot be accessed. Please report this message to the foundry team.");
-            var localPlayer = localPlayerProp.GetValue(client);
+            object localPlayer = null;
+            while (localPlayer == null)
+            {
+                localPlayer = localPlayerProp.GetValue(client);
+                if(localPlayer == null)
+                    await Task.Delay(20);
+            }
 
             var roomRefProp = localPlayerProp.PropertyType.GetProperty("RoomReference",BindingFlags.Instance | BindingFlags.NonPublic);
             Debug.Assert(roomRefProp != null, "Internal Fusion API has changed. RoomReference cannot be accessed. Please report this message to the foundry team.");
