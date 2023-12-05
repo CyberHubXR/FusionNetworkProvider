@@ -23,7 +23,7 @@ namespace Foundry.Networking
     /// <see cref="FusionNetworkProvider"/>
     public class FoundryRunnerManager : NetworkBehaviour, INetworkRunnerCallbacks
     {
-        public static NetworkRunner runner;
+        public NetworkRunner runner;
         
         public FusionVoiceClient voiceClient;
         public Recorder recorder;
@@ -82,7 +82,7 @@ namespace Foundry.Networking
             sceneManager.InitScene();
         }
 
-        void UpdateSharedModeMasterClientID()
+        async Task UpdateSharedModeMasterClientID()
         {
             if (runner.IsSharedModeMasterClient)
             {
@@ -92,21 +92,33 @@ namespace Foundry.Networking
             
             //FOR SOME REASON they don't expose the master client ID, so we have to use reflection to get it.
             var cloudServicesProp = typeof(NetworkRunner).GetField("_cloudServices", BindingFlags.NonPublic | BindingFlags.Instance);
+            Debug.Assert(cloudServicesProp != null, "Internal Fusion API has changed. _cloudServices cannot be accessed. Please report this message to the foundry team.");
             var cloudServices = cloudServicesProp.GetValue(runner);
             
             var communicatorProp = cloudServicesProp.FieldType.GetField("_communicator", BindingFlags.NonPublic | BindingFlags.Instance);
+            Debug.Assert(communicatorProp != null, "Internal Fusion API has changed. _communicator cannot be accessed. Please report this message to the foundry team.");
             var comunicator = communicatorProp.GetValue(cloudServices);
             
             var clientProp = communicatorProp.FieldType.GetField("_client", BindingFlags.NonPublic | BindingFlags.Instance);
+            Debug.Assert(clientProp != null, "Internal Fusion API has changed. _client cannot be accessed. Please report this message to the foundry team.");
             var client = clientProp.GetValue(comunicator);
             
             var localPlayerProp = clientProp.FieldType.GetProperty("LocalPlayer");
+            Debug.Assert(localPlayerProp != null, "Internal Fusion API has changed. LocalPlayer cannot be accessed. Please report this message to the foundry team.");
             var localPlayer = localPlayerProp.GetValue(client);
 
             var roomRefProp = localPlayerProp.PropertyType.GetProperty("RoomReference",BindingFlags.Instance | BindingFlags.NonPublic);
-            var roomRef = roomRefProp.GetValue(localPlayer);
+            Debug.Assert(roomRefProp != null, "Internal Fusion API has changed. RoomReference cannot be accessed. Please report this message to the foundry team.");
+            object roomRef = null;
+            while (roomRef == null)
+            {
+                roomRef = roomRefProp.GetValue(localPlayer);
+                if(roomRef == null)
+                    await Task.Delay(20);
+            }
             
             var masterClientIdProp = roomRefProp.PropertyType.GetProperty("MasterClientId");
+            Debug.Assert(cloudServicesProp != null, "Internal Fusion API has changed. MasterClientId cannot be accessed. Please report this message to the foundry team.");
             var masterClientActorID = (int)masterClientIdProp.GetValue(roomRef);
 
             // We've just given up on any semblance of performance here
@@ -156,8 +168,8 @@ namespace Foundry.Networking
             {
                 var res = await sgr;
                 if (res.Ok == false) { throw new InvalidOperationException("Fusion runner did not start properly. Will now shutdown. Reason: " + res.ToString()); }
+                await UpdateSharedModeMasterClientID();
                 sessionStarted = true;
-                UpdateSharedModeMasterClientID();
             });
         }
 
@@ -172,11 +184,11 @@ namespace Foundry.Networking
                 SubscribeAll();
         }
 
-        public void OnPlayerLeft(NetworkRunner runner, PlayerRef player)
+        public async void OnPlayerLeft(NetworkRunner runner, PlayerRef player)
         {
             stateUpdateSubscribers.Remove(player);
 
-            UpdateSharedModeMasterClientID();
+            await UpdateSharedModeMasterClientID();
             provider.SendPlayerLeft(player);
         }
 
@@ -429,7 +441,7 @@ namespace Foundry.Networking
             int callbackId = ownerChangeCount++;
             ownershipChangeCallbacks.Add(callbackId, callback);
             
-            RPC_ChangeOwner(runner, networkObject.StateAuthority, networkObject, id.Id, newOwner, callbackId);
+            RPC_ChangeOwner(networkObject.Runner, networkObject.StateAuthority, networkObject, id.Id, newOwner, callbackId);
         }
         
         [Rpc(sources: RpcSources.All, targets: RpcTargets.All, Channel = RpcChannel.Reliable, InvokeLocal = false)]

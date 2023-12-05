@@ -25,11 +25,11 @@ namespace Foundry.Networking
 
         #region Interface Implementations
 
-        public bool IsSessionConnected => FoundryRunnerManager.runner && FoundryRunnerManager.runner.IsRunning;
+        public bool IsSessionConnected => runnerManager && runnerManager.runner.IsRunning;
         public bool IsServer => runnerManager is { IsServer: true };
         public bool IsClient => runnerManager is { IsClient: true };
 
-        public bool IsGraphAuthority => IsServer || (FoundryRunnerManager.runner && FoundryRunnerManager.runner.IsSharedModeMasterClient);
+        public bool IsGraphAuthority => IsServer || (runnerManager && runnerManager.runner.IsSharedModeMasterClient);
         public int GraphAuthorityId => runnerManager.MasterClientId;
 
         public int LocalPlayerId => runnerManager.LocalPlayerId;
@@ -48,7 +48,7 @@ namespace Foundry.Networking
             photonVoiceNetwork.UseFusionAuthValues = true;
             
             runnerManager = networkContextHolder.AddComponent<FoundryRunnerManager>();
-            FoundryRunnerManager.runner = runner;
+            runnerManager.runner = runner;
             runnerManager.voiceClient = photonVoiceNetwork;
             runnerManager.recorder = recorder;
 
@@ -283,8 +283,8 @@ namespace Foundry.Networking
         public GameObject Spawn(GameObject prefab, Vector3 position, Quaternion rotation)
         {
             if (registeredPrefabs.TryGetValue(prefab, out var registeredPrefab))
-                return FoundryRunnerManager.runner.Spawn(registeredPrefab.ID, position, rotation, FoundryRunnerManager.runner.LocalPlayer).gameObject;
-            return FoundryRunnerManager.runner.Spawn(prefab, position, rotation, FoundryRunnerManager.runner.LocalPlayer).gameObject;
+                return runnerManager.runner.Spawn(registeredPrefab.ID, position, rotation, runnerManager.runner.LocalPlayer).gameObject;
+            return runnerManager.runner.Spawn(prefab, position, rotation, runnerManager.runner.LocalPlayer).gameObject;
         }
 
         public void Despawn(GameObject gameObject)
