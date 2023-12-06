@@ -40,7 +40,7 @@ namespace Foundry.Networking
         {
             GetNetworkStateIdAsync(id => onConnectedCallback?.Invoke());
             if (!HasStateAuthority)
-                RPC_GetID();
+                SendIDRequest();
         }
 
         private Action onConnectedCallback;
@@ -80,6 +80,17 @@ namespace Foundry.Networking
         public void StateAuthorityChanged()
         {
             onOwnershipChangedCallback?.Invoke(Object.StateAuthority);
+        }
+
+        public async void SendIDRequest()
+        {
+            int attempts = 0;
+            int maxAttempts = 5;
+            while (!NetworkStateId.IsValid() && attempts++ < maxAttempts)
+            {
+                RPC_GetID();
+                await Task.Delay(250);
+            }
         }
         
         // Id request chain
