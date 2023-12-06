@@ -15,6 +15,7 @@ namespace Foundry.Networking
             set
             {
                 cachedGraphNetworkStateId = value;
+                Debug.Assert(value.IsValid(), "Tried to set NetworkStateId to invalid value");
                 onNetworkStateIdSet?.Invoke(value);
                 onNetworkStateIdSet = null;
             }
@@ -30,16 +31,13 @@ namespace Foundry.Networking
             if (NetworkStateId.IsValid())
                 callback(NetworkStateId);
             else
-                onNetworkStateIdSet = callback;
+                onNetworkStateIdSet += callback;
         }
-
-
-        private uint cachedFusionId = 0xffffffff;
+        
         private NetworkId cachedGraphNetworkStateId = NetworkId.Invalid;
         
         public override void Spawned()
         {
-            cachedFusionId = Object.Id.Raw;
             GetNetworkStateIdAsync(id => onConnectedCallback?.Invoke());
             if (!HasStateAuthority)
                 RPC_GetID();
