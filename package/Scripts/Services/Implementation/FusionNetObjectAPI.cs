@@ -85,12 +85,15 @@ namespace Foundry.Networking
         public async void SendIDRequest()
         {
             int attempts = 0;
-            int maxAttempts = 5;
+            int maxAttempts = 50;
             while (!NetworkStateId.IsValid() && attempts++ < maxAttempts)
             {
                 RPC_GetID();
                 await Task.Delay(250);
             }
+
+            if (!NetworkStateId.IsValid())
+                Debug.LogError($"Failed to get NetworkStateId for {gameObject.name} after {maxAttempts} attempts");
         }
         
         // Id request chain
