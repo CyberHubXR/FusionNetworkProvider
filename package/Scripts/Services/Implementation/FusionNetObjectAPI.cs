@@ -49,7 +49,7 @@ namespace Foundry.Networking
 
         public void OnConnected(Action callback)
         {
-            if(Object?.IsValid ?? false)
+            if(Object is { IsValid: true } && NetworkStateId.IsValid())
                 callback();
             else
                 onConnectedCallback += callback;
