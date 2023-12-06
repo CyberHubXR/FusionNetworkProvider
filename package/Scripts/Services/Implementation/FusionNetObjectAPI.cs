@@ -86,8 +86,10 @@ namespace Foundry.Networking
         [Rpc(sources: RpcSources.All, targets: RpcTargets.StateAuthority, Channel = RpcChannel.Reliable, InvokeLocal = false)]
         void RPC_GetID(RpcInfo info = default)
         {
+            Debug.Log("Received RPC request from player " + info.Source + " for NetworkStateId");
             GetNetworkStateIdAsync(id =>
             {
+                Debug.Log("Sending RPC response to player " + info.Source + " with NetworkStateId " + id.Id + "");
                 RPC_SetId(info.Source, id.Id);
             });
         }
@@ -95,6 +97,7 @@ namespace Foundry.Networking
         [Rpc(sources: RpcSources.StateAuthority, targets: RpcTargets.All, Channel = RpcChannel.Reliable, InvokeLocal = false)]
         void RPC_SetId([RpcTarget] PlayerRef requestor, uint id)
         {
+            Debug.Log("Received RPC response containing network state id ");
             NetworkStateId = new(id);
         }
     }
