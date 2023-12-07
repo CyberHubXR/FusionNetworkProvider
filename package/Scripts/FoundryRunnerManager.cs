@@ -39,6 +39,9 @@ namespace Foundry.Networking
         private FoundryFusionSceneManager sceneManager;
         
         private static HashSet<PlayerRef> stateUpdateSubscribers;
+        
+        static INetworkProvider.StateDeltaCallback stateDeltaCallback;
+        static HashSet<PlayerRef> subscribedToStateFrom;
 
         private bool autoSubscribeToStateChanges = false;
         
@@ -66,8 +69,6 @@ namespace Foundry.Networking
         void Start()
         {
             Debug.Assert(runner, "FoundryRunnerManager requires a Photon NetworkRunner to be assigned.");
-            
-            stateUpdateSubscribers = new();
         }
 
         public Task InitScene()
@@ -159,6 +160,11 @@ namespace Foundry.Networking
                 default:
                     throw new ArgumentOutOfRangeException();
             }
+
+            
+            
+            stateUpdateSubscribers = new();
+            subscribedToStateFrom = new();
             
             var navigator = FoundryApp.GetService<ISceneNavigator>();
             
@@ -355,16 +361,9 @@ namespace Foundry.Networking
             runner.Despawn(o.GetComponent<Fusion.NetworkObject>());
         }
         
-        static INetworkProvider.StateDeltaCallback stateDeltaCallback;
-        HashSet<PlayerRef> subscribedToStateFrom = new();
-        
         public async Task SubscribeToStateChangesAsync(INetworkProvider.StateDeltaCallback onStateDelta)
         {
-            stateDeltaCallback = (sender, delta)=>
-            {
-                subscribedToStateFrom.Add(sender);
-                onStateDelta(sender, delta);
-            };
+            stateDeltaCallback = onStateDelta;
             
             autoSubscribeToStateChanges = true;
             await SubscribeAll();
@@ -382,19 +381,25 @@ namespace Foundry.Networking
             bool unsubedPlayers = true;
             while(unsubedPlayers)
             {
-                var playerSubTasks = runner.ActivePlayers.Where(p => p != LocalPlayerId && !subscribedToStateFrom.Contains(p)).Select(player =>
-                {
-                    RPC_SubscribeToGraphChanges(runner, player);
-                    return Task.Run(async () =>
-                    {
-                        int delay = 50;
-                        int tries = 0;
-                        while (!subscribedToStateFrom.Contains(player) && tries++ * delay < maxWait)
-                            await Task.Delay(delay);
-                    });
-                }).ToArray();
+                var playerSubTasks = runner.ActivePlayers.Where(p => p != LocalPlayerId && !subscribedToStateFrom.Contains(p)).Select(SubscribeToStateChanges).ToArray();
                 await Task.WhenAll(playerSubTasks);
                 unsubedPlayers = playerSubTasks.Length > 0;
+            }
+        }
+        
+        private async Task SubscribeToStateChanges(PlayerRef player)
+        {
+            if (subscribedToStateFrom.Contains(player))
+                return;
+            
+            RPC_SubscribeToGraphChanges(runner, player);
+            int delay = 50;
+            int tries = 0;
+            int maxTries = 50;
+            while (!subscribedToStateFrom.Contains(player) && tries++ < maxTries)
+            {
+                RPC_SubscribeToGraphChanges(runner, player);
+                await Task.Delay(delay);
             }
         }
 
@@ -419,7 +424,17 @@ namespace Foundry.Networking
             
             stateUpdateSubscribers.Add(info.Source);
 
-            RPC_SendStateDeltaReliable(runner, info.Source, subscriberInitialState());
+            RPC_SendInitialStateReliable(runner, info.Source, subscriberInitialState());
+        }
+
+        [Rpc(sources: RpcSources.All, targets: RpcTargets.All, Channel = RpcChannel.Reliable, InvokeLocal = false)]
+        static void RPC_SendInitialStateReliable(NetworkRunner runner, [RpcTarget] PlayerRef player, byte[] graphData, RpcInfo info = default)
+        {
+            if (subscribedToStateFrom.Contains(info.Source))
+                return;
+
+            subscribedToStateFrom.Add(info.Source);
+            stateDeltaCallback(info.Source, graphData);
         }
         
         [Rpc(sources: RpcSources.All, targets: RpcTargets.All, Channel = RpcChannel.Reliable, InvokeLocal = false)]
