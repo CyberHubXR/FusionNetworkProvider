@@ -35,13 +35,14 @@ namespace Foundry.Networking
         public int MasterClientId { get; private set; }
         
         private static FusionNetworkProvider provider = FoundryApp.GetService<INetworkProvider>() as FusionNetworkProvider;
+        private static Dictionary<Scene, FoundryRunnerManager> instances = new();
         
         private FoundryFusionSceneManager sceneManager;
         
-        private static HashSet<PlayerRef> stateUpdateSubscribers;
+        private HashSet<PlayerRef> stateUpdateSubscribers;
         
-        static INetworkProvider.StateDeltaCallback stateDeltaCallback;
-        static HashSet<PlayerRef> subscribedToStateFrom;
+        INetworkProvider.StateDeltaCallback stateDeltaCallback;
+        HashSet<PlayerRef> subscribedToStateFrom;
 
         private bool autoSubscribeToStateChanges = false;
         
@@ -65,10 +66,25 @@ namespace Foundry.Networking
                 deserializer.Deserialize(ref graphId);
             }
         }
-        
+        Scene currentScene;
         void Start()
         {
             Debug.Assert(runner, "FoundryRunnerManager requires a Photon NetworkRunner to be assigned.");
+            currentScene = SceneManager.GetSceneByBuildIndex(FoundryApp.GetService<ISceneNavigator>().CurrentScene.BuildIndex);
+            instances.Add(currentScene, this);
+        }
+        
+        void OnDestroy()
+        {
+            instances.Remove(currentScene);
+        }
+        
+        public static FoundryRunnerManager GetManagerForScene(Scene scene)
+        {
+            if (instances.TryGetValue(scene, out var instance))
+                return instance;
+            Debug.LogError("No FoundryRunnerManager found for scene " + scene.name);
+            return null;
         }
 
         public Task InitScene()
@@ -81,6 +97,14 @@ namespace Foundry.Networking
             while(FoundryApp.GetService<ISceneNavigator>().IsNavigating)
                 await Task.Yield();
             sceneManager.InitScene();
+            while (Object == null)
+            {
+                await Task.Delay(100);
+            }
+            while (!Object.IsValid)
+            {
+                await Task.Delay(100);
+            }
         }
 
         async Task UpdateSharedModeMasterClientID()
@@ -169,6 +193,7 @@ namespace Foundry.Networking
             var navigator = FoundryApp.GetService<ISceneNavigator>();
             
             sceneManager = new FoundryFusionSceneManager();
+            sceneManager.runnerManager = GetComponent<Fusion.NetworkObject>();
             var sgr = runner.StartGame(new StartGameArgs
             {
                 GameMode = fusionGameMode,
@@ -193,7 +218,7 @@ namespace Foundry.Networking
             
             // Subscribe to graph changes from the new player
             if(autoSubscribeToStateChanges)
-                SubscribeAll();
+                SubscribeToStateChanges(player);
         }
 
         public async void OnPlayerLeft(NetworkRunner runner, PlayerRef player)
@@ -392,43 +417,46 @@ namespace Foundry.Networking
             if (subscribedToStateFrom.Contains(player))
                 return;
             
-            RPC_SubscribeToGraphChanges(runner, player);
-            int delay = 50;
-            int tries = 0;
-            int maxTries = 50;
-            while (!subscribedToStateFrom.Contains(player) && tries++ < maxTries)
+            RPC_SubscribeToGraphChanges(player);
+            while (!subscribedToStateFrom.Contains(player))
             {
-                RPC_SubscribeToGraphChanges(runner, player);
-                await Task.Delay(delay);
+                RPC_SubscribeToGraphChanges(player);
+                await Task.Delay(250);
             }
         }
 
-        public void SendStateDelta(byte[] delta)
+        public async void SendStateDelta(byte[] delta)
         {
+            while (!Object)
+                await Task.Yield();
+            
             foreach (var player in stateUpdateSubscribers)
-                RPC_SendStateDeltaReliable(runner, player, delta);
+                RPC_SendStateDeltaReliable(player, delta);
         }
 
-        private static Func<byte[]> subscriberInitialState;
+        private Func<byte[]> subscriberInitialState;
         public void SetSubscriberInitialStateCallback(Func<byte[]> callback)
         {
             subscriberInitialState = callback;
         }
         
         [Rpc(sources: RpcSources.All, targets: RpcTargets.All, Channel = RpcChannel.Reliable, InvokeLocal = false)]
-        static void RPC_SubscribeToGraphChanges(NetworkRunner runner, [RpcTarget] PlayerRef player, RpcInfo info = default)
+        void RPC_SubscribeToGraphChanges([RpcTarget] PlayerRef player, RpcInfo info = default)
         {
             // Make sure we don't double subscribe 
-            if (stateUpdateSubscribers.Contains(info.Source))
-                return;
             
+            if (stateUpdateSubscribers.Contains(info.Source))
+            {
+                Debug.LogWarning("Ignoring duplicate subscribe to graph changes request from " + info.Source.PlayerId);
+                return;
+            }
             stateUpdateSubscribers.Add(info.Source);
 
-            RPC_SendInitialStateReliable(runner, info.Source, subscriberInitialState());
+            RPC_SendInitialStateReliable(info.Source, subscriberInitialState());
         }
 
         [Rpc(sources: RpcSources.All, targets: RpcTargets.All, Channel = RpcChannel.Reliable, InvokeLocal = false)]
-        static void RPC_SendInitialStateReliable(NetworkRunner runner, [RpcTarget] PlayerRef player, byte[] graphData, RpcInfo info = default)
+        void RPC_SendInitialStateReliable([RpcTarget] PlayerRef player, byte[] graphData, RpcInfo info = default)
         {
             if (subscribedToStateFrom.Contains(info.Source))
                 return;
@@ -438,7 +466,7 @@ namespace Foundry.Networking
         }
         
         [Rpc(sources: RpcSources.All, targets: RpcTargets.All, Channel = RpcChannel.Reliable, InvokeLocal = false)]
-        static void RPC_SendStateDeltaReliable(NetworkRunner runner, [RpcTarget] PlayerRef player, byte[] graphData, RpcInfo info = default)
+        void RPC_SendStateDeltaReliable([RpcTarget] PlayerRef player, byte[] graphData, RpcInfo info = default)
         {
             try
             {
@@ -451,10 +479,10 @@ namespace Foundry.Networking
             }
         }
         
-        public static int ownerChangeCount = 0;
-        public static Dictionary<int, Action<bool>> ownershipChangeCallbacks = new();
+        public int ownerChangeCount = 0;
+        public Dictionary<int, Action<bool>> ownershipChangeCallbacks = new();
         
-        public static void ChangeOwner(NetworkId id, Fusion.NetworkObject networkObject, int newOwner, Action<bool> callback)
+        public void ChangeOwner(NetworkId id, Fusion.NetworkObject networkObject, int newOwner, Action<bool> callback)
         {
             if (!provider.IsSessionConnected)
                 return;
@@ -462,30 +490,30 @@ namespace Foundry.Networking
             int callbackId = ownerChangeCount++;
             ownershipChangeCallbacks.Add(callbackId, callback);
             
-            RPC_ChangeOwner(networkObject.Runner, networkObject.StateAuthority, networkObject, id.Id, newOwner, callbackId);
+            RPC_ChangeOwner(networkObject.StateAuthority, networkObject, id.Id, newOwner, callbackId);
         }
         
         [Rpc(sources: RpcSources.All, targets: RpcTargets.All, Channel = RpcChannel.Reliable, InvokeLocal = false)]
-        static void RPC_ChangeOwner(NetworkRunner runner, [RpcTarget] PlayerRef currentObjectOwner, Fusion.NetworkObject netObject, uint objectId, int newOwner, int callbackId, RpcInfo info = default)
+        void RPC_ChangeOwner([RpcTarget] PlayerRef currentObjectOwner, Fusion.NetworkObject netObject, uint objectId, int newOwner, int callbackId, RpcInfo info = default)
         {
             if (netObject.TryGetComponent(out Foundry.Networking.NetworkObject fno))
             {
                 bool allowChange = fno.VerifyIDChangeRequest(newOwner);
                 if(allowChange)
                     netObject.ReleaseStateAuthority();
-                RPC_ReceiveOwnershipChange(runner, info.Source, netObject, allowChange, callbackId);
+                RPC_ReceiveOwnershipChange(info.Source, netObject, allowChange, callbackId);
             }
             else
             {
                 bool changeAllowed = (bool)typeof(Fusion.NetworkObject)
                     .GetField("AllowStateAuthorityOverride", BindingFlags.Instance | BindingFlags.NonPublic)
                     .GetValue(netObject);
-                RPC_ReceiveOwnershipChange(runner, info.Source, netObject, changeAllowed, callbackId);
+                RPC_ReceiveOwnershipChange(info.Source, netObject, changeAllowed, callbackId);
             }
         }
         
         [Rpc(sources: RpcSources.All, targets: RpcTargets.All, Channel = RpcChannel.Reliable, InvokeLocal = false)]
-        static void RPC_ReceiveOwnershipChange(NetworkRunner runner, [RpcTarget] PlayerRef listener, Fusion.NetworkObject netObject, bool result, int callbackId)
+        void RPC_ReceiveOwnershipChange([RpcTarget] PlayerRef listener, Fusion.NetworkObject netObject, bool result, int callbackId)
         {
             if(ownershipChangeCallbacks.TryGetValue(callbackId, out var callback))
             {
@@ -499,6 +527,7 @@ namespace Foundry.Networking
 
     class FoundryFusionSceneManager : INetworkSceneManager
     {
+        public Fusion.NetworkObject runnerManager;
         bool loadInProgress = true;
         private NetworkRunner runner;
         
@@ -521,7 +550,9 @@ namespace Foundry.Networking
         {
             runner.InvokeSceneLoadStart();
             var currentScene = FoundryApp.GetService<ISceneNavigator>().CurrentScene;
-            runner.RegisterSceneObjects(FindNetworkObjects(SceneManager.GetSceneByBuildIndex(currentScene.BuildIndex)));
+            var list = FindNetworkObjects(SceneManager.GetSceneByBuildIndex(currentScene.BuildIndex));
+            list.Add(runnerManager);
+            runner.RegisterSceneObjects(list);
             runner.InvokeSceneLoadDone();
             loadInProgress = false;
         }

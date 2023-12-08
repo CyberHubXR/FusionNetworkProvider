@@ -52,6 +52,14 @@ namespace Foundry.Networking
             runnerManager.voiceClient = photonVoiceNetwork;
             runnerManager.recorder = recorder;
 
+            var netObject = networkContextHolder.AddComponent<Fusion.NetworkObject>();
+            netObject.Flags = NetworkObjectFlags.V1 | NetworkObjectFlags.TypeSceneObject;
+            netObject.NetworkGuid = Guid.Parse("ea2e0fa7-6b67-43d3-aec3-256b6c5025d6");
+            netObject.SimulationBehaviours = Array.Empty<SimulationBehaviour>();
+            netObject.NetworkedBehaviours = new NetworkBehaviour[]{runnerManager};
+            netObject.NestedObjects = netObject.NestedObjects = Array.Empty<Fusion.NetworkObject>();
+            
+
             return runnerManager.StartSession(info);
         }
 
@@ -115,6 +123,10 @@ namespace Foundry.Networking
                 var child = gameObject.transform.GetChild(i);
                 childNetObjects.AddRange(BindNetworkObjectInternal(child.gameObject, metadata, isPrefab));
             }
+
+            // If there's already a net object api on this object, it means we've already bound it recursively
+            if (foundryNetObject && gameObject.TryGetComponent(out FusionNetObjectAPI existing_api))
+                return childNetObjects;
             
 
             if (metadata != null)
@@ -206,7 +218,7 @@ namespace Foundry.Networking
             if (!metadata.IsRoot)
             {
                 childNetObjects.Add(netObject);
-                netObject.NestedObjects = new Fusion.NetworkObject[0];
+                netObject.NestedObjects = Array.Empty<Fusion.NetworkObject>();
             }
             else
                 netObject.NestedObjects = childNetObjects.ToArray();

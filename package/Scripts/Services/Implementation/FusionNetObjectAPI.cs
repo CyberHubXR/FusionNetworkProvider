@@ -1,7 +1,9 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using System.Threading.Tasks;
+using Foundry.Core.Serialization;
 using UnityEngine;
 using Fusion;
 
@@ -23,6 +25,8 @@ namespace Foundry.Networking
 
         public int Owner => Object?.StateAuthority ?? -1;
         public bool IsOwner => Object?.HasStateAuthority ?? true;
+
+        public FoundryRunnerManager runnerManager;
         
         
         Action<NetworkId> onNetworkStateIdSet;
@@ -38,9 +42,10 @@ namespace Foundry.Networking
         
         public override void Spawned()
         {
+            runnerManager = FoundryRunnerManager.GetManagerForScene(gameObject.scene);
             GetNetworkStateIdAsync(id => onConnectedCallback?.Invoke());
             if (!HasStateAuthority)
-                SendIDRequest();
+                StartCoroutine(SendIDRequest());
         }
 
         private Action onConnectedCallback;
@@ -69,7 +74,7 @@ namespace Foundry.Networking
         public void SetOwnership(int newOwner, Action<bool> callback)
         {
             setOwnershipCallback += callback;
-            FoundryRunnerManager.ChangeOwner(cachedGraphNetworkStateId, Object, newOwner, result =>
+            runnerManager.ChangeOwner(cachedGraphNetworkStateId, Object, newOwner, result =>
             {
                 setOwnershipCallback?.Invoke(result);
                 if(newOwner == FoundryApp.GetService<INetworkProvider>().LocalPlayerId)
@@ -82,34 +87,85 @@ namespace Foundry.Networking
             onOwnershipChangedCallback?.Invoke(Object.StateAuthority);
         }
 
-        public async void SendIDRequest()
+        IEnumerator SendIDRequest()
         {
-            int attempts = 0;
-            int maxAttempts = 50;
-            while (!NetworkStateId.IsValid() && attempts++ < maxAttempts)
+            while (gameObject && !NetworkStateId.IsValid() && !Object.HasStateAuthority)
             {
-                RPC_GetID();
-                await Task.Delay(250);
+                RPC_GetID(Object.StateAuthority);
+                yield return new WaitForSecondsRealtime(0.25f);
             }
-
-            if (!NetworkStateId.IsValid())
-                Debug.LogError($"Failed to get NetworkStateId for {gameObject.name} after {maxAttempts} attempts");
         }
-        
+
         // Id request chain
+
         [Rpc(sources: RpcSources.All, targets: RpcTargets.StateAuthority, Channel = RpcChannel.Reliable, InvokeLocal = false)]
-        void RPC_GetID(RpcInfo info = default)
+        void RPC_GetID([RpcTarget] PlayerRef stateAuthority, RpcInfo info = default)
         {
             GetNetworkStateIdAsync(id =>
             {
                 RPC_SetId(info.Source, id.Id);
             });
         }
-        
+
         [Rpc(sources: RpcSources.StateAuthority, targets: RpcTargets.All, Channel = RpcChannel.Reliable, InvokeLocal = false)]
         void RPC_SetId([RpcTarget] PlayerRef requestor, uint id)
         {
             NetworkStateId = new(id);
+        }
+
+        Action onRequestFullStateCallback;
+        public void RequestFullState(Action callback)
+        {
+            onRequestFullStateCallback = callback;
+            RPC_RequestFullNode();
+        }
+
+        [Rpc(sources: RpcSources.All, targets: RpcTargets.StateAuthority, Channel = RpcChannel.Reliable, InvokeLocal = false)]
+        void RPC_RequestFullNode(RpcInfo info = default)
+        {
+            if (!NetworkManager.State.TryGetNode(cachedGraphNetworkStateId, out var node))
+            {
+                Debug.LogError("Request for nonexistent node: " + cachedGraphNetworkStateId);
+                return;
+            }
+
+            MemoryStream stream = new();
+            FoundrySerializer serializer = new(stream);
+
+            NetworkManager.State.SerializeNode(node, serializer, true);
+
+            serializer.Dispose();
+            RPC_SendFullNode(info.Source, stream.ToArray());
+        }
+        
+        [Rpc(sources: RpcSources.All, targets: RpcTargets.All, Channel = RpcChannel.Reliable, InvokeLocal = false)]
+        void RPC_SendFullNode([RpcTarget] PlayerRef player, byte[] nodeData, RpcInfo info = default)
+        {
+            if (nodeData == null || nodeData.Length == 0)
+            {
+                Debug.LogError("Received empty node data from " + info.Source + " for " + gameObject.name);
+                return;
+            }
+            try
+            {
+                var netId = new NetworkId();
+                MemoryStream stream = new(nodeData);
+                FoundryDeserializer deserializer = new(stream);
+                deserializer.Deserialize(ref netId);
+                NetworkStateId = netId;
+
+                if (!NetworkManager.State.TryGetNode(netId, out var node))
+                    node = NetworkManager.State.AddNode(netId, info.Source, false);
+
+                node.Deserialize(deserializer);
+                deserializer.Dispose();
+            }
+            catch (Exception e)
+            {
+                Debug.LogError(e);
+            }
+            
+            onRequestFullStateCallback?.Invoke();
         }
     }
 }
