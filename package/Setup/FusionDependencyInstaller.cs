@@ -30,7 +30,7 @@ namespace Foundry.Core.Setup
                 var addFusionTask = new SetupTask();
                 addFusionTask.name = "Photon Fusion";
                 addFusionTask.SetTextDescription("foundry.core requires the Photon Fusion SDK, refer to the Photon docs for the installation process.");
-                addFusionTask.action = SetupAction.OpenDocLink("https://doc.photonengine.com/fusion/current/getting-started/sdk-download");
+                addFusionTask.action = SetupAction.OpenDocLink("https://doc.photonengine.com/fusion/v1/getting-started/sdk-download");
                 addFusionTask.disableAfterAction = false;
                 tasks.Add(addFusionTask);
             }
