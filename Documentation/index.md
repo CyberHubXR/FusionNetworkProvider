@@ -3,7 +3,7 @@ This package provides networking for Foundry using the Fusion networking framewo
 Foundry's networking features and Fusion's networking features at the same time if they wish.
 
 ## Installation instructions
-Install [Foundry Core](https://foundryxr.github.io/FoundryCore/) first, once you've done that you can install this 
+Install [Foundry Core](https://cyberhubxr.github.io/FoundryCore/) first, once you've done that you can install this 
 package from the package manager.
 
 To enable this network provider open the foundry config window from the menu bar at `Foundry -> Config Manager` and set 

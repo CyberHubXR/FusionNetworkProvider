@@ -3,7 +3,7 @@
     {
       "src": [
         {
-          "src": "..\\..\\..\\Fusion Gauntlet",
+          "src": "..",
           "files": [
             "Foundry.Networking.Fusion.csproj",
             "Foundry.Fusion.Setup.csproj",
@@ -45,7 +45,7 @@
       }
     ],
     "overwrite": "",
-    "dest": "",
+    "dest": "_site",
     "globalMetadataFiles": [
       "metadata.json"
     ],

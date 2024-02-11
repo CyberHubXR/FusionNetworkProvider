@@ -25,7 +25,7 @@ jobs:
 
       - run: dotnet tool update -g docfx
       - name: Build Docs
-        run: docfx build -o _site
+        run: docfx build
         working-directory: package/Documentation
           
       - name: Deploy
