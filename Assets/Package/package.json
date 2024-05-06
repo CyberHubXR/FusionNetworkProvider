@@ -1,7 +1,7 @@
 {
   "name": "com.cyberhub.foundry.networking.fusion",
   "displayName": "Fusion Networking for Foundry",
-  "version": "0.1.2-preview",
+  "version": "0.3.0-preview",
   "unity": "2021.3",
   "description": "Provides networking backend for Foundry through Photon Fusion.",
   "keywords": [
@@ -12,6 +12,6 @@
   ],
   "category": "Networking",
   "dependencies": {
-    "com.cyberhub.foundry.core": "0.2.2-preview"
+    "com.cyberhub.brane.core": "0.1.4-preview"
   }
 }

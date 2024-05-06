@@ -1,7 +1,6 @@
-using System.Collections;
 using System.Collections.Generic;
-using Foundry.Core.Editor;
-using UnityEngine;
+using CyberHub.Brane;
+using CyberHub.Brane.Editor;
 
 namespace Foundry.Networking
 {
@@ -24,7 +23,7 @@ namespace Foundry.Networking
             };
         }
 
-        public List<UsedService> GetUsedService()
+        public List<UsedService> GetUsedServices()
         {
             return new List<UsedService>
             {
@@ -36,7 +35,7 @@ namespace Foundry.Networking
             };
         }
 
-        public FoundryModuleConfig GetModuleConfig()
+        public BraneModuleConfig GetModuleConfig()
         {
             return FusionModuleConfig.GetAsset();
         }

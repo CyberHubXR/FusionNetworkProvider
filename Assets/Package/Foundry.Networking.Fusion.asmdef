@@ -2,11 +2,12 @@
     "name": "Foundry.Networking.Fusion",
     "rootNamespace": "Foundry.Networking",
     "references": [
-        "GUID:9e080be906bfc1c4bb2683d498c53669",
+        "GUID:d5f3d7ff39685d34daeded8c4fb25728",
         "GUID:b59fae9c7ebc1574e8690f2570b29d6f",
         "GUID:415d649162855d948bfd44d8c5f1e7a2",
         "GUID:831409e8f9d13b5479a3baef9822ad34",
-        "GUID:889df8a24ec2bcb469964d4f890236b3"
+        "GUID:889df8a24ec2bcb469964d4f890236b3",
+        "GUID:4ea02e77b8d172e489137c8d6533d9eb"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

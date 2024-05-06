@@ -1,8 +1,6 @@
-using System.Collections;
 using System.Collections.Generic;
-using Foundry.Core.Editor;
-using UnityEditor;
-using UnityEngine;
+using CyberHub.Brane.Editor;
+using CyberHub.Brane.Setup;
 
 namespace Foundry.Core.Setup
 {

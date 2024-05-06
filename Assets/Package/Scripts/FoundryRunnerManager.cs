@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Threading.Tasks;
+using CyberHub.Brane;
 using Foundry.Core.Serialization;
 using Foundry.Services;
 using Fusion;
@@ -34,7 +35,7 @@ namespace Foundry.Networking
         
         public int MasterClientId { get; private set; }
         
-        private static FusionNetworkProvider provider = FoundryApp.GetService<INetworkProvider>() as FusionNetworkProvider;
+        private static FusionNetworkProvider provider = BraneApp.GetService<INetworkProvider>() as FusionNetworkProvider;
         private static Dictionary<Scene, FoundryRunnerManager> instances = new();
         
         private FoundryFusionSceneManager sceneManager;
@@ -70,7 +71,7 @@ namespace Foundry.Networking
         void Start()
         {
             Debug.Assert(runner, "FoundryRunnerManager requires a Photon NetworkRunner to be assigned.");
-            currentScene = SceneManager.GetSceneByBuildIndex(FoundryApp.GetService<ISceneNavigator>().CurrentScene.BuildIndex);
+            currentScene = SceneManager.GetSceneByBuildIndex(BraneApp.GetService<ISceneNavigator>().CurrentScene.BuildIndex);
             instances.Add(currentScene, this);
         }
         
@@ -94,7 +95,7 @@ namespace Foundry.Networking
 
         async Task InitSceneAsync()
         {
-            while(FoundryApp.GetService<ISceneNavigator>().IsNavigating)
+            while(BraneApp.GetService<ISceneNavigator>().IsNavigating)
                 await Task.Yield();
             sceneManager.InitScene();
             while (Object == null)
@@ -190,7 +191,7 @@ namespace Foundry.Networking
             stateUpdateSubscribers = new();
             subscribedToStateFrom = new();
             
-            var navigator = FoundryApp.GetService<ISceneNavigator>();
+            var navigator = BraneApp.GetService<ISceneNavigator>();
             
             sceneManager = new FoundryFusionSceneManager();
             sceneManager.runnerManager = GetComponent<Fusion.NetworkObject>();
@@ -549,7 +550,7 @@ namespace Foundry.Networking
         public void InitScene()
         {
             runner.InvokeSceneLoadStart();
-            var currentScene = FoundryApp.GetService<ISceneNavigator>().CurrentScene;
+            var currentScene = BraneApp.GetService<ISceneNavigator>().CurrentScene;
             var list = FindNetworkObjects(SceneManager.GetSceneByBuildIndex(currentScene.BuildIndex));
             list.Add(runnerManager);
             runner.RegisterSceneObjects(list);

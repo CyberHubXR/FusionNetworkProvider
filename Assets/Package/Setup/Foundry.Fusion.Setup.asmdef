@@ -2,9 +2,8 @@
     "name": "Foundry.Fusion.Setup",
     "rootNamespace": "Foundry.Fusion.Setup",
     "references": [
-        "GUID:fdbcaec5f0c0cb04cbcc6dbdac102da5",
-        "GUID:695fc961570e58f4293948619467a6f4",
-        "GUID:0b611528461e48e48973c1472b20956f"
+        "GUID:450bfcf31e882cb4e8de897193635451",
+        "GUID:d5f92cd0879d521428ef70aa2f30096c"
     ],
     "includePlatforms": [
         "Editor"

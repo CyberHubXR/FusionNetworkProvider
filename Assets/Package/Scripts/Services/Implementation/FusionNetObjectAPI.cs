@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
+using CyberHub.Brane;
 using Foundry.Core.Serialization;
 using UnityEngine;
 using Fusion;
@@ -77,7 +78,7 @@ namespace Foundry.Networking
             runnerManager.ChangeOwner(cachedGraphNetworkStateId, Object, newOwner, result =>
             {
                 setOwnershipCallback?.Invoke(result);
-                if(newOwner == FoundryApp.GetService<INetworkProvider>().LocalPlayerId)
+                if(newOwner == BraneApp.GetService<INetworkProvider>().LocalPlayerId)
                     Object.RequestStateAuthority();
             });
         }

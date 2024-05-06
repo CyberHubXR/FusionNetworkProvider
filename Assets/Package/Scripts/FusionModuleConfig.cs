@@ -1,9 +1,10 @@
 using System;
 using System.Collections.Generic;
+using CyberHub.Brane;
 
 namespace Foundry.Networking
 {
-    public class FusionModuleConfig : FoundryModuleConfig
+    public class FusionModuleConfig : BraneModuleConfig
     {
 #if UNITY_EDITOR
         public static FusionModuleConfig GetAsset()
