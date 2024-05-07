@@ -12,6 +12,7 @@
   ],
   "category": "Networking",
   "dependencies": {
-    "com.cyberhub.brane.core": "0.1.4-preview"
+    "com.cyberhub.brane.core": "0.1.4-preview",
+    "com.cyberhub.foundry.core": "0.3.0-preview"
   }
 }
